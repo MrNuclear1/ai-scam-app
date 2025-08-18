@@ -64,8 +64,8 @@ export default function HomePage() {
 				
 				<div className="bg-[#1E293B]/50 backdrop-blur-sm p-6 rounded-xl border border-[#334155] hover:border-[#7C5CFC] transition-colors duration-300">
 					<div className="text-[#3BA4F7] text-3xl mb-4">🤖</div>
-					<h3 className="text-xl font-semibold text-[#E8EEF6] mb-3">AI Scam Simulation</h3>
-					<p className="text-[#94A3B8]">Practice with AI-powered scammer personas in a safe environment to build real-world resistance.</p>
+					<h3 className="text-xl font-semibold text-[#E8EEF6] mb-3">ChatGPT-Powered Scammers</h3>
+					<p className="text-[#94A3B8]">Chat with 9 realistic AI scammer personas powered by ChatGPT. Each uses authentic tactics to help you practice spotting real scams.</p>
 				</div>
 				
 				<div className="bg-[#1E293B]/50 backdrop-blur-sm p-6 rounded-xl border border-[#334155] hover:border-[#FF6B6B] transition-colors duration-300">
@@ -88,8 +88,8 @@ export default function HomePage() {
 						<div className="text-[#94A3B8]">5-Star Reviews</div>
 					</div>
 					<div className="bg-[#1E293B]/30 backdrop-blur-sm p-6 rounded-xl">
-						<div className="text-3xl font-bold text-[#7C5CFC] mb-2">6</div>
-						<div className="text-[#94A3B8]">Scam Types</div>
+						<div className="text-3xl font-bold text-[#7C5CFC] mb-2">9</div>
+						<div className="text-[#94A3B8]">AI Scam Simulators</div>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { lessons } from "@/data/lessons";
+import { getPersonaByLessonId } from "@/data/personas";
 
 // Generate static params for all lessons
 export function generateStaticParams() {
@@ -11,6 +12,8 @@ export function generateStaticParams() {
 export default function LessonDetailPage({ params }: { params: { id: string } }) {
 	const lesson = lessons.find(l => l.id === params.id);
 	if (!lesson) notFound();
+	
+	const correspondingPersona = getPersonaByLessonId(lesson.id);
 
 	return (
 		<div className="min-h-screen w-full bg-[#0B0F14]">
@@ -115,6 +118,32 @@ export default function LessonDetailPage({ params }: { params: { id: string } })
 					</div>
 				</div>
 
+				{/* Practice Simulation Call-to-Action */}
+				{correspondingPersona && (
+					<div className="bg-gradient-to-r from-[#3BA4F7]/10 to-[#7C5CFC]/10 border border-[#3BA4F7]/30 rounded-xl p-6 mb-6">
+						<div className="flex items-center justify-between">
+							<div>
+								<h3 className="text-xl font-bold text-[#E8EEF6] mb-2">🎯 Ready to Practice?</h3>
+								<p className="text-[#CBD5E1] mb-4">
+									Test your knowledge with a live simulation of this scam type. 
+									Chat with an AI scammer and see if you can spot the red flags!
+								</p>
+							</div>
+							<div className="flex flex-col gap-3">
+								<a 
+									href={`/sim/${correspondingPersona}`}
+									className="bg-gradient-to-r from-[#20C997] to-[#3BA4F7] hover:from-[#1BA085] hover:to-[#2A8EE6] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-center whitespace-nowrap"
+								>
+									Start Simulation →
+								</a>
+								<span className="text-xs text-[#94A3B8] text-center">
+									Live AI scammer chat
+								</span>
+							</div>
+						</div>
+					</div>
+				)}
+
 				{/* Navigation */}
 				<div className="flex justify-between items-center">
 					<a 
@@ -127,7 +156,7 @@ export default function LessonDetailPage({ params }: { params: { id: string } })
 						href="/simulator" 
 						className="bg-gradient-to-r from-[#3BA4F7] to-[#7C5CFC] hover:from-[#2A8EE6] hover:to-[#6D4CFC] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
 					>
-						Practice in Simulator →
+						Browse All Simulators →
 					</a>
 				</div>
 			</div>
