@@ -5,8 +5,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"start": "node src/server.mjs",
-		"dev": "node src/server.mjs",
-		"build": "echo 'No build step required'"
+		"dev": "node src/server.mjs"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
