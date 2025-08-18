@@ -1,0 +1,19 @@
+{
+	"name": "ai-scam-backend",
+	"private": true,
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "node src/server.mjs",
+		"dev": "node src/server.mjs"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.19.2",
+		"openai": "^4.0.0",
+		"dotenv": "^16.4.5"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	}
+}
