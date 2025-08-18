@@ -1,10 +1,10 @@
 [build]
-command = "npm ci"
+command = "rm -rf node_modules && npm ci --force"
 
 [deploy]
 startCommand = "npm start"
 healthcheckPath = "/api/health"
-healthcheckTimeout = 100
+healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
 
