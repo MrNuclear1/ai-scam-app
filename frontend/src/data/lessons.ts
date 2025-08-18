@@ -40,13 +40,13 @@ export const lessons: Lesson[] = [
 		title: 'Cryptocurrency Scam Basics',
 		description: 'Learn to identify common cryptocurrency scam tactics and red flags.',
 		difficulty: 'beginner',
-		duration: '15 mins',
+		duration: '18-20 mins',
 		content: {
-			introduction: 'Cryptocurrency scams are among the fastest-growing fraud types. Learn to protect yourself from these sophisticated schemes.',
+			introduction: '🚨 **Imagine this:** You\'re scrolling through social media when you see a post from "Elon Musk" promising to double any Bitcoin you send to his wallet within 24 hours. Sounds too good to be true? It absolutely is.\n\n📊 **The Reality:** Cryptocurrency scams cost victims over $2.6 billion in 2022 alone, making them one of the fastest-growing fraud types. From fake giveaways to bogus investment platforms, scammers are targeting both crypto newcomers and experienced traders.\n\n👥 **Who\'s at Risk:** Tech-savvy teens attracted to quick crypto gains and curious seniors exploring digital investments are equally vulnerable. This lesson will teach you to spot the red flags and protect your money.',
 			sections: [
 				{
-					title: 'Common Crypto Scam Types',
-					content: 'Giveaway scams promise to double your crypto if you send them coins first. Investment scams guarantee unrealistic returns. Fake exchange platforms steal your deposits.',
+					title: '🔍 How Crypto Scams Work',
+					content: '**The Giveaway Trap 🎁**\n\n📱 **Youth Scenario:** You\'re on Discord or TikTok and see a "verified" celebrity account hosting a Bitcoin giveaway. "Send 0.1 BTC, get 1 BTC back!" The comments are full of people claiming they received their payouts.\n\n📞 **Senior Scenario:** You receive a professional-looking email or phone call about a "limited-time crypto investment opportunity" with guaranteed 300% returns in 90 days. The caller has impressive credentials and testimonials.\n\n**How It Actually Works:**\n\n1. 🎭 **Impersonation:** Scammers create fake profiles of celebrities, influencers, or financial experts\n2. 🎯 **The Hook:** Promise guaranteed returns, exclusive opportunities, or "doubling" investments\n3. 💸 **The Ask:** Request you send cryptocurrency first as "verification" or "participation fee"\n4. 💨 **The Vanish:** Once you send crypto, the scammer disappears - crypto transactions can\'t be reversed\n5. 🔄 **The Multiply:** Your wallet address is now marked as a "target" for future scams\n\n📋 **Legitimate vs Scam Comparison:**\n\n| Legitimate Crypto | Crypto Scam |\n|-------------------|-------------|\n| ✅ No upfront payments required | ❌ "Send crypto to receive more" |\n| ✅ Realistic returns (if any) | ❌ Guaranteed 100%+ returns |\n| ✅ Registered business/platform | ❌ Anonymous or fake credentials |\n| ✅ Take time to research/decide | ❌ "Limited time - act now!" |\n| ✅ Official verified accounts | ❌ New accounts with few followers |',
 					type: 'text'
 				},
 				{
