@@ -6,6 +6,12 @@ export interface SiteStats {
 
 const SITE_STATS_KEY = 'scamguard-site-stats';
 const VISITOR_KEY = 'scamguard-visitor-id';
+const COUNT_API_BASES = [
+	'https://api.countapi.xyz',
+	'https://api.countapi.dev',
+];
+const GLOBAL_NAMESPACE = 'scamproof';
+const GLOBAL_TOTAL_VISITS_KEY = 'total_visits';
 
 export function incrementSiteVisit(): SiteStats {
 	if (typeof window === 'undefined') {
@@ -44,6 +50,13 @@ export function incrementSiteVisit(): SiteStats {
 	// Save updated stats
 	localStorage.setItem(SITE_STATS_KEY, JSON.stringify(stats));
 
+	// Best-effort: increment global total visits counter
+	try {
+		for (const base of COUNT_API_BASES) {
+			fetch(`${base}/hit/${encodeURIComponent(GLOBAL_NAMESPACE)}/${encodeURIComponent(GLOBAL_TOTAL_VISITS_KEY)}`).catch(() => {});
+		}
+	} catch (_) {}
+
 	return stats;
 }
 
@@ -64,19 +77,16 @@ export function getSiteStats(): SiteStats {
 	return { totalVisits: 0, uniqueVisits: 0, lastVisit: new Date().toISOString() };
 }
 
-// Mock review data
-const mockReviews = [
-	{ id: '1', name: 'Sarah M.', stars: 5, description: 'Amazing platform! Helped me spot a crypto scam attempt.', date: '2024-01-15' },
-	{ id: '2', name: 'Mike K.', stars: 5, description: 'The AI simulations are incredibly realistic and educational.', date: '2024-01-14' },
-	{ id: '3', name: 'Jessica L.', stars: 4, description: 'Great lessons, very interactive and engaging.', date: '2024-01-13' },
-	{ id: '4', name: 'David R.', stars: 5, description: 'Saved me from falling for a tech support scam!', date: '2024-01-12' },
-	{ id: '5', name: 'Emma T.', stars: 5, description: 'Story mode is addictive and really teaches you red flags.', date: '2024-01-11' }
-];
-
-export function getFiveStarReviewsCount(): number {
-	return mockReviews.filter(review => review.stars === 5).length;
+export async function getGlobalTotalVisits(): Promise<number | null> {
+	for (const base of COUNT_API_BASES) {
+		try {
+			const res = await fetch(`${base}/get/${encodeURIComponent(GLOBAL_NAMESPACE)}/${encodeURIComponent(GLOBAL_TOTAL_VISITS_KEY)}`);
+			if (!res.ok) continue;
+			const data = await res.json();
+			if (typeof data.value === 'number') return data.value;
+		} catch (_) { /* try next */ }
+	}
+	return null;
 }
 
-export function getRecentReviews(count: number = 3) {
-	return mockReviews.slice(0, count);
-}
+// The reviews utilities now live in '@/utils/reviews'
