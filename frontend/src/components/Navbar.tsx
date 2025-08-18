@@ -12,7 +12,7 @@ export default function Navbar() {
 					{/* Logo */}
 					<Link href="/" className="flex items-center space-x-2">
 						<span className="text-2xl font-bold bg-gradient-to-r from-[#20C997] via-[#3BA4F7] to-[#7C5CFC] bg-clip-text text-transparent">
-							ScamGuard
+							Scamproof
 						</span>
 					</Link>
 

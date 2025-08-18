@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "ScamGuard - AI-Powered Scam Awareness Training",
+	title: "Scamproof - AI-Powered Scam Awareness Training",
 	description: "Learn to spot and avoid scams with interactive lessons and AI-powered training simulations",
 };
 
