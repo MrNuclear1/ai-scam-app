@@ -27,27 +27,55 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 const PORT = process.env.PORT || 3001;
 const SCAM_MODEL = process.env.SCAM_MODEL || "gpt-4o-mini";
 
-// OpenAI client initialization
-function getOpenAI() {
-	const apiKey = process.env.OPENAI_API_KEY;
-	if (!apiKey) {
-		console.warn("OPENAI_API_KEY is not set - chat functionality will be disabled");
-		throw new Error("OPENAI_API_KEY is required but missing");
+// Enhanced OpenAI client with better error handling
+let openaiClient = null;
+
+function initializeOpenAI() {
+	try {
+		const apiKey = process.env.OPENAI_API_KEY;
+		if (!apiKey) {
+			console.warn("⚠️  OPENAI_API_KEY not found - chat functionality will be disabled");
+			return null;
+		}
+		
+		openaiClient = new OpenAI({ 
+			apiKey,
+			timeout: 30000, // 30 second timeout
+			maxRetries: 3
+		});
+		
+		console.log("✅ OpenAI client initialized successfully");
+		return openaiClient;
+	} catch (error) {
+		console.error("❌ Failed to initialize OpenAI client:", error.message);
+		return null;
 	}
-	return new OpenAI({ apiKey });
 }
 
-// Health check endpoint
+// Initialize OpenAI on startup
+initializeOpenAI();
+
+function getOpenAI() {
+	if (!openaiClient) {
+		throw new Error("OpenAI client not initialized - check OPENAI_API_KEY");
+	}
+	return openaiClient;
+}
+
+// Health check endpoint with detailed status
 app.get("/", (req, res) => {
 	res.json({ 
-		status: "AI Scam Backend is running", 
+		status: "🚀 AI Scam Backend is running", 
 		timestamp: new Date().toISOString(),
-		version: "1.0.0"
+		version: "2.0.0",
+		personas: Object.keys(personas).length
 	});
 });
 
 app.get("/api/health", (_req, res) => {
 	const hasOpenAI = !!process.env.OPENAI_API_KEY;
+	const openaiStatus = openaiClient ? "connected" : "disconnected";
+	
 	res.json({ 
 		status: "ok", 
 		timestamp: new Date().toISOString(),
@@ -56,53 +84,165 @@ app.get("/api/health", (_req, res) => {
 		environment: {
 			nodeEnv: process.env.NODE_ENV || "development",
 			port: PORT,
-			openaiConfigured: hasOpenAI
+			model: SCAM_MODEL,
+			openaiConfigured: hasOpenAI,
+			openaiStatus: openaiStatus,
+			personas: Object.keys(personas).length,
+			availablePersonas: Object.keys(personas)
 		}
 	});
 });
 
-// Scam chat endpoint
-app.post("/api/scam-chat", async (req, res) => {
+// Get all personas endpoint
+app.get("/api/personas", (_req, res) => {
 	try {
-		const { personaId, messages } = req.body || {};
-		if (!personaId || !Array.isArray(messages) || messages.length === 0) {
-			return res.status(400).json({ error: "Invalid payload: personaId and messages array required" });
-		}
+		const personaList = Object.entries(personas).map(([id, persona]) => ({
+			id,
+			title: persona.title,
+			description: persona.description || "Scammer training simulation"
+		}));
 		
-		const persona = personas[personaId];
-		if (!persona) {
-			return res.status(400).json({ error: "Invalid persona ID" });
-		}
-
-		const openai = getOpenAI();
-		const chat = await openai.chat.completions.create({
-			model: SCAM_MODEL,
-			temperature: 0.8,
-			max_tokens: 80,
-			messages: [
-				{ role: "system", content: persona.system },
-				...messages.map(m => ({ role: m.role, content: m.content }))
-			]
+		res.json({ 
+			personas: personaList,
+			count: personaList.length 
 		});
-		
-		const content = chat.choices?.[0]?.message?.content ?? "";
-		if (!content) {
-			return res.status(500).json({ error: "No response generated" });
-		}
-		
-		res.json({ content });
-	} catch (e) {
-		console.error("/api/scam-chat error", e);
-		res.status(500).json({ error: `Error: ${e?.message || "Unknown error occurred"}` });
+	} catch (error) {
+		console.error("/api/personas error:", error);
+		res.status(500).json({ error: "Failed to fetch personas" });
 	}
 });
 
-// Scam evaluation endpoint
+// Enhanced scam chat endpoint with better error handling
+app.post("/api/scam-chat", async (req, res) => {
+	try {
+		// Validate request payload
+		const { personaId, messages } = req.body || {};
+		
+		if (!personaId) {
+			return res.status(400).json({ 
+				error: "Missing personaId",
+				availablePersonas: Object.keys(personas)
+			});
+		}
+		
+		if (!Array.isArray(messages) || messages.length === 0) {
+			return res.status(400).json({ 
+				error: "Invalid messages array - must be non-empty array" 
+			});
+		}
+		
+		// Validate persona exists
+		const persona = personas[personaId];
+		if (!persona) {
+			return res.status(400).json({ 
+				error: `Invalid persona ID: ${personaId}`,
+				availablePersonas: Object.keys(personas)
+			});
+		}
+		
+		// Validate messages format
+		for (let i = 0; i < messages.length; i++) {
+			const msg = messages[i];
+			if (!msg.role || !msg.content) {
+				return res.status(400).json({ 
+					error: `Invalid message format at index ${i} - must have 'role' and 'content'` 
+				});
+			}
+			if (!['user', 'assistant', 'system'].includes(msg.role)) {
+				return res.status(400).json({ 
+					error: `Invalid role '${msg.role}' at index ${i} - must be 'user', 'assistant', or 'system'` 
+				});
+			}
+		}
+
+		// Get OpenAI client
+		const openai = getOpenAI();
+		
+		// Prepare messages for OpenAI
+		const chatMessages = [
+			{ role: "system", content: persona.system },
+			...messages.map(m => ({ 
+				role: m.role, 
+				content: String(m.content).trim() 
+			}))
+		];
+		
+		console.log(`🤖 Processing chat for persona: ${personaId} (${messages.length} messages)`);
+		
+		// Call OpenAI API with enhanced configuration
+		const completion = await openai.chat.completions.create({
+			model: SCAM_MODEL,
+			messages: chatMessages,
+			temperature: 0.8,
+			max_tokens: 100,
+			presence_penalty: 0.1,
+			frequency_penalty: 0.1,
+			timeout: 25000 // 25 second timeout
+		});
+		
+		const content = completion.choices?.[0]?.message?.content?.trim() || "";
+		
+		if (!content) {
+			console.warn("⚠️  OpenAI returned empty response");
+			return res.status(500).json({ 
+				error: "No response generated by AI model" 
+			});
+		}
+		
+		console.log(`✅ Generated response for ${personaId}: ${content.substring(0, 50)}...`);
+		
+		res.json({ 
+			content,
+			personaId,
+			model: SCAM_MODEL,
+			timestamp: new Date().toISOString()
+		});
+		
+	} catch (error) {
+		console.error(`❌ /api/scam-chat error:`, error);
+		
+		// Enhanced error handling
+		if (error.message?.includes('API key')) {
+			return res.status(503).json({ 
+				error: "OpenAI API configuration error",
+				details: "API key invalid or missing"
+			});
+		}
+		
+		if (error.message?.includes('timeout')) {
+			return res.status(504).json({ 
+				error: "Request timeout - OpenAI API took too long to respond" 
+			});
+		}
+		
+		if (error.message?.includes('rate limit')) {
+			return res.status(429).json({ 
+				error: "Rate limit exceeded - please wait and try again" 
+			});
+		}
+		
+		if (error.status) {
+			return res.status(error.status).json({ 
+				error: `OpenAI API error: ${error.message}` 
+			});
+		}
+		
+		res.status(500).json({ 
+			error: "Internal server error",
+			details: error.message || "Unknown error occurred"
+		});
+	}
+});
+
+// Enhanced scam evaluation endpoint
 app.post("/api/scam-eval", async (req, res) => {
 	try {
 		const { personaId, transcript } = req.body || {};
+		
 		if (!Array.isArray(transcript) || transcript.length === 0) {
-			return res.status(400).json({ error: "Transcript is required" });
+			return res.status(400).json({ 
+				error: "Transcript is required and must be non-empty array" 
+			});
 		}
 		
 		const schema = {
@@ -110,87 +250,210 @@ app.post("/api/scam-eval", async (req, res) => {
 			schema: {
 				type: "object",
 				properties: {
-					outcome: { type: "string", enum: ["safe", "risky", "compromised"] },
-					score: { type: "integer", minimum: 0, maximum: 100 },
-					badge: { type: "string" },
-					feedback: { type: "string" }
+					outcome: { 
+						type: "string", 
+						enum: ["safe", "risky", "compromised"],
+						description: "Overall safety assessment" 
+					},
+					score: { 
+						type: "integer", 
+						minimum: 0, 
+						maximum: 100,
+						description: "Performance score out of 100" 
+					},
+					badge: { 
+						type: "string",
+						description: "Achievement badge name"
+					},
+					feedback: { 
+						type: "string",
+						description: "Detailed feedback on performance"
+					},
+					redFlags: {
+						type: "array",
+						items: { type: "string" },
+						description: "List of red flags user should have noticed"
+					}
 				},
 				additionalProperties: false,
-				required: ["outcome", "score", "badge", "feedback"]
+				required: ["outcome", "score", "badge", "feedback", "redFlags"]
 			},
 			strict: true
 		};
 
-		const system = `You are an expert evaluator for a scam-awareness training simulator. Analyze the user's performance in a chat with a scammer persona. Return strict JSON.
+		const system = `You are an expert cybersecurity evaluator for scam awareness training. Analyze the user's performance in a chat with a scammer persona and provide detailed assessment.
 
-Scoring Guidelines:
-- 90-100: Excellent - Immediately identified as scam, no sensitive info shared
-- 70-89: Good - Identified as scam with some hesitation
-- 50-69: Risky - Showed some suspicious behavior but didn't fall completely
-- 0-49: Compromised - Fell for the scam or shared sensitive information
+SCORING GUIDELINES:
+- 90-100: Excellent - Immediately identified as scam, no sensitive info shared, asked good questions
+- 70-89: Good - Identified as scam with some hesitation, minimal engagement
+- 50-69: Risky - Showed some suspicious behavior but didn't completely fall for it
+- 30-49: Poor - Engaged significantly with scammer, shared some information
+- 0-29: Compromised - Fell for the scam completely, shared sensitive information
 
-Badge Guidelines:
-- Perfect (90-100): "Scam Detector", "Cyber Savvy", "Digital Guardian"
-- Good (70-89): "Cautious User", "Alert Citizen", "Scam Aware"
-- Risky (50-69): "Needs Practice", "Learning Mode", "Getting There"
-- Poor (0-49): "Scam Victim", "High Risk", "Needs Training"`;
+BADGE GUIDELINES:
+- 90-100: "Scam Detector", "Cyber Guardian", "Digital Sleuth", "Fraud Fighter"
+- 70-89: "Cautious User", "Alert Citizen", "Scam Aware", "Safety First"
+- 50-69: "Needs Practice", "Learning Mode", "Getting Better", "Almost There"
+- 30-49: "High Risk", "Vulnerable User", "Needs Training", "Danger Zone"
+- 0-29: "Scam Victim", "Extremely Vulnerable", "Urgent Training Needed"
+
+Focus on identifying red flags the user should have noticed and provide constructive feedback.`;
 
 		const openai = getOpenAI();
+		
 		const completion = await openai.chat.completions.create({
 			model: SCAM_MODEL,
-			temperature: 0,
+			temperature: 0.2, // Lower temperature for more consistent evaluation
 			response_format: { type: "json_schema", json_schema: schema },
-			max_tokens: 200,
+			max_tokens: 300,
 			messages: [
 				{ role: "system", content: system },
-				{ role: "user", content: `Persona: ${personaId}\n\nTranscript:\n${transcript.map(m => `${m.role}: ${m.content}`).join("\n")}\n\nEvaluate this user's performance and return JSON.` }
-			]
+				{ 
+					role: "user", 
+					content: `Evaluate this scam awareness training session:
+
+Persona: ${personaId || 'unknown'}
+Total Messages: ${transcript.length}
+
+Conversation Transcript:
+${transcript.map((m, i) => `${i + 1}. ${m.role}: ${m.content}`).join('\n')}
+
+Provide detailed evaluation with scoring, badge, feedback, and identified red flags.`
+				}
+			],
+			timeout: 30000
 		});
 		
 		const jsonContent = completion.choices?.[0]?.message?.content || "{}";
+		
 		try {
-			const parsed = JSON.parse(jsonContent);
-			if (!parsed.outcome || parsed.score === undefined || !parsed.badge || !parsed.feedback) {
-				throw new Error("Incomplete evaluation result");
+			const evaluation = JSON.parse(jsonContent);
+			
+			// Validate required fields
+			if (!evaluation.outcome || 
+				evaluation.score === undefined || 
+				!evaluation.badge || 
+				!evaluation.feedback) {
+				throw new Error("Incomplete evaluation result from AI");
 			}
-			res.json(parsed);
-		} catch (err) {
-			console.error("/api/scam-eval parse error", err);
+			
+			// Add metadata
+			evaluation.personaId = personaId;
+			evaluation.timestamp = new Date().toISOString();
+			evaluation.messagesAnalyzed = transcript.length;
+			
+			console.log(`✅ Generated evaluation for ${personaId}: ${evaluation.score}/100 (${evaluation.outcome})`);
+			
+			res.json(evaluation);
+			
+		} catch (parseError) {
+			console.error("❌ Failed to parse evaluation JSON:", parseError, "Raw content:", jsonContent);
+			
+			// Fallback evaluation
 			res.json({ 
 				outcome: "error", 
 				score: 0, 
 				badge: "Evaluation Error", 
-				feedback: "Failed to evaluate performance. Please try again." 
+				feedback: "Unable to evaluate this session. Please try again with a longer conversation.",
+				redFlags: ["Evaluation system temporarily unavailable"],
+				personaId,
+				timestamp: new Date().toISOString(),
+				error: true
 			});
 		}
-	} catch (e) {
-		console.error("/api/scam-eval error", e);
-		res.status(500).json({ error: `Error: ${e?.message || "Unknown error occurred"}` });
+		
+	} catch (error) {
+		console.error("❌ /api/scam-eval error:", error);
+		
+		res.status(500).json({ 
+			outcome: "error", 
+			score: 0, 
+			badge: "System Error", 
+			feedback: "Evaluation service temporarily unavailable. Please try again later.",
+			redFlags: ["System evaluation error"],
+			error: error.message || "Unknown error occurred",
+			timestamp: new Date().toISOString()
+		});
+	}
+});
+
+// Test endpoint for API functionality
+app.get("/api/test", async (_req, res) => {
+	try {
+		const openai = getOpenAI();
+		
+		const test = await openai.chat.completions.create({
+			model: "gpt-3.5-turbo",
+			messages: [{ role: "user", content: "Say 'API test successful'" }],
+			max_tokens: 10,
+			timeout: 10000
+		});
+		
+		res.json({ 
+			status: "success", 
+			response: test.choices[0]?.message?.content || "No response",
+			model: "gpt-3.5-turbo",
+			timestamp: new Date().toISOString()
+		});
+		
+	} catch (error) {
+		res.status(500).json({ 
+			status: "failed", 
+			error: error.message,
+			timestamp: new Date().toISOString()
+		});
 	}
 });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-	console.error('Unhandled error:', err);
-	res.status(500).json({ error: 'Internal server error' });
+	console.error('❌ Unhandled error:', err);
+	res.status(500).json({ 
+		error: 'Internal server error',
+		timestamp: new Date().toISOString()
+	});
 });
 
 // 404 handler
 app.use((req, res) => {
-	res.status(404).json({ error: 'Endpoint not found' });
+	res.status(404).json({ 
+		error: 'Endpoint not found',
+		availableEndpoints: [
+			'GET /',
+			'GET /api/health',
+			'GET /api/personas',
+			'POST /api/scam-chat',
+			'POST /api/scam-eval',
+			'GET /api/test'
+		],
+		timestamp: new Date().toISOString()
+	});
 });
 
+// Start server with enhanced logging
 const server = app.listen(PORT, '0.0.0.0', () => {
-	console.log(`🚀 Backend running on http://0.0.0.0:${PORT}`);
+	console.log(`🚀 AI Scam Backend v2.0 running on http://0.0.0.0:${PORT}`);
 	console.log(`📡 Health check: http://0.0.0.0:${PORT}/api/health`);
 	console.log(`🤖 Chat endpoint: http://0.0.0.0:${PORT}/api/scam-chat`);
 	console.log(`📊 Eval endpoint: http://0.0.0.0:${PORT}/api/scam-eval`);
+	console.log(`👥 Personas endpoint: http://0.0.0.0:${PORT}/api/personas`);
+	console.log(`🧪 Test endpoint: http://0.0.0.0:${PORT}/api/test`);
+	console.log(`🎭 Available personas: ${Object.keys(personas).length}`);
+	console.log(`🔑 OpenAI status: ${openaiClient ? '✅ Connected' : '❌ Not configured'}`);
+	console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
-	console.log('SIGTERM received, shutting down gracefully');
+	console.log('🔄 SIGTERM received, shutting down gracefully');
 	server.close(() => {
-		console.log('Process terminated');
+		console.log('✅ Process terminated gracefully');
+	});
+});
+
+process.on('SIGINT', () => {
+	console.log('🔄 SIGINT received, shutting down gracefully');
+	server.close(() => {
+		console.log('✅ Process terminated gracefully');
 	});
 });
