@@ -1,5 +1,5 @@
 [build]
-command = "cd backend && npm ci"
+command = "cd backend && npm cache clean --force && npm install --production"
 
 [deploy]
 startCommand = "cd backend && npm start"
