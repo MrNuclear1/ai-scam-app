@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { getSiteStats, incrementSiteVisit, getFiveStarReviewsCount, getRecentReviews, SiteStats } from "@/utils/siteVisits";
+import { getSiteStats, incrementSiteVisit, SiteStats } from "@/utils/siteVisits";
+import { getLocalFiveStarReviewsCount, getRecentReviews as getRecentUserReviews, getGlobalFiveStarReviewsCount } from "@/utils/reviews";
 
 interface Review {
 	id: string;
@@ -23,8 +24,11 @@ export default function HomePage() {
 	useEffect(() => {
 		const stats = incrementSiteVisit();
 		setSiteStats(stats);
-		setFiveStarCount(getFiveStarReviewsCount());
-		setRecentReviews(getRecentReviews(2));
+		(async () => {
+			const globalFive = await getGlobalFiveStarReviewsCount();
+			setFiveStarCount(globalFive ?? getLocalFiveStarReviewsCount());
+		})();
+		setRecentReviews(getRecentUserReviews(3));
 	}, []);
 
 	return (
@@ -50,6 +54,9 @@ export default function HomePage() {
 					</Link>
 					<Link href="/simulator" className="bg-gradient-to-r from-[#7C5CFC] to-[#FF6B6B] hover:from-[#6D4CFC] hover:to-[#FF5A5A] text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-lg">
 						Practice with AI
+					</Link>
+					<Link href="/reviews" className="bg-gradient-to-r from-[#FFA500] to-[#FF6B6B] hover:from-[#FF8C00] hover:to-[#FF5A5A] text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-lg">
+						Leave a Review
 					</Link>
 				</div>
 			</div>

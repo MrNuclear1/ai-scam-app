@@ -3,7 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { addReview, getGlobalFiveStarReviewsCount, getLocalFiveStarReviewsCount, getRecentReviews, Review } from "@/utils/reviews";
 
 export default function ReviewsPage() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [stars, setStars] = useState<number>(5);
   const [description, setDescription] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -24,9 +25,11 @@ export default function ReviewsPage() {
     if (!description.trim()) return;
     setSubmitting(true);
     try {
+      const name = `${firstName || ""} ${lastName || ""}`.trim();
       await addReview(name, stars, description);
       setRecent(getRecentReviews(10));
-      setName("");
+      setFirstName("");
+      setLastName("");
       setStars(5);
       setDescription("");
       // Refresh global count best-effort
@@ -42,9 +45,15 @@ export default function ReviewsPage() {
 
       <div className="bg-[#1E293B] rounded-xl p-6 mb-10">
         <form onSubmit={submit} className="space-y-4">
-          <div>
-            <label className="block text-sm text-[#94A3B8] mb-1">Your Name (optional)</label>
-            <input value={name} onChange={(e) => setName(e.target.value)} className="w-full bg-[#0F172A] text-[#E8EEF6] border border-[#334155] rounded-lg px-3 py-2" placeholder="Jane" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm text-[#94A3B8] mb-1">First Name (optional)</label>
+              <input value={firstName} onChange={(e) => setFirstName(e.target.value)} className="w-full bg-[#0F172A] text-[#E8EEF6] border border-[#334155] rounded-lg px-3 py-2" placeholder="Jane" />
+            </div>
+            <div>
+              <label className="block text-sm text-[#94A3B8] mb-1">Last Name (optional)</label>
+              <input value={lastName} onChange={(e) => setLastName(e.target.value)} className="w-full bg-[#0F172A] text-[#E8EEF6] border border-[#334155] rounded-lg px-3 py-2" placeholder="Doe" />
+            </div>
           </div>
 
           <div>
