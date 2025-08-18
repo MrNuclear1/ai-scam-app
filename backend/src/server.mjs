@@ -12,8 +12,8 @@ const app = express();
 const corsOptions = {
 	origin: process.env.NODE_ENV === 'production' 
 		? [
-			'https://your-netlify-site.netlify.app',
-			'https://your-custom-domain.com'
+			'https://scamproof.ca',
+			'https://www.scamproof.ca'
 		]
 		: ['http://localhost:3000', 'http://127.0.0.1:3000'],
 	credentials: true,
