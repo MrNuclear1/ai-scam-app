@@ -1,5 +1,5 @@
 [build]
-command = "rm -rf node_modules && npm ci --force"
+command = "npm ci --only=production"
 
 [deploy]
 startCommand = "npm start"
