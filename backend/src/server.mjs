@@ -31,6 +31,7 @@ const SCAM_MODEL = process.env.SCAM_MODEL || "gpt-4o-mini";
 function getOpenAI() {
 	const apiKey = process.env.OPENAI_API_KEY;
 	if (!apiKey) {
+		console.warn("OPENAI_API_KEY is not set - chat functionality will be disabled");
 		throw new Error("OPENAI_API_KEY is required but missing");
 	}
 	return new OpenAI({ apiKey });
@@ -46,11 +47,17 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/health", (_req, res) => {
+	const hasOpenAI = !!process.env.OPENAI_API_KEY;
 	res.json({ 
 		status: "ok", 
 		timestamp: new Date().toISOString(),
 		uptime: process.uptime(),
-		memory: process.memoryUsage()
+		memory: process.memoryUsage(),
+		environment: {
+			nodeEnv: process.env.NODE_ENV || "development",
+			port: PORT,
+			openaiConfigured: hasOpenAI
+		}
 	});
 });
 
