@@ -430,9 +430,21 @@ app.use((req, res) => {
 	});
 });
 
+// Add startup error handling
+process.on('uncaughtException', (error) => {
+	console.error('💥 Uncaught Exception:', error);
+	process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+	console.error('💥 Unhandled Rejection at:', promise, 'reason:', reason);
+	process.exit(1);
+});
+
 // Start server with enhanced logging
 const server = app.listen(PORT, '0.0.0.0', () => {
 	console.log(`🚀 AI Scam Backend v2.0 running on http://0.0.0.0:${PORT}`);
+	console.log(`📁 Working directory: ${process.cwd()}`);
 	console.log(`📡 Health check: http://0.0.0.0:${PORT}/api/health`);
 	console.log(`🤖 Chat endpoint: http://0.0.0.0:${PORT}/api/scam-chat`);
 	console.log(`📊 Eval endpoint: http://0.0.0.0:${PORT}/api/scam-eval`);
@@ -441,6 +453,7 @@ const server = app.listen(PORT, '0.0.0.0', () => {
 	console.log(`🎭 Available personas: ${Object.keys(personas).length}`);
 	console.log(`🔑 OpenAI status: ${openaiClient ? '✅ Connected' : '❌ Not configured'}`);
 	console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+	console.log(`🔧 All environment variables:`, Object.keys(process.env).filter(key => !key.includes('PATH')));
 });
 
 // Graceful shutdown
