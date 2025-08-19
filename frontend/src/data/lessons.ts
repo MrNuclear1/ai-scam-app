@@ -1568,35 +1568,347 @@ You receive an email offering a remote data entry job for $40/hour, no interview
 				id: 'introduction',
 				title: 'Investment Fraud Overview',
 				type: 'introduction',
-				content: `Investment scams promise unrealistic returns and use sophisticated tactics to appear legitimate. Learn to identify and avoid these financial traps that can devastate your savings.`
+				content: `📉 **Investment fraud is one of the most damaging scams because it attacks not just your wallet, but your future security.** Scammers know that people dream of growing their money quickly — whether it's saving for retirement, paying off debt, or chasing financial independence. They play on those desires by offering opportunities that seem professional, sophisticated, and low-risk.
+
+These scams often arrive through email, social media ads, or even introductions from people you know who have already been tricked. Fraudsters use company logos, fake testimonials, and polished websites to look legitimate. What makes them dangerous is that they often use half-truths — mentioning real financial terms, citing actual companies, or blending real investments with fake ones.
+
+💡 **Key Insight:** Unlike lottery or romance scams that are easy to spot once you know the tricks, investment fraud feels professional. The scammer doesn't just pretend to be a stranger — they pretend to be an advisor, expert, or insider. That authority makes their promises more believable.
+
+**The Psychology of Investment Fraud**
+
+**Why Investment Scams Work So Well:**
+
+**1. They Target Universal Desires**
+• Financial security and independence
+• Early retirement dreams
+• Paying off debts quickly
+• Providing for family's future
+• Building wealth for major purchases
+
+**2. They Exploit Financial Anxiety**
+• Fear of inflation eroding savings
+• Worry about not having enough for retirement
+• Pressure to "catch up" financially
+• FOMO (fear of missing out) on wealth-building opportunities
+
+**3. They Use Professional Credibility**
+• Official-looking websites and documents
+• Financial jargon and industry terminology
+• Fake regulatory credentials and awards
+• Testimonials from "successful" investors (often fabricated)
+• Association with legitimate companies or people
+
+**4. They Blend Truth with Lies**
+• Mention real financial concepts and market trends
+• Reference actual successful investments or companies
+• Use half-true statistics and market data
+• Mix legitimate investment strategies with fraudulent schemes
+
+**The Devastating Impact**
+
+Investment fraud is particularly destructive because:
+
+• **Large amounts:** Victims often invest life savings, retirement funds, or borrowed money
+• **Long-term damage:** Recovery can take years or decades, if possible at all
+• **Compound effect:** Lost money means lost investment growth over time
+• **Emotional trauma:** Victims often feel ashamed, betrayed, and financially insecure
+• **Relationship strain:** Money loss can damage marriages and family relationships
+
+**Real-World Scale**
+
+• The SEC estimates Americans lose tens of billions annually to investment fraud
+• Bernie Madoff's Ponzi scheme alone cost investors $65 billion
+• Cryptocurrency scams have exploded, with billions lost in "rug pulls" and fake projects
+• Elder fraud targeting retirees' investment accounts is a growing epidemic
+
+Understanding these psychological tactics is the first step in building immunity to investment fraud.`
+			},
+			{
+				id: 'scam-types',
+				title: 'Common Types of Investment Scams',
+				type: 'red-flags',
+				content: `💼 **Scammers use sophisticated schemes designed to separate you from your money.**
+
+**Ponzi Schemes**
+These are the "classic" scams where money from new investors is used to pay returns to earlier investors. As long as fresh money keeps flowing in, the scheme appears successful. But when recruitment slows, the whole thing collapses. Famous cases like Bernie Madoff's $65 billion scheme show how devastating these can be, even for sophisticated investors.
+
+**Pump-and-Dump Stocks**
+Here, scammers artificially hype up little-known penny stocks on forums, email lists, or social media. Victims rush to buy in, driving the price up. Once the stock hits a peak, the scammers sell their shares for a profit and disappear — leaving everyone else with worthless stock.
+
+**Fake Cryptocurrency Projects**
+Scammers launch coins or NFT projects that look cutting-edge but have no real utility or technology behind them. They build hype with whitepapers, influencers, and even fake partnerships. Once investors put money in, the founders vanish — this is often called a rug pull.
+
+**Binary Options & Trading Platforms**
+These platforms pretend to be real trading tools but are rigged so the victim can never win. They often show fake "profits" on screen to encourage bigger deposits, then lock withdrawals or shut down accounts.
+
+**Advanced Investment Scam Variations**
+
+**5. Affinity Fraud**
+• Targets specific communities (religious groups, ethnicities, professions)
+• Uses trusted community members as unwitting recruiters
+• Exploits shared identity and trust within tight-knit groups
+• Often spreads through word-of-mouth recommendations
+
+**6. Prime Bank Fraud**
+• Claims access to "secret" high-yield bank instruments
+• References fictional "prime bank" trading programs
+• Uses complex financial jargon to confuse victims
+• Promises returns that "banks don't want you to know about"
+
+**7. Oil and Gas Investment Scams**
+• Fake drilling projects and energy partnerships
+• Use legitimate-sounding geological and technical terms
+• Promise huge returns from "sure thing" oil discoveries
+• Often target patriotic sentiments ("energy independence")
+
+**8. Real Estate Investment Fraud**
+• Non-existent property developments or flipping projects
+• Fake REITs (Real Estate Investment Trusts) with fabricated portfolios
+• Land investment scams in "developing" areas that don't exist
+• Time-share and vacation property fraud
+
+**9. Forex Trading Scams**
+• Fake foreign exchange trading platforms and systems
+• "Automated trading robots" that guarantee profits
+• Signal services that charge for "insider" currency tips
+• Managed forex accounts that steal deposits
+
+**10. Precious Metals and Commodities Fraud**
+• Overpriced or non-existent gold and silver investments
+• Fake precious metals storage programs
+• Agricultural commodity schemes (fake farm investments)
+• Rare earth element and mineral extraction fraud
+
+**How Scammers Make These Look Legitimate:**
+• Professional websites with fake regulatory badges
+• Fabricated performance charts and historical data
+• Paid actors providing testimonials
+• Fake news articles and press releases
+• Social media manipulation and fake followers
+• Rented office spaces for legitimacy`
 			},
 			{
 				id: 'red-flags',
-					title: 'Types of Investment Fraud',
+				title: 'Red Flags',
 				type: 'red-flags',
-				content: `**Common Investment Scams:**
+				content: `🚩 **Investment scams share a common playbook — once you know the warning signs, they become much easier to spot.**
 
-• **Ponzi schemes** - Use new investors' money to pay existing investors
-• **Pump-and-dump stocks** - Artificially inflate stock prices then sell
-• **Fake cryptocurrency projects** - Non-existent or worthless digital assets
-• **Binary options scams** - Rigged trading platforms
+**Guaranteed or Risk-Free Returns:** All real investments carry some risk. If someone says "guaranteed 30% monthly return," they're lying.
 
-🚩 **Red Flags:**
-• Guaranteed high returns with no risk
-• Pressure to invest immediately
-• Unlicensed or unregistered advisors
-• Complex strategies you don't understand`
+**Urgent Deadlines:** Scammers pressure victims to act fast: "We're closing this round today." They don't want you to think.
+
+**Unlicensed Advisors:** Many fraudsters call themselves "wealth managers" or "crypto consultants" but have no registration with financial regulators.
+
+**Too Complex to Understand:** If the investment is so complicated that no one can explain it simply, that's a red flag. Scammers hide behind jargon to discourage questions.
+
+**Payment in Crypto or Wires Only:** Legitimate firms allow normal payment methods. If they only accept irreversible methods like Bitcoin or wire transfer, be cautious.
+
+📌 **Remember:** The more emotional pressure you feel — excitement, urgency, or fear of missing out — the more likely it's a scam.
+
+**Detailed Red Flag Analysis**
+
+🚨 **Financial Red Flags**
+• Promises of guaranteed returns above market rates (anything over 10-12% annually is suspicious)
+• Claims of "risk-free" investments (all investments carry risk)
+• Pressure to invest retirement funds or borrow money to invest
+• Requests for cash, wire transfers, or cryptocurrency only
+• No clear explanation of how profits are generated
+• Promises that are too good to be true for the current market conditions
+
+🚨 **Behavioral Red Flags**
+• High-pressure sales tactics and artificial urgency
+• Discouraging you from consulting family, friends, or financial advisors
+• Refusing to provide written documentation or contracts
+• Avoiding direct questions about licensing and regulation
+• Claiming "exclusive" or "limited time" opportunities
+• Using fear tactics about missing out on wealth
+
+🚨 **Communication Red Flags**
+• Unsolicited contact via phone, email, or social media
+• Professional-looking materials with spelling/grammar errors
+• Use of testimonials that can't be verified
+• Vague or evasive answers to specific questions
+• Pressure to keep the investment "confidential"
+• Claims of insider information or secret strategies
+
+🚨 **Documentation Red Flags**
+• No regulatory filings or disclosures available
+• Fake or expired licenses and certifications
+• No physical business address or fake office locations
+• No clear fee structure or transparency about costs
+• Contracts with confusing terms or unfair clauses
+• No independent audit or verification of past performance
+
+🚨 **Technology Red Flags (Crypto/Online Platforms)**
+• Anonymous or fake team members with stock photo profiles
+• No working product or technology demonstration
+• Unrealistic roadmaps and promises
+• Social media accounts with fake followers or engagement
+• Copy-pasted whitepapers or business plans
+• No clear use case or business model explanation
+
+**The "Too Good to Be True" Test:**
+If an investment promises:
+• Monthly returns above 3-5%
+• No possibility of loss
+• Exclusive access to secret opportunities
+• Returns that consistently beat the stock market
+• Immediate profits with no waiting period
+
+**It's definitely a scam.** Real investments involve risk, market fluctuations, and reasonable returns over time.`
 			},
 			{
 				id: 'tips',
-					title: 'Due Diligence Best Practices',
+				title: 'Due Diligence Best Practices',
 				type: 'tips',
-				content: `✅ **Verify investment firm credentials** through regulatory databases
-✅ **Understand the risks** - high returns always mean high risk
-✅ **Check regulatory compliance** with financial authorities
-✅ **Consult licensed financial advisors** before major investments
-✅ **Be skeptical of exclusive opportunities** or "limited time" offers
-✅ **Research thoroughly** - legitimate investments are transparent`
+				content: `✅ **The best way to protect yourself is not just spotting red flags but actively practicing due diligence. That means doing your homework before giving anyone your money.**
+
+**Verify Credentials:** Use regulatory databases like FINRA (US), IIROC (Canada), or FCA (UK) to confirm the advisor or firm is licensed. If they're not listed, walk away.
+
+**Check Compliance:** Real investment firms publish disclosures and follow strict rules. If you can't find records or filings, that's suspicious.
+
+**Research Thoroughly:** Look for news articles, company history, and independent reviews. Scammers rely on victims skipping this step.
+
+**Ask Professionals:** Before committing significant money, talk to a licensed financial advisor or accountant. A second opinion can save you from disaster.
+
+**Be Skeptical of "Exclusive" Opportunities:** If you weren't already wealthy or connected, why would someone randomly give you a secret, high-return deal? Scarcity is often a trick.
+
+**Understand the Risk:** If you can't explain in one sentence how the investment makes money, you shouldn't invest.
+
+💡 **Tip:** Real investments welcome questions and transparency. Scams push secrecy and urgency.`
+			},
+			{
+				id: 'interactive',
+				title: 'Real vs. Scam Investment Pitch',
+				type: 'interactive',
+				content: `🔍 **Scammers know how to dress up lies as opportunity. Here's a direct comparison:**
+
+| **Legitimate Pitch ✅** | **Scam Pitch 🚩** |
+|-------------------------|-------------------|
+| Provides official documentation and risk disclosures | Avoids paperwork, focuses on "quick wins" |
+| Registered with regulators, easy to verify | Advisor dodges licensing or "works offshore" |
+| Encourages time to review, consult others | Urges you to act "before it's too late" |
+| Returns are modest and tied to market risk | Promises "guaranteed" or "risk-free" profits |
+| Accepts normal payment methods | Requests crypto, gift cards, or wire transfers |
+
+📌 **Scenario:**
+If someone says, "We've unlocked a trading algorithm that beats the stock market every time. But spots are limited, you must send Bitcoin today."
+— That is a 100% scam.`,
+				interactive: {
+					type: 'drag-match',
+					data: {
+						title: 'Investment Pitch: Legitimate vs. Scam',
+						instructions: 'Drag each investment pitch characteristic to the correct category',
+						items: [
+							'Provides risk disclosures',
+							'Avoids documentation',
+							'Registered with regulators',
+							'Works offshore, no license',
+							'Encourages consultation',
+							'Pressures immediate action',
+							'Realistic market returns',
+							'Guarantees impossible profits',
+							'Normal payment methods',
+							'Crypto/wire transfers only'
+						],
+						categories: [
+							{
+								name: 'Legitimate Investment ✅',
+								items: ['Provides risk disclosures', 'Registered with regulators', 'Encourages consultation', 'Realistic market returns', 'Normal payment methods']
+							},
+							{
+								name: 'Investment Scam 🚩',
+								items: ['Avoids documentation', 'Works offshore, no license', 'Pressures immediate action', 'Guarantees impossible profits', 'Crypto/wire transfers only']
+							}
+						]
+					}
+				}
+			},
+			{
+				id: 'quiz',
+				title: 'Interactive Scenario & Quiz',
+				type: 'quiz',
+				content: `🎮 **Interactive Scenario:**
+
+**Situation:**
+You receive a call from a man claiming to be an investment advisor. He says he has an opportunity to double your money in six months through a "government-backed crypto bond." He pressures you by saying spots are closing fast and insists you wire $5,000 today to lock in your position.
+
+👉 **What should you do?**
+
+**A)** Send the money quickly so you don't miss out.
+**B)** Ask for his regulatory license number and check it with financial authorities.
+**C)** Send a smaller amount first as a "test."
+
+✅ **Correct Answer: B.** Always verify before sending money. Even sending a "small test" amount can't be recovered if it's a scam.
+
+**Key Takeaways:**
+📝 **High returns with no risk = scam. All real investments carry some uncertainty.**
+📝 **Urgency and secrecy are tools of manipulation. Scammers don't want you to think or verify.**
+📝 **Do your due diligence. Research companies, confirm licenses, and consult professionals.**
+📝 **If you don't understand it, don't invest in it. Complexity is often a cover for fraud.**
+📝 **Protect your money like your health. It's easier to prevent than to recover.**`,
+				quiz: [
+					{
+						id: 'i1',
+						question: 'Someone promises you "guaranteed 25% monthly returns with zero risk." This is:',
+						options: [
+							'A legitimate high-yield investment opportunity',
+							'Definitely a scam - no investment guarantees such returns',
+							'Only risky if they ask for more than $10,000',
+							'Safe if they provide official-looking documents'
+						],
+						correctAnswer: 1,
+						explanation: 'No legitimate investment can guarantee 25% monthly returns (300% annually) with zero risk. This is always a scam, regardless of documentation.'
+					},
+					{
+						id: 'i2',
+						question: 'What should you do if an "investment advisor" pressures you to invest immediately?',
+						options: [
+							'Invest quickly before the opportunity disappears',
+							'Ask for more time to research and verify their credentials',
+							'Invest a small amount to test their legitimacy',
+							'Negotiate for better terms first'
+						],
+						correctAnswer: 1,
+						explanation: 'Legitimate investment opportunities don\'t disappear overnight. Pressure to act immediately is a classic scam tactic designed to prevent due diligence.'
+					},
+					{
+						id: 'i3',
+						question: 'How can you verify if an investment advisor is legitimate?',
+						options: [
+							'Check their social media profiles and followers',
+							'Look at their professional website design',
+							'Verify their license through official regulatory databases',
+							'Ask them to provide references from other clients'
+						],
+						correctAnswer: 2,
+						explanation: 'Always verify advisor credentials through official regulatory databases like FINRA, IIROC, or your local securities regulator. Social media and websites can be easily faked.'
+					},
+					{
+						id: 'i4',
+						question: 'A cryptocurrency project promises to "revolutionize finance" but has anonymous founders. This is:',
+						options: [
+							'Normal for innovative crypto projects',
+							'A red flag - legitimate projects have identifiable teams',
+							'Only concerning if they ask for large investments',
+							'Acceptable if they have a detailed whitepaper'
+						],
+						correctAnswer: 1,
+						explanation: 'Anonymous founders are a major red flag in investment projects. Legitimate businesses have identifiable leadership who stand behind their projects.'
+					},
+					{
+						id: 'i5',
+						question: 'What\'s the safest approach when someone offers you an "exclusive investment opportunity"?',
+						options: [
+							'Jump on it quickly since it\'s exclusive',
+							'Ask why you were specifically chosen for this opportunity',
+							'Request a smaller minimum investment amount',
+							'Share the opportunity with friends to spread risk'
+						],
+						correctAnswer: 1,
+						explanation: 'Ask yourself why you were chosen for an "exclusive" opportunity. Legitimate exclusive investments typically target wealthy, connected individuals - not random people.'
+					}
+				]
 			}
 		]
 	},
