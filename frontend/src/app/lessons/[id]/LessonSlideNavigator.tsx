@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { getPersonaByLessonId } from "@/data/personas";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
+import DragDropExercise from "@/components/DragDropExercise";
 
 // Kahoot-style interactive game component
 function KahootStyleGame({ data }: { data: any }) {
@@ -205,26 +206,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 							</p>
 						</div>
 						{slide.interactive && slide.interactive.type === 'drag-match' && (
-							<div className="mt-6 p-6 bg-[#0F172A] rounded-lg">
-								<h3 className="text-lg font-semibold text-[#E8EEF6] mb-4">Interactive Exercise</h3>
-								<p className="text-[#94A3B8] mb-4">Drag the items to the correct categories:</p>
-								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-									{slide.interactive?.data?.categories?.map((category: any) => (
-										<div key={category.id} className="bg-[#1E293B] p-4 rounded-lg">
-											<h4 className="text-[#E8EEF6] font-semibold mb-3">{category.name}</h4>
-											<div className="space-y-2">
-												{slide.interactive?.data?.items
-													?.filter((item: any) => item.category === category.id)
-													.map((item: any) => (
-													<div key={item.id} className="bg-[#374151] text-[#CBD5E1] p-2 rounded text-sm">
-														{item.text}
-													</div>
-												))}
-											</div>
-										</div>
-									))}
-								</div>
-							</div>
+							<DragDropExercise data={slide.interactive.data} />
 						)}
 						{slide.interactive && slide.interactive.type === 'kahoot-style' && (
 							<KahootStyleGame data={slide.interactive.data} />
