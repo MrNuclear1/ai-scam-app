@@ -1,39 +1,46 @@
 "use client";
 import { useState, useCallback } from "react";
 
-interface DragDropItem {
-	id: string;
-	text: string;
-	category?: string;
-}
-
-interface Category {
-	name: string;
-	items: string[];
-}
-
-interface DragDropData {
-	title: string;
-	instructions: string;
-	items: string[];
-	categories: Category[];
-}
-
 interface DragDropExerciseProps {
-	data: DragDropData;
+	data: any;
 }
 
 export default function DragDropExercise({ data }: DragDropExerciseProps) {
+	// Normalize incoming data to support both schemas used in lessons
+	const normalized = (() => {
+		const itemsIsObject = Array.isArray(data?.items) && data.items.length > 0 && typeof data.items[0] === 'object' && 'text' in data.items[0];
+		const categoriesHaveIds = Array.isArray(data?.categories) && data.categories.length > 0 && typeof data.categories[0] === 'object' && 'id' in data.categories[0];
+		if (itemsIsObject && categoriesHaveIds) {
+			const items: string[] = data.items.map((i: any) => i.text);
+			const categories = data.categories.map((cat: any) => ({
+				name: cat.name,
+				items: data.items.filter((i: any) => i.category === cat.id).map((i: any) => i.text)
+			}));
+			return {
+				title: data.title ?? 'Interactive Exercise',
+				instructions: data.instructions ?? 'Drag the items to the correct categories',
+				items,
+				categories,
+			};
+		}
+		return {
+			title: data?.title ?? 'Interactive Exercise',
+			instructions: data?.instructions ?? 'Drag the items to the correct categories',
+			items: Array.isArray(data?.items) ? data.items : [],
+			categories: Array.isArray(data?.categories) ? data.categories.map((c: any) => ({ name: c.name, items: c.items ?? [] })) : [],
+		};
+	})();
+
 	const [draggedItems, setDraggedItems] = useState<{ [categoryName: string]: string[] }>({});
-	const [availableItems, setAvailableItems] = useState<string[]>(data.items);
+	const [availableItems, setAvailableItems] = useState<string[]>(normalized.items);
 	const [draggedElement, setDraggedElement] = useState<string | null>(null);
 	const [isComplete, setIsComplete] = useState(false);
 	const [score, setScore] = useState(0);
 	const [showResults, setShowResults] = useState(false);
 
 	// Create a mapping of correct answers
-	const correctAnswers = data.categories.reduce((acc, category) => {
-		category.items.forEach(item => {
+	const correctAnswers = normalized.categories.reduce((acc: { [item: string]: string }, category: any) => {
+		category.items.forEach((item: string) => {
 			acc[item] = category.name;
 		});
 		return acc;
@@ -89,7 +96,7 @@ export default function DragDropExercise({ data }: DragDropExerciseProps) {
 
 	const checkAnswers = () => {
 		let correctCount = 0;
-		const totalItems = data.items.length;
+		const totalItems = normalized.items.length;
 
 		Object.entries(draggedItems).forEach(([categoryName, items]) => {
 			items.forEach(item => {
@@ -106,7 +113,7 @@ export default function DragDropExercise({ data }: DragDropExerciseProps) {
 
 	const resetExercise = () => {
 		setDraggedItems({});
-		setAvailableItems(data.items);
+		setAvailableItems(normalized.items);
 		setIsComplete(false);
 		setScore(0);
 		setShowResults(false);
@@ -123,8 +130,8 @@ export default function DragDropExercise({ data }: DragDropExerciseProps) {
 	return (
 		<div className="mt-6 p-6 bg-[#0F172A] rounded-lg">
 			<div className="mb-6">
-				<h3 className="text-xl font-bold text-[#E8EEF6] mb-2">{data.title}</h3>
-				<p className="text-[#CBD5E1] mb-4">{data.instructions}</p>
+				<h3 className="text-xl font-bold text-[#E8EEF6] mb-2">{normalized.title}</h3>
+				<p className="text-[#CBD5E1] mb-4">{normalized.instructions}</p>
 				
 				{showResults && (
 					<div className="mb-4 p-4 bg-[#1E293B] rounded-lg">
@@ -133,10 +140,10 @@ export default function DragDropExercise({ data }: DragDropExerciseProps) {
 								<span className={`text-lg font-semibold ${
 									isComplete ? 'text-green-400' : 'text-yellow-400'
 								}`}>
-									Score: {score}/{data.items.length}
+									Score: {score}/{normalized.items.length}
 								</span>
 								<span className="text-sm text-[#94A3B8] ml-2">
-									({Math.round((score / data.items.length) * 100)}%)
+									({Math.round((score / normalized.items.length) * 100)}%)
 								</span>
 							</div>
 							{isComplete ? (
@@ -177,7 +184,7 @@ export default function DragDropExercise({ data }: DragDropExerciseProps) {
 
 			{/* Drop Zones */}
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-				{data.categories.map((category) => (
+				{normalized.categories.map((category: any) => (
 					<div
 						key={category.name}
 						onDragOver={handleDragOver}
