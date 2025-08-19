@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { getPersonaByLessonId } from "@/data/personas";
+import InteractiveQuiz from "@/components/InteractiveQuiz";
 
 // Kahoot-style interactive game component
 function KahootStyleGame({ data }: { data: any }) {
@@ -239,32 +240,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 							</p>
 						</div>
 						{slide.quiz && slide.quiz.length > 0 && (
-							<div className="mt-8 p-6 bg-[#0F172A] rounded-lg">
-								{slide.quiz.map((question: any, index: number) => (
-									<div key={question.id} className="mb-8 last:mb-0">
-										<h3 className="text-lg font-semibold text-[#E8EEF6] mb-4">
-											Question {index + 1}: {question.question}
-										</h3>
-										<div className="space-y-2 mb-4">
-											{question.options.map((option: string, optionIndex: number) => (
-												<div 
-													key={optionIndex} 
-													className={`p-3 rounded-lg cursor-pointer transition-colors ${
-														optionIndex === question.correctAnswer 
-															? 'bg-green-900 border border-green-500 text-green-100' 
-															: 'bg-[#374151] hover:bg-[#4B5563] text-[#CBD5E1]'
-													}`}
-												>
-													{option}
-												</div>
-											))}
-										</div>
-										<div className="text-sm text-[#94A3B8] bg-[#1E293B] p-3 rounded">
-											<strong>Explanation:</strong> {question.explanation}
-										</div>
-									</div>
-								))}
-							</div>
+							<InteractiveQuiz questions={slide.quiz} />
 						)}
 					</div>
 				);
