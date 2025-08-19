@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getPersonaByLessonId } from "@/data/personas";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
 import DragDropExercise from "@/components/DragDropExercise";
+import LessonContent from "@/components/LessonContent";
 
 // Kahoot-style interactive game component
 function KahootStyleGame({ data }: { data: any }) {
@@ -200,11 +201,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 			case 'interactive':
 				return (
 					<div>
-						<div className="prose prose-invert max-w-none mb-8">
-							<p className="text-lg text-[#CBD5E1] leading-relaxed whitespace-pre-line">
-								{slide.content}
-							</p>
-						</div>
+						<LessonContent content={slide.content} />
 						{slide.interactive && slide.interactive.type === 'drag-match' && (
 							<DragDropExercise data={slide.interactive.data} />
 						)}
@@ -216,11 +213,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 			case 'quiz':
 				return (
 					<div>
-						<div className="prose prose-invert max-w-none mb-8">
-							<p className="text-lg text-[#CBD5E1] leading-relaxed whitespace-pre-line">
-								{slide.content}
-							</p>
-						</div>
+						<LessonContent content={slide.content} />
 						{slide.quiz && slide.quiz.length > 0 && (
 							<InteractiveQuiz questions={slide.quiz} />
 						)}
@@ -228,11 +221,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 				);
 			default:
 				return (
-					<div className="prose prose-invert max-w-none">
-						<p className="text-lg text-[#CBD5E1] leading-relaxed whitespace-pre-line">
-							{slide.content}
-						</p>
-					</div>
+					<LessonContent content={slide.content} />
 				);
 		}
 	};
