@@ -91,6 +91,22 @@ export default function HomePage() {
 				<p className="text-lg text-[#94A3B8] mb-12 max-w-3xl mx-auto">
 					Learn to identify and resist scam attempts through interactive simulations, educational lessons, and real-world scenarios.
 				</p>
+				{/* Latest 5-star reviews banner */}
+				{globalTestimonials.length > 0 && (
+					<div className="mb-12 bg-[#1E293B]/60 border border-yellow-400/30 rounded-xl px-4 py-3">
+						<div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+							{globalTestimonials.slice(0, 3).map((t) => (
+								<div key={t.id} className="flex items-center gap-2 max-w-[320px]">
+									<span aria-hidden className="text-yellow-400">★★★★★</span>
+									<span className="text-sm text-[#CBD5E1] italic truncate" title={t.message}>
+										"{t.message}"
+									</span>
+									<span className="text-xs text-[#94A3B8] whitespace-nowrap">– {t.firstName}</span>
+								</div>
+							))}
+						</div>
+					</div>
+				)}
 				
 				{/* CTA Buttons */}
 				<div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
