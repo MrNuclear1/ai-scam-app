@@ -20,20 +20,42 @@ export default function HomePage() {
 	});
 	const [fiveStarCount, setFiveStarCount] = useState(0);
 	const [globalTestimonials, setGlobalTestimonials] = useState<GlobalFiveStarReview[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const stats = incrementSiteVisit();
 		setSiteStats(stats);
 		
+		// Load initial local data immediately
+		setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
+		setFiveStarCount(getLocalFiveStarReviewsCount());
+		
 		// Sync global data on page load
 		(async () => {
-			// Sync 5-star reviews from global storage
-			await syncGlobalFiveStarReviews();
-			
-			// Update state with synced data
-			const globalFive = await getGlobalFiveStarReviewsCountFromAPI();
-			setFiveStarCount(globalFive ?? getLocalFiveStarReviewsCount());
-			setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
+			try {
+				// Sync 5-star reviews from global storage
+				await syncGlobalFiveStarReviews();
+				
+				// Update state with synced data
+				const refreshedTestimonials = getGlobalFiveStarReviewsForDisplay(6);
+				setGlobalTestimonials(refreshedTestimonials);
+				
+				// Update global count from API
+				const globalFive = await getGlobalFiveStarReviewsCountFromAPI();
+				if (globalFive !== null) {
+					setFiveStarCount(globalFive);
+				} else {
+					// Fallback to local count if API fails
+					setFiveStarCount(getLocalFiveStarReviewsCount());
+				}
+			} catch (error) {
+				console.error('Error syncing global data:', error);
+				// Keep local data if sync fails
+				setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
+				setFiveStarCount(getLocalFiveStarReviewsCount());
+			} finally {
+				setIsLoading(false);
+			}
 		})();
 	}, []);
 
@@ -112,7 +134,12 @@ export default function HomePage() {
 				<h2 className="text-3xl font-bold text-[#E8EEF6] mb-4">⭐ 5-Star Testimonials ⭐</h2>
 				<p className="text-[#94A3B8] mb-8">Real feedback from users who found our platform valuable</p>
 				
-				{globalTestimonials.length > 0 ? (
+				{isLoading ? (
+					<div className="text-center py-8">
+						<div className="text-[#94A3B8] mb-4">Loading testimonials...</div>
+						<div className="animate-spin mx-auto w-8 h-8 border-2 border-[#3BA4F7] border-t-transparent rounded-full"></div>
+					</div>
+				) : globalTestimonials.length > 0 ? (
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 						{globalTestimonials.map((testimonial) => (
 							<div key={testimonial.id} className="bg-gradient-to-br from-[#1E293B]/50 to-[#0F172A]/50 backdrop-blur-sm p-6 rounded-xl border border-yellow-400/20 hover:border-yellow-400/40 transition-all duration-300">

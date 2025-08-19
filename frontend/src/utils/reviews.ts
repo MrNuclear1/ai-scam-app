@@ -235,7 +235,8 @@ export function getGlobalFiveStarReviews(): GlobalFiveStarReview[] {
 
 export function getGlobalFiveStarReviewsForDisplay(count: number = 6): GlobalFiveStarReview[] {
   const all = getGlobalFiveStarReviews();
-  return all.sort((a, b) => (b.date > a.date ? 1 : -1)).slice(0, count);
+  // Sort by date descending (newest first)
+  return all.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, count);
 }
 
 export function getGlobalFiveStarReviewsCount(): number {
