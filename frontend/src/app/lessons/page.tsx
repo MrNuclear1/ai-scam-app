@@ -56,21 +56,17 @@ export default function LessonsPage() {
 							</div>
 
 							<div className="space-y-2">
-								<h4 className="text-sm font-semibold text-[#CBD5E1]">Key Topics:</h4>
+								<h4 className="text-sm font-semibold text-[#CBD5E1]">Lesson Format:</h4>
 								<div className="flex flex-wrap gap-2">
-									{lesson.content.keyTakeaways.slice(0, 2).map((takeaway, index) => (
-										<span
-											key={index}
-											className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded"
-										>
-											{takeaway.length > 25 ? `${takeaway.substring(0, 25)}...` : takeaway}
-										</span>
-									))}
-									{lesson.content.keyTakeaways.length > 2 && (
-										<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
-											+{lesson.content.keyTakeaways.length - 2} more
-										</span>
-									)}
+									<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
+										{lesson.slides.length} Interactive Slides
+									</span>
+									<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
+										Knowledge Check
+									</span>
+									<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
+										Practice Scenarios
+									</span>
 								</div>
 							</div>
 
@@ -79,11 +75,9 @@ export default function LessonsPage() {
 									<span className="text-sm text-[#3BA4F7] font-medium group-hover:text-[#20C997] transition-colors duration-300">
 										Start Lesson →
 									</span>
-									{lesson.quiz && (
-										<span className="text-xs bg-[#7C5CFC] text-white px-2 py-1 rounded">
-											Quiz Included
-										</span>
-									)}
+									<span className="text-xs bg-[#7C5CFC] text-white px-2 py-1 rounded">
+										{lesson.slides.length} Slides
+									</span>
 								</div>
 							</div>
 						</Link>

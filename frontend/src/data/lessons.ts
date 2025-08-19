@@ -17,7 +17,7 @@ export interface LessonSlide {
 }
 
 export interface InteractiveElement {
-	type: 'drag-match' | 'mcq' | 'hotspot';
+	type: 'drag-match' | 'mcq' | 'hotspot' | 'kahoot-style';
 	data: any;
 }
 
@@ -1245,28 +1245,43 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 		title: 'Investment Fraud Awareness',
 		description: 'Identify fake investment opportunities and Ponzi schemes.',
 		difficulty: 'advanced',
-		duration: '25 mins',
-		content: {
-			introduction: 'Investment scams promise unrealistic returns and use sophisticated tactics to appear legitimate.',
-			sections: [
-				{
-					title: 'Types of Investment Fraud',
-					content: 'Ponzi schemes, pump-and-dump stocks, fake cryptocurrency projects, and binary options scams are common investment frauds.',
-					type: 'text'
-				},
-				{
-					title: 'Due Diligence Best Practices',
-					content: 'Verify investment firm credentials, understand the risks, check regulatory compliance, and consult licensed advisors.',
-					type: 'text'
-				}
-			],
-			keyTakeaways: [
-				'High returns always mean high risk',
-				'Verify investment firm credentials',
-				'Be skeptical of exclusive opportunities',
-				'Consult licensed financial advisors'
-			]
-		}
+		duration: '10-12 mins',
+		slides: [
+			{
+				id: 'introduction',
+				title: 'Investment Fraud Overview',
+				type: 'introduction',
+				content: `Investment scams promise unrealistic returns and use sophisticated tactics to appear legitimate. Learn to identify and avoid these financial traps that can devastate your savings.`
+			},
+			{
+				id: 'red-flags',
+				title: 'Types of Investment Fraud',
+				type: 'red-flags',
+				content: `**Common Investment Scams:**
+
+• **Ponzi schemes** - Use new investors' money to pay existing investors
+• **Pump-and-dump stocks** - Artificially inflate stock prices then sell
+• **Fake cryptocurrency projects** - Non-existent or worthless digital assets
+• **Binary options scams** - Rigged trading platforms
+
+🚩 **Red Flags:**
+• Guaranteed high returns with no risk
+• Pressure to invest immediately
+• Unlicensed or unregistered advisors
+• Complex strategies you don't understand`
+			},
+			{
+				id: 'tips',
+				title: 'Due Diligence Best Practices',
+				type: 'tips',
+				content: `✅ **Verify investment firm credentials** through regulatory databases
+✅ **Understand the risks** - high returns always mean high risk
+✅ **Check regulatory compliance** with financial authorities
+✅ **Consult licensed financial advisors** before major investments
+✅ **Be skeptical of exclusive opportunities** or "limited time" offers
+✅ **Research thoroughly** - legitimate investments are transparent`
+			}
+		]
 	},
 	{
 		id: 'cra-scams',
