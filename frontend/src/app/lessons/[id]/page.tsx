@@ -180,15 +180,18 @@ export default function LessonDetailPage({ params }: { params: { id: string } })
 	const lesson = lessons.find(l => l.id === params.id);
 	if (!lesson) notFound();
 	
-	// Check if lesson has slides (new format) or content (old format)
+	// FORCE slides to exist and show debugging info
 	if (!lesson.slides || lesson.slides.length === 0) {
 		return (
 			<div className="min-h-screen w-full bg-[#0B0F14]">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 					<div className="bg-[#1E293B] rounded-xl p-8 text-center">
-						<h1 className="text-2xl font-bold text-[#E8EEF6] mb-4">Lesson Under Construction</h1>
+						<h1 className="text-2xl font-bold text-[#E8EEF6] mb-4">🚨 Debug: No Slides Found</h1>
 						<p className="text-[#CBD5E1] mb-6">
-							This lesson is being updated to our new comprehensive format. Please check back soon!
+							Lesson ID: {lesson.id}<br/>
+							Has slides property: {lesson.slides ? 'Yes' : 'No'}<br/>
+							Slides length: {lesson.slides?.length || 0}<br/>
+							This indicates a data structure issue.
 						</p>
 						<a 
 							href="/lessons" 
