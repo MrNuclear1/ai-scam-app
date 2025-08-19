@@ -1237,6 +1237,323 @@ Applicants are funneled into scams after "applying."
 ❌ Requests for sensitive info before official contract
 
 If you encounter ANY of these red flags, it's likely a job scam.`
+			},
+			{
+				id: 'scam-psychology',
+				title: 'Why Job Scams Work',
+				type: 'red-flags',
+				content: `🎭 **Scammers prey on hope and urgency. Job seekers are vulnerable because:**
+
+**They're actively waiting for offers and may ignore red flags.**
+
+**Remote work culture has normalized online-only hiring.**
+
+**"Too good to be true" jobs appeal to financial stress or ambition.**
+
+📌 **Key Insight: Scammers exploit emotions first — logic comes later.**
+
+**The Psychology Behind Job Scam Success**
+
+**🧠 Emotional Manipulation Tactics**
+
+**Hope Exploitation**
+• Job seekers are often desperate or stressed about finances
+• Scammers offer exactly what victims want to hear: high pay, flexible hours, easy work
+• The promise of financial relief clouds critical thinking
+
+**Urgency Creation**
+• "Limited positions available - respond immediately"
+• "This opportunity won't last long"
+• Pressure prevents victims from researching or consulting others
+
+**Authority Mimicking**
+• Use legitimate company names and professional language
+• Create fake websites that look official
+• Reference real job posting sites to build credibility
+
+**🎯 Targeting Vulnerable Moments**
+
+**Peak Vulnerability Times:**
+• Recent layoffs or job loss
+• Economic uncertainty periods
+• Graduation seasons when students need employment
+• End of temporary contracts or seasonal work
+
+**Demographic Targeting:**
+• New immigrants unfamiliar with local hiring practices
+• Stay-at-home parents seeking flexible work
+• Students needing part-time income
+• Seniors looking for supplemental retirement income
+
+**🔄 The Scammer's Playbook**
+
+**Step 1: The Setup**
+• Monitor job boards for recent applicants
+• Send unsolicited offers that seem too good to refuse
+• Use professional templates and company letterheads
+
+**Step 2: The Hook**
+• Build excitement about the opportunity
+• Create false scarcity: "Only 3 positions left"
+• Use flattery: "Your profile impressed our hiring team"
+
+**Step 3: The Rush**
+• Demand quick decisions to prevent research
+• Create artificial deadlines
+• Discourage consulting family or friends
+
+**Step 4: The Ask**
+• Request upfront payments for "training" or "equipment"
+• Ask for personal information under the guise of payroll setup
+• Send fake checks with overpayment scams
+
+**💡 Breaking the Psychological Trap**
+
+**Remember: Legitimate employers:**
+• Never rush quality candidates
+• Don't require upfront payments
+• Welcome questions and verification
+• Provide clear contact information and company details
+• Follow standard hiring procedures regardless of remote work`
+			},
+			{
+				id: 'tips',
+				title: 'Hot Tips to Stay Safe',
+				type: 'tips',
+				content: `✅ **Practical protection strategies:**
+
+**Apply only through official company websites or trusted platforms.**
+
+**Research the employer on Google, LinkedIn, and Glassdoor.**
+
+**Verify emails: real recruiters don't use Gmail/Yahoo.**
+
+**Ask for a video interview before considering an offer.**
+
+**Never pay for training, equipment, or software upfront.**
+
+**Protect your SIN, passport, and banking info until after contract signing.**
+
+**Advanced Job Scam Protection Strategies**
+
+**🔍 Research and Verification**
+
+**Company Verification Checklist:**
+• Check the company's official website independently
+• Look up company reviews on Glassdoor, Indeed, and Google
+• Verify the company's physical address and phone number
+• Search for recent news about the company
+• Check if the company is registered with business bureaus
+
+**Contact Verification:**
+• Legitimate recruiters use company email domains (@company.com)
+• Call the company directly using phone numbers from their official website
+• Ask to speak with HR or the hiring manager by name
+• Verify the recruiter's LinkedIn profile and connections
+
+**🛡️ Information Security Practices**
+
+**What to NEVER Share Before Official Hiring:**
+• Social Insurance Number (SIN)
+• Passport or driver's license numbers
+• Banking information or direct deposit details
+• Credit card or financial account numbers
+• Mother's maiden name or security questions
+
+**Safe Information Sharing Timeline:**
+• Initial Application: Resume, cover letter, professional references only
+• Interview Stage: Educational background, work history, availability
+• After Job Offer: Official documents for background checks (if standard for the industry)
+• After Contract Signing: Banking info for payroll setup
+
+**📞 Interview Red Flags**
+
+**Legitimate Interview Process:**
+• Multiple rounds of interviews (phone/video screening, formal interview)
+• Questions about your skills, experience, and work style
+• Clear job description and expectations
+• Discussion of company culture and team structure
+• Opportunity for YOU to ask questions about the role
+
+**Scam Interview Warning Signs:**
+• No interview process at all
+• Interview conducted only via text or email
+• Vague questions unrelated to job skills
+• Immediate job offer without skills assessment
+• Refusal to provide specific job details
+• No discussion of company policies or procedures
+
+**🚨 Emergency Action Plan**
+
+**If You Suspect a Scam:**
+1. **Stop all communication** immediately
+2. **Don't send money** or provide additional information
+3. **Document everything** - save emails, phone numbers, screenshots
+4. **Report to authorities** - local police, Better Business Bureau, job platforms
+5. **Warn others** - share your experience to protect fellow job seekers
+
+**If You've Been Victimized:**
+1. **Contact your bank** immediately if you sent money
+2. **Monitor your credit** for signs of identity theft
+3. **File a police report** with all documentation
+4. **Report to the Canadian Anti-Fraud Centre**
+5. **Consider credit monitoring services** for ongoing protection`
+			},
+			{
+				id: 'interactive',
+				title: 'Real vs. Fake Job Offer',
+				type: 'interactive',
+				content: `🔍 **Learn to distinguish between legitimate and fraudulent job offers**
+
+Compare these characteristics to build your scam detection skills:
+
+**Job Offer Comparison Guide**
+
+| **Legitimate Offer ✅** | **Fake Offer 🚩** |
+|-------------------------|-------------------|
+| Requires an interview | No interview required |
+| Uses official company email | Gmail/Yahoo accounts |
+| Clear responsibilities | Vague "easy work, great pay" |
+| Provides official job letter | Demands fees for equipment |
+| Open to video call | Avoids calls, hides identity |
+
+**Real-World Scenario Analysis**
+
+**Practice identifying these job offers:**
+
+**Scenario A:** Email from "hr@techcorp.gmail.com" offering $50/hour for data entry, no experience needed, start immediately, requires $200 for software license.
+
+**Scenario B:** LinkedIn message from verified recruiter at established company, requesting phone interview to discuss marketing coordinator position, asks for your availability.
+
+**Scenario C:** Text message: "Congratulations! You've been selected for a $40/hour work-from-home position. Reply YES to accept. Training starts Monday."
+
+**Scenario D:** Formal email from company domain, detailed job description, invitation to video interview, clear company information and website provided.
+
+**Analysis:**
+- **Scenario A: SCAM** - Gmail account, upfront payment, unrealistic pay
+- **Scenario B: LEGITIMATE** - Verified recruiter, proper process, reasonable request  
+- **Scenario C: SCAM** - Unsolicited text, no application process, immediate acceptance
+- **Scenario D: LEGITIMATE** - Professional communication, proper hiring process`,
+				interactive: {
+					type: 'drag-match',
+					data: {
+						title: 'Job Offer: Legitimate vs. Scam',
+						instructions: 'Drag each job offer characteristic to the correct category',
+						items: [
+							'Requires interview process',
+							'No interview required',
+							'Uses official company email',
+							'Gmail/Yahoo email accounts',
+							'Clear job responsibilities',
+							'Vague job descriptions',
+							'Provides official documentation',
+							'Demands upfront fees',
+							'Open to video calls',
+							'Avoids phone/video contact'
+						],
+						categories: [
+							{
+								name: 'Legitimate Offer ✅',
+								items: ['Requires interview process', 'Uses official company email', 'Clear job responsibilities', 'Provides official documentation', 'Open to video calls']
+							},
+							{
+								name: 'Fake Offer 🚩',
+								items: ['No interview required', 'Gmail/Yahoo email accounts', 'Vague job descriptions', 'Demands upfront fees', 'Avoids phone/video contact']
+							}
+						]
+					}
+				}
+			},
+			{
+				id: 'quiz',
+				title: 'Story Mode Example & Quiz',
+				type: 'quiz',
+				content: `📖 **Story Mode Example**
+
+**Scenario:**
+You receive an email offering a remote data entry job for $40/hour, no interview required. The employer says they'll send you a $2,000 cheque to buy equipment and asks you to wire back any "extra funds."
+
+👉 **Question: What should you do?**
+
+**A)** Cash the cheque and wire back the difference.
+**B)** Ask for a video interview and verify the company website.
+**C)** Accept immediately because "it's too good to miss."
+
+✅ **Correct Answer: B.** The cheque is fake, and wiring money will leave you liable.
+
+**Key Takeaways:**
+
+📝 **No interview = no real job.**
+
+📝 **Never pay to work. Legitimate employers cover training and equipment.**
+
+📝 **Emails matter. Generic domains are major red flags.**
+
+📝 **Slow down. Urgency is a scammer's tool.**
+
+📝 **Protect your identity. Don't share SIN, passport, or banking info prematurely.**`,
+				quiz: [
+					{
+						id: 'q1',
+						question: 'A job offer arrives via email with no interview required and asks for $500 upfront for training materials. This is:',
+						options: [
+							'A legitimate opportunity with standard training costs',
+							'A job scam - real employers never charge for training',
+							'Only a scam if the amount is over $1000',
+							'Safe as long as they provide a receipt'
+						],
+						correctAnswer: 1,
+						explanation: 'Legitimate employers never charge employees for training, equipment, or materials. Any upfront payment request is always a scam.'
+					},
+					{
+						id: 'q2',
+						question: 'You receive a job offer from "hiring@company.gmail.com" offering $45/hour for data entry. What\'s the biggest red flag?',
+						options: [
+							'The pay rate is too high',
+							'Data entry jobs don\'t exist anymore',
+							'Professional companies don\'t use Gmail for business',
+							'The job seems too easy'
+						],
+						correctAnswer: 2,
+						explanation: 'Legitimate companies use their own email domains (@company.com), not free email services like Gmail or Yahoo for official business communications.'
+					},
+					{
+						id: 'q3',
+						question: 'What should you do if a "recruiter" pressures you to accept a job offer immediately?',
+						options: [
+							'Accept quickly before the opportunity disappears',
+							'Ask for more time to research the company',
+							'Negotiate for better terms first',
+							'Request references from current employees'
+						],
+						correctAnswer: 1,
+						explanation: 'Pressure to accept immediately is a major red flag. Legitimate employers understand that candidates need time to make informed decisions and research the company.'
+					},
+					{
+						id: 'q4',
+						question: 'When is it safe to provide your Social Insurance Number (SIN) to a potential employer?',
+						options: [
+							'During the initial application process',
+							'After the first interview to show you\'re serious',
+							'Only after you\'ve signed an official employment contract',
+							'When they ask for it to "verify your eligibility"'
+						],
+						correctAnswer: 2,
+						explanation: 'Your SIN should only be provided after you\'ve been officially hired and signed a legitimate employment contract. Never share it during the application or interview process.'
+					},
+					{
+						id: 'q5',
+						question: 'You receive a check for $3000 from a new employer with instructions to buy equipment and wire back $2500. What should you do?',
+						options: [
+							'Deposit the check and follow the instructions',
+							'Wait for the check to clear before buying anything',
+							'Recognize this as a fake check scam and report it',
+							'Cash the check at the bank that issued it'
+						],
+						correctAnswer: 2,
+						explanation: 'This is a classic fake check scam. The check will eventually bounce, but your wired money will be gone forever. Never participate in overpayment schemes.'
+					}
+				]
 			}
 		]
 	},
@@ -1641,6 +1958,319 @@ Once scammers have access, they:
 **Real-World Example**
 
 In 2022, Canadian banks reported a surge in "safe account" scams. Victims received calls from fraudsters posing as fraud investigators, telling them criminals were inside the banking system. Customers were told to "move money to a secure account" to protect it — which was actually controlled by the scammer. Victims lost thousands, and because they "authorized" the transfer, recovery was often impossible.`
+			},
+			{
+				id: 'scam-types',
+				title: 'Common Types of Banking Scams',
+				type: 'red-flags',
+				content: `⚠️ **Scammers use multiple tactics to trick you:**
+
+**Phishing Emails 📧**
+
+Fake "security alerts" or "account locked" messages.
+
+Direct victims to cloned bank websites.
+
+**Smishing Text Messages 📱**
+
+"Unusual login detected, verify here."
+
+Link redirects to fake login pages.
+
+**Vishing Phone Calls 📞**
+
+Fraudster pretends to be your bank's fraud department.
+
+Asks for PINs, passwords, or even transfers to a "safe account."
+
+**Fake Banking Apps 📲**
+
+Look legitimate but steal login details.
+
+Often found outside official app stores.
+
+**Advanced Banking Scam Techniques**
+
+**1. Account Takeover Scams**
+• Scammers call pretending to be fraud prevention
+• They already have some of your information to sound legitimate
+• Ask you to "verify" remaining details like PIN or full card number
+• Use social engineering: "We're trying to protect your account"
+
+**2. Safe Account Transfer Scams**
+• Caller claims your account has been compromised
+• Instructs you to move money to a "temporary safe account"
+• The "safe account" actually belongs to the scammer
+• Creates false urgency: "We need to secure your funds immediately"
+
+**3. Fake Check/Wire Fraud**
+• Scammer sends you a check that appears legitimate
+• Asks you to deposit it and wire money back for "fees"
+• The original check later bounces, leaving you liable
+• Often combined with romance or employment scams
+
+**4. SIM Swap Banking Attacks**
+• Scammer takes control of your phone number
+• Uses it to reset banking passwords and bypass 2FA
+• Can drain accounts even with strong security measures
+• Often targets high-value accounts
+
+**5. Business Email Compromise (BEC)**
+• Targets businesses and their banking relationships
+• Scammer impersonates CEO or vendor requesting wire transfers
+• Uses urgency and authority to bypass normal approval processes
+• Can result in massive losses for companies`
+			},
+			{
+				id: 'red-flags',
+				title: 'Red Flags',
+				type: 'red-flags',
+				content: `🚩 **Watch out for these warning signs:**
+
+**Generic greetings like "Dear Customer"**
+
+**Urgent deadlines: "Respond within 30 minutes"**
+
+**Email links that don't match the bank's domain**
+
+**Requests for PINs, 2FA codes, or full account details**
+
+**Poor spelling/grammar in emails or texts**
+
+**Unfamiliar apps or websites asking for banking credentials**
+
+**Calls that pressure you not to hang up or verify with your bank**
+
+**Critical Red Flags That Signal Banking Scams**
+
+🚨 **Immediate Action Required**
+• Any message demanding you act "within minutes" 
+• Threats of account closure or suspension
+• Claims your account will be "frozen permanently"
+• Pressure to not discuss with family or bank staff
+
+🚨 **Information Requests**
+• Asking for complete PIN numbers over phone
+• Requesting online banking passwords via email
+• Asking for 2FA codes sent to your phone
+• Demanding Social Insurance Numbers for "verification"
+
+🚨 **Communication Issues**
+• Emails from non-bank domains (@gmail.com, @yahoo.com)
+• Phone numbers that don't match your bank's official numbers
+• Poor grammar and spelling in official communications
+• Generic greetings instead of using your actual name
+
+🚨 **Payment Method Red Flags**
+• Requests for payment via gift cards
+• Instructions to wire money to "secure accounts"
+• Asking for cryptocurrency payments
+• Demands for prepaid credit card numbers
+
+🚨 **Technology Red Flags**
+• Apps downloaded outside official app stores
+• Websites with slightly different URLs (bnkofcanada.com vs bankofcanada.com)
+• Pop-ups claiming to be from your bank
+• Unsolicited remote access requests to your computer
+
+🚨 **Behavioral Red Flags**
+• Caller refuses to let you hang up and call back
+• Insistence on secrecy: "Don't tell anyone about this"
+• Creating false urgency about fraudulent activity
+• Asking you to lie to bank tellers about transaction purposes`
+			},
+			{
+				id: 'tips',
+				title: 'Hot Tips to Stay Safe',
+				type: 'tips',
+				content: `✅ **Practical ways to protect yourself:**
+
+**Type your bank's URL directly into your browser — don't click links.**
+
+**Use official banking apps only from the App Store/Google Play.**
+
+**Hang up on suspicious calls and call your bank directly using the number on your card.**
+
+**Never share PINs, passwords, or verification codes.**
+
+**Set up two-factor authentication (2FA) for extra protection.**
+
+**Regularly monitor your account for unusual activity.**
+
+**Advanced Banking Security Strategies**
+
+**🔐 Strong Authentication Practices**
+• Use unique passwords for banking that you don't use anywhere else
+• Enable biometric authentication (fingerprint, face ID) when available
+• Never save banking passwords in browsers on shared computers
+• Set up account alerts for all transactions, no matter how small
+
+**📱 Secure Banking Habits**
+• Only access banking on your personal devices, never public computers
+• Always log out completely after banking sessions
+• Use your mobile carrier's official banking app, not web browsers when possible
+• Keep your banking apps updated to the latest security versions
+
+**🔍 Verification Protocols**
+• Always verify suspicious contacts by calling your bank directly
+• Use the phone number on your bank card, not numbers provided in messages
+• Ask bank representatives for their full name and department
+• If someone claims to be from fraud prevention, ask for a case number you can reference
+
+**🛡️ Account Monitoring**
+• Check your accounts daily, not just monthly statements
+• Set up immediate text/email alerts for all transactions
+• Review monthly statements carefully for small unauthorized charges
+• Know your spending patterns so you can spot unusual activity quickly
+
+**👨‍👩‍👧‍👦 Family Protection**
+• Educate family members about banking scam tactics
+• Set up shared family protocols for handling suspicious banking contacts
+• Create a family rule: always verify before taking any banking action
+• Designate one family member to handle banking emergencies for elderly relatives
+
+**🚨 Emergency Response Plan**
+• Know how to immediately freeze your accounts if compromised
+• Keep your bank's fraud hotline number easily accessible
+• Document any suspicious contacts (screenshots, caller ID, etc.)
+• Report attempted scams to help protect others in your community`
+			},
+			{
+				id: 'interactive',
+				title: 'Scam vs. Legit Banking Contact',
+				type: 'interactive',
+				content: `🔍 **Learn to distinguish between legitimate and fraudulent banking communications**
+
+Compare these examples to build your scam detection skills:
+
+**Contact Method Comparison**
+
+| **Legitimate Bank ✅** | **Bank Scam 🚩** |
+|------------------------|-------------------|
+| Greets you by name | "Dear Customer" |
+| Uses secure portals for communication | Sends links by text/email |
+| No urgency — gives time to respond | "Act immediately or account will close" |
+| Never asks for full PIN or password | Demands sensitive info over phone/email |
+| Accepts payment only via secure methods | Requests gift cards, wires, or crypto |
+
+**Real vs. Fake Banking Scenarios**
+
+**Scenario Analysis Practice:**
+
+Think about these situations and identify which are legitimate vs. scams:
+
+1. **Email Alert:** "Your account has been temporarily suspended. Click here to reactivate within 24 hours or it will be permanently closed."
+
+2. **Phone Call:** "This is John from TD Bank fraud prevention. We've detected unusual activity and need to verify your identity. Can you please confirm your PIN?"
+
+3. **Text Message:** "Scotiabank Alert: We've placed a temporary hold on your card due to suspicious activity. Please call 1-800-SCOTIA to review."
+
+4. **App Notification:** "New transaction: $150.00 at Metro. If this wasn't you, tap here to report."
+
+**Analysis:**
+1. **SCAM** - Legitimate banks don't suspend accounts via email links
+2. **SCAM** - Banks never ask for PINs over the phone
+3. **LEGITIMATE** - Directs you to call official number, doesn't ask for info
+4. **LEGITIMATE** - Asks you to report, doesn't request sensitive information`,
+				interactive: {
+					type: 'drag-match',
+					data: {
+						title: 'Banking Contact: Legitimate vs. Scam',
+						instructions: 'Drag each banking contact example to the correct category',
+						items: [
+							'Greets you by name',
+							'"Dear Customer"',
+							'Uses secure banking portal',
+							'Sends links via text/email',
+							'Gives you time to respond',
+							'"Act immediately or lose account"',
+							'Never asks for full PIN',
+							'Demands PIN over phone',
+							'Official payment methods only',
+							'Requests gift card payments'
+						],
+						categories: [
+							{
+								name: 'Legitimate Bank ✅',
+								items: ['Greets you by name', 'Uses secure banking portal', 'Gives you time to respond', 'Never asks for full PIN', 'Official payment methods only']
+							},
+							{
+								name: 'Bank Scam 🚩',
+								items: ['"Dear Customer"', 'Sends links via text/email', '"Act immediately or lose account"', 'Demands PIN over phone', 'Requests gift card payments']
+							}
+						]
+					}
+				}
+			},
+			{
+				id: 'quiz',
+				title: 'Quick Interactive Exercise',
+				type: 'quiz',
+				content: `📝 **Test your banking scam knowledge**
+
+Apply what you've learned to identify safe banking practices.`,
+				quiz: [
+					{
+						id: 'b1',
+						question: 'Which of these banking practices is SAFE?',
+						options: [
+							'Text from "Scotiabank" asking you to click a link within 10 minutes',
+							'Call from "fraud prevention" asking for your debit PIN',
+							'Logging in by typing your bank\'s URL directly into the browser',
+							'Downloading a banking app from a random website'
+						],
+						correctAnswer: 2,
+						explanation: 'Always type your bank\'s URL directly rather than clicking links. This ensures you\'re on the legitimate website.'
+					},
+					{
+						id: 'b2',
+						question: 'A caller claims to be from your bank\'s fraud department and asks for your PIN to "verify your identity." What should you do?',
+						options: [
+							'Give them the PIN since they\'re trying to help',
+							'Ask them to verify the last transaction on your account first',
+							'Hang up and call your bank directly using the number on your card',
+							'Give them only half the PIN to be safe'
+						],
+						correctAnswer: 2,
+						explanation: 'Banks NEVER ask for PINs over the phone. Always hang up and call your bank directly using official numbers.'
+					},
+					{
+						id: 'b3',
+						question: 'Which of these is a legitimate way banks communicate account issues?',
+						options: [
+							'Urgent text messages with links to click',
+							'Emails demanding immediate password reset',
+							'Secure messages through your online banking portal',
+							'Social media direct messages about account problems'
+						],
+						correctAnswer: 2,
+						explanation: 'Banks use secure messaging within your online banking portal for legitimate communications about your account.'
+					},
+					{
+						id: 'b4',
+						question: 'You receive a check for $5,000 with instructions to deposit it and wire $4,500 back for "processing fees." This is:',
+						options: [
+							'A legitimate transaction with normal processing fees',
+							'A check fraud scam - the check will bounce',
+							'Safe as long as you wait for the check to clear',
+							'Only risky if the check amount is larger'
+						],
+						correctAnswer: 1,
+						explanation: 'This is a classic check fraud scam. The check will eventually bounce, leaving you responsible for the full amount you wired.'
+					},
+					{
+						id: 'b5',
+						question: 'What\'s the safest way to download your bank\'s mobile app?',
+						options: [
+							'Click the link in an email from your bank',
+							'Search for it on Google and click the first result',
+							'Download it directly from the official App Store or Google Play',
+							'Get it from your bank\'s social media page'
+						],
+						correctAnswer: 2,
+						explanation: 'Only download banking apps from official app stores (Apple App Store or Google Play Store) to ensure authenticity and security.'
+					}
+				]
 			}
 		]
 	},

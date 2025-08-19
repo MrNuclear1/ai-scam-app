@@ -289,14 +289,28 @@ async function saveGlobalData(data: GlobalData): Promise<boolean> {
 }
 
 // Enhanced functions that sync with global storage
-export async function syncGlobalFiveStarReviews(): Promise<void> {
+export async function syncGlobalFiveStarReviews(): Promise<boolean> {
   try {
     const globalData = await getGlobalData();
     if (globalData?.fiveStarReviews) {
-      localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(globalData.fiveStarReviews));
+      const currentLocal = getGlobalFiveStarReviews();
+      const globalReviews = globalData.fiveStarReviews;
+      
+      // Check if we have new reviews from global storage
+      const hasNewReviews = globalReviews.length > currentLocal.length || 
+                           (globalReviews.length > 0 && currentLocal.length > 0 && 
+                            globalReviews[0].id !== currentLocal[0].id);
+      
+      if (hasNewReviews) {
+        localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(globalReviews));
+        console.log('Synced new global reviews:', globalReviews.length);
+        return true; // Indicates new data was synced
+      }
     }
+    return false; // No new data
   } catch (error) {
     console.error('Error syncing global reviews:', error);
+    return false;
   }
 }
 

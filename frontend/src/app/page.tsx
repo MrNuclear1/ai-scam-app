@@ -22,41 +22,58 @@ export default function HomePage() {
 	const [globalTestimonials, setGlobalTestimonials] = useState<GlobalFiveStarReview[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
+	// Function to sync and update testimonials
+	const syncAndUpdateTestimonials = async () => {
+		try {
+			// Sync 5-star reviews from global storage
+			const hasNewData = await syncGlobalFiveStarReviews();
+			
+			if (hasNewData) {
+				// Update state with fresh synced data
+				const refreshedTestimonials = getGlobalFiveStarReviewsForDisplay(3);
+				setGlobalTestimonials(refreshedTestimonials);
+				console.log('Updated testimonials with new data');
+			}
+			
+			// Update global count from API
+			const globalFive = await getGlobalFiveStarReviewsCountFromAPI();
+			if (globalFive !== null) {
+				setFiveStarCount(globalFive);
+			} else {
+				// Fallback to local count if API fails
+				setFiveStarCount(getLocalFiveStarReviewsCount());
+			}
+		} catch (error) {
+			console.error('Error syncing global data:', error);
+			// Keep local data if sync fails
+			setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(3));
+			setFiveStarCount(getLocalFiveStarReviewsCount());
+		}
+	};
+
 	useEffect(() => {
 		const stats = incrementSiteVisit();
 		setSiteStats(stats);
 		
 		// Load initial local data immediately
-		setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
+		setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(3));
 		setFiveStarCount(getLocalFiveStarReviewsCount());
 		
-		// Sync global data on page load
+		// Initial sync and setup periodic syncing
 		(async () => {
-			try {
-				// Sync 5-star reviews from global storage
-				await syncGlobalFiveStarReviews();
-				
-				// Update state with synced data
-				const refreshedTestimonials = getGlobalFiveStarReviewsForDisplay(6);
-				setGlobalTestimonials(refreshedTestimonials);
-				
-				// Update global count from API
-				const globalFive = await getGlobalFiveStarReviewsCountFromAPI();
-				if (globalFive !== null) {
-					setFiveStarCount(globalFive);
-				} else {
-					// Fallback to local count if API fails
-					setFiveStarCount(getLocalFiveStarReviewsCount());
-				}
-			} catch (error) {
-				console.error('Error syncing global data:', error);
-				// Keep local data if sync fails
-				setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
-				setFiveStarCount(getLocalFiveStarReviewsCount());
-			} finally {
-				setIsLoading(false);
-			}
+			await syncAndUpdateTestimonials();
+			setIsLoading(false);
 		})();
+
+		// Set up periodic syncing every 30 seconds to catch new reviews from other users
+		const syncInterval = setInterval(async () => {
+			await syncAndUpdateTestimonials();
+		}, 30000); // 30 seconds
+
+		// Cleanup interval on unmount
+		return () => {
+			clearInterval(syncInterval);
+		};
 	}, []);
 
 	return (
