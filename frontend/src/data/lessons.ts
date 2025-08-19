@@ -1255,7 +1255,7 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 			},
 			{
 				id: 'red-flags',
-				title: 'Types of Investment Fraud',
+					title: 'Types of Investment Fraud',
 				type: 'red-flags',
 				content: `**Common Investment Scams:**
 
@@ -1272,7 +1272,7 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 			},
 			{
 				id: 'tips',
-				title: 'Due Diligence Best Practices',
+					title: 'Due Diligence Best Practices',
 				type: 'tips',
 				content: `✅ **Verify investment firm credentials** through regulatory databases
 ✅ **Understand the risks** - high returns always mean high risk
