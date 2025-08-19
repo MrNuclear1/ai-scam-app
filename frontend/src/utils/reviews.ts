@@ -27,6 +27,17 @@ const COUNT_API_BASES = [
   'https://api.countapi.dev',
 ];
 
+// GitHub Gist storage for persistent data across devices and deployments
+const GITHUB_API_BASE = 'https://api.github.com';
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN || '';
+const GIST_ID = process.env.NEXT_PUBLIC_STORAGE_GIST_ID || '';
+
+interface GlobalData {
+  fiveStarReviews: GlobalFiveStarReview[];
+  totalSiteVisits: number;
+  lastUpdated: string;
+}
+
 async function countApiHit(namespace: string, key: string): Promise<number | null> {
   for (const base of COUNT_API_BASES) {
     try {
@@ -99,11 +110,8 @@ export async function addReview(name: string, stars: number, description: string
         date: new Date().toISOString(),
       };
       
-      try {
-        const existingGlobal = getGlobalFiveStarReviews();
-        const updatedGlobal = [globalReview, ...existingGlobal].slice(0, 100); // Cap at 100 testimonials
-        localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(updatedGlobal));
-      } catch (_) {}
+      // Save to global storage (async, non-blocking)
+      addGlobalFiveStarReview(globalReview).catch(console.error);
     }
   }
 
@@ -126,7 +134,7 @@ export function getLocalFiveStarReviewsCount(): number {
   return getReviews().filter(r => r.stars === 5).length;
 }
 
-export async function getGlobalFiveStarReviewsCount(): Promise<number | null> {
+export async function getGlobalFiveStarReviewsCountFromAPI(): Promise<number | null> {
   try {
     return await countApiGet('scamproof', 'five_star_reviews');
   } catch (_) {
@@ -232,6 +240,87 @@ export function getGlobalFiveStarReviewsForDisplay(count: number = 6): GlobalFiv
 
 export function getGlobalFiveStarReviewsCount(): number {
   return getGlobalFiveStarReviews().length;
+}
+
+// Global data persistence functions
+async function getGlobalData(): Promise<GlobalData | null> {
+  if (!GIST_ID) return null;
+  
+  try {
+    const response = await fetch(`${GITHUB_API_BASE}/gists/${GIST_ID}`);
+    if (!response.ok) return null;
+    
+    const gist = await response.json();
+    const content = gist.files?.['global-data.json']?.content;
+    if (!content) return null;
+    
+    return JSON.parse(content) as GlobalData;
+  } catch (error) {
+    console.error('Error fetching global data:', error);
+    return null;
+  }
+}
+
+async function saveGlobalData(data: GlobalData): Promise<boolean> {
+  if (!GIST_ID || !GITHUB_TOKEN) return false;
+  
+  try {
+    const response = await fetch(`${GITHUB_API_BASE}/gists/${GIST_ID}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        files: {
+          'global-data.json': {
+            content: JSON.stringify(data, null, 2)
+          }
+        }
+      })
+    });
+    
+    return response.ok;
+  } catch (error) {
+    console.error('Error saving global data:', error);
+    return false;
+  }
+}
+
+// Enhanced functions that sync with global storage
+export async function syncGlobalFiveStarReviews(): Promise<void> {
+  try {
+    const globalData = await getGlobalData();
+    if (globalData?.fiveStarReviews) {
+      localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(globalData.fiveStarReviews));
+    }
+  } catch (error) {
+    console.error('Error syncing global reviews:', error);
+  }
+}
+
+export async function addGlobalFiveStarReview(review: GlobalFiveStarReview): Promise<boolean> {
+  try {
+    // Add to local storage first
+    const existingLocal = getGlobalFiveStarReviews();
+    const updatedLocal = [review, ...existingLocal].slice(0, 100);
+    localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(updatedLocal));
+    
+    // Sync with global storage
+    const globalData = await getGlobalData() || {
+      fiveStarReviews: [],
+      totalSiteVisits: 0,
+      lastUpdated: new Date().toISOString()
+    };
+    
+    globalData.fiveStarReviews = [review, ...globalData.fiveStarReviews].slice(0, 100);
+    globalData.lastUpdated = new Date().toISOString();
+    
+    return await saveGlobalData(globalData);
+  } catch (error) {
+    console.error('Error adding global review:', error);
+    return false;
+  }
 }
 
 

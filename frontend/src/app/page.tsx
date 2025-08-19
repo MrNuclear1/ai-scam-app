@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSiteStats, incrementSiteVisit, SiteStats } from "@/utils/siteVisits";
-import { getLocalFiveStarReviewsCount, getRecentReviews as getRecentUserReviews, getGlobalFiveStarReviewsCount, getGlobalFiveStarReviewsForDisplay, GlobalFiveStarReview } from "@/utils/reviews";
+import { getLocalFiveStarReviewsCount, getRecentReviews as getRecentUserReviews, getGlobalFiveStarReviewsCount, getGlobalFiveStarReviewsForDisplay, GlobalFiveStarReview, syncGlobalFiveStarReviews, getGlobalFiveStarReviewsCountFromAPI } from "@/utils/reviews";
 
 interface Review {
 	id: string;
@@ -24,11 +24,17 @@ export default function HomePage() {
 	useEffect(() => {
 		const stats = incrementSiteVisit();
 		setSiteStats(stats);
+		
+		// Sync global data on page load
 		(async () => {
-			const globalFive = await getGlobalFiveStarReviewsCount();
+			// Sync 5-star reviews from global storage
+			await syncGlobalFiveStarReviews();
+			
+			// Update state with synced data
+			const globalFive = await getGlobalFiveStarReviewsCountFromAPI();
 			setFiveStarCount(globalFive ?? getLocalFiveStarReviewsCount());
+			setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
 		})();
-		setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
 	}, []);
 
 	return (

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { addReview, getGlobalFiveStarReviewsCount, getLocalFiveStarReviewsCount, getRecentReviews, Review } from "@/utils/reviews";
+import { addReview, getGlobalFiveStarReviewsCount, getLocalFiveStarReviewsCount, getRecentReviews, Review, getGlobalFiveStarReviewsCountFromAPI } from "@/utils/reviews";
 
 export default function ReviewsPage() {
   const [firstName, setFirstName] = useState("");
@@ -14,7 +14,7 @@ export default function ReviewsPage() {
   useEffect(() => {
     setRecent(getRecentReviews(10));
     (async () => {
-      setGlobalFiveStar(await getGlobalFiveStarReviewsCount());
+      setGlobalFiveStar(await getGlobalFiveStarReviewsCountFromAPI());
     })();
   }, []);
 
@@ -33,7 +33,7 @@ export default function ReviewsPage() {
       setStars(5);
       setDescription("");
       // Refresh global count best-effort
-      setGlobalFiveStar(await getGlobalFiveStarReviewsCount());
+      setGlobalFiveStar(await getGlobalFiveStarReviewsCountFromAPI());
     } finally {
       setSubmitting(false);
     }

@@ -83,7 +83,34 @@ NODE_ENV=production
 ### Frontend (Netlify)
 ```env
 NEXT_PUBLIC_BACKEND_URL=https://your-backend.up.railway.app
+
+# Optional: Global Data Persistence (syncs 5-star reviews & site visits across devices)
+NEXT_PUBLIC_GITHUB_TOKEN=ghp_your_github_personal_access_token
+NEXT_PUBLIC_STORAGE_GIST_ID=your_gist_id_here
 ```
+
+### 📊 Global Data Persistence Setup (Optional)
+
+To sync 5-star reviews and site visit counts across all devices and deployments:
+
+1. **Create GitHub Personal Access Token:**
+   - Go to GitHub.com → Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - Create new token with `gist` scope only
+   - Copy the token (starts with `ghp_`)
+
+2. **Create Storage Gist:**
+   - Go to https://gist.github.com/
+   - Create a new **SECRET** gist
+   - Name: `global-data.json`
+   - Content: `{"fiveStarReviews":[],"totalSiteVisits":0,"lastUpdated":"2024-01-01T00:00:00.000Z"}`
+   - Save and copy the Gist ID from URL
+
+3. **Add Environment Variables:**
+   - In Netlify: Site settings → Environment variables
+   - Add `NEXT_PUBLIC_GITHUB_TOKEN` and `NEXT_PUBLIC_STORAGE_GIST_ID`
+   - Redeploy the site
+
+**Without these variables:** Data will be stored locally per device only (localStorage)
 
 ## 📊 API Endpoints
 
