@@ -169,12 +169,8 @@ function KahootStyleGame({ data }: { data: any }) {
 	);
 }
 
-// Generate static params for all lessons
-export function generateStaticParams() {
-	return lessons.map((lesson) => ({
-		id: lesson.id,
-	}));
-}
+// Note: generateStaticParams removed to avoid conflict with "use client"
+// Static generation will be handled by Next.js automatically
 
 export default function LessonDetailPage({ params }: { params: { id: string } }) {
 	const lesson = lessons.find(l => l.id === params.id);
