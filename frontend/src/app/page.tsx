@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSiteStats, incrementSiteVisit, SiteStats } from "@/utils/siteVisits";
-import { getLocalFiveStarReviewsCount, getRecentReviews as getRecentUserReviews, getGlobalFiveStarReviewsCount } from "@/utils/reviews";
+import { getLocalFiveStarReviewsCount, getRecentReviews as getRecentUserReviews, getGlobalFiveStarReviewsCount, getGlobalFiveStarReviewsForDisplay, GlobalFiveStarReview } from "@/utils/reviews";
 
 interface Review {
 	id: string;
@@ -19,7 +19,7 @@ export default function HomePage() {
 		lastVisit: new Date().toISOString()
 	});
 	const [fiveStarCount, setFiveStarCount] = useState(0);
-	const [recentReviews, setRecentReviews] = useState<Review[]>([]);
+	const [globalTestimonials, setGlobalTestimonials] = useState<GlobalFiveStarReview[]>([]);
 
 	useEffect(() => {
 		const stats = incrementSiteVisit();
@@ -28,7 +28,7 @@ export default function HomePage() {
 			const globalFive = await getGlobalFiveStarReviewsCount();
 			setFiveStarCount(globalFive ?? getLocalFiveStarReviewsCount());
 		})();
-		setRecentReviews(getRecentUserReviews(3));
+		setGlobalTestimonials(getGlobalFiveStarReviewsForDisplay(6));
 	}, []);
 
 	return (
@@ -101,25 +101,39 @@ export default function HomePage() {
 				</div>
 			</div>
 
-			{/* Recent Reviews */}
-			{recentReviews.length > 0 && (
-				<div className="text-center mb-16">
-					<h2 className="text-3xl font-bold text-[#E8EEF6] mb-8">What Users Say</h2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-						{recentReviews.map((review) => (
-							<div key={review.id} className="bg-[#1E293B]/30 backdrop-blur-sm p-6 rounded-xl">
+			{/* Global 5-Star Testimonials */}
+			<div className="text-center mb-16">
+				<h2 className="text-3xl font-bold text-[#E8EEF6] mb-4">⭐ 5-Star Testimonials ⭐</h2>
+				<p className="text-[#94A3B8] mb-8">Real feedback from users who found our platform valuable</p>
+				
+				{globalTestimonials.length > 0 ? (
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+						{globalTestimonials.map((testimonial) => (
+							<div key={testimonial.id} className="bg-gradient-to-br from-[#1E293B]/50 to-[#0F172A]/50 backdrop-blur-sm p-6 rounded-xl border border-yellow-400/20 hover:border-yellow-400/40 transition-all duration-300">
 								<div className="flex justify-center mb-4">
 									{[...Array(5)].map((_, i) => (
-										<span key={i} className={`text-xl ${i < review.stars ? 'text-yellow-400' : 'text-gray-600'}`}>⭐</span>
+										<span key={i} className="text-xl text-yellow-400">⭐</span>
 									))}
 								</div>
-								<p className="text-[#94A3B8] mb-4 italic">"{review.description}"</p>
-								<div className="text-[#E8EEF6] font-semibold">- {review.name}</div>
+								<p className="text-[#CBD5E1] mb-4 italic text-sm leading-relaxed">"{testimonial.message}"</p>
+								<div className="text-[#E8EEF6] font-semibold text-sm">
+									- {testimonial.firstName} {testimonial.lastName}
+								</div>
+								<div className="text-[#94A3B8] text-xs mt-1">
+									{new Date(testimonial.date).toLocaleDateString()}
+								</div>
 							</div>
 						))}
 					</div>
-				</div>
-			)}
+				) : (
+					<div className="text-center py-8">
+						<p className="text-[#94A3B8] mb-4">Be the first to leave a 5-star review!</p>
+						<Link href="/reviews" className="bg-gradient-to-r from-[#FFA500] to-[#FF6B6B] hover:from-[#FF8C00] hover:to-[#FF5A5A] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+							Share Your Experience
+						</Link>
+					</div>
+				)}
+			</div>
 
 			{/* Navigation Links */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

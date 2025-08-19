@@ -26,7 +26,7 @@ export default function ReviewsPage() {
     setSubmitting(true);
     try {
       const name = `${firstName || ""} ${lastName || ""}`.trim();
-      await addReview(name, stars, description);
+      await addReview(name, stars, description, firstName, lastName);
       setRecent(getRecentReviews(10));
       setFirstName("");
       setLastName("");

@@ -6,11 +6,21 @@ export interface Review {
   date: string; // ISO
 }
 
+export interface GlobalFiveStarReview {
+  id: string;
+  firstName: string;
+  lastName: string;
+  message: string;
+  stars: 5; // Always 5
+  date: string; // ISO
+}
+
 const REVIEWS_KEY = 'scamproof-reviews';
 const LEGACY_REVIEWS_KEY = 'scamguard-reviews';
 const MY_REVIEWS_KEY = 'scamproof-myreviews';
 const HELPFUL_COUNTS_KEY = 'scamproof-helpful-counts';
 const HELPFUL_VOTED_KEY = 'scamproof-helpful-voted';
+const GLOBAL_FIVE_STAR_REVIEWS_KEY = 'scamproof-global-five-star-reviews';
 
 const COUNT_API_BASES = [
   'https://api.countapi.xyz',
@@ -56,7 +66,7 @@ export function getReviews(): Review[] {
   return [];
 }
 
-export async function addReview(name: string, stars: number, description: string): Promise<Review> {
+export async function addReview(name: string, stars: number, description: string, firstName?: string, lastName?: string): Promise<Review> {
   const review: Review = {
     id: `rev_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
     name: name?.trim() || 'Anonymous',
@@ -77,6 +87,24 @@ export async function addReview(name: string, stars: number, description: string
       mine.unshift(review.id);
       localStorage.setItem(MY_REVIEWS_KEY, JSON.stringify(mine.slice(0, 100)));
     } catch (_) {}
+
+    // If 5-star review, save to global testimonials
+    if (review.stars === 5 && firstName && lastName) {
+      const globalReview: GlobalFiveStarReview = {
+        id: `global_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        message: description?.trim() || '',
+        stars: 5,
+        date: new Date().toISOString(),
+      };
+      
+      try {
+        const existingGlobal = getGlobalFiveStarReviews();
+        const updatedGlobal = [globalReview, ...existingGlobal].slice(0, 100); // Cap at 100 testimonials
+        localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(updatedGlobal));
+      } catch (_) {}
+    }
   }
 
   // If 5-star, hit global counter (best-effort)
@@ -183,6 +211,27 @@ export function getRatingDistribution(): Record<number, number> {
   const dist: Record<number, number> = {1:0,2:0,3:0,4:0,5:0};
   for (const r of getReviews()) dist[r.stars] = (dist[r.stars] || 0) + 1;
   return dist;
+}
+
+// Global 5-star review functions
+export function getGlobalFiveStarReviews(): GlobalFiveStarReview[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(GLOBAL_FIVE_STAR_REVIEWS_KEY);
+    if (!raw) return [];
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) return arr as GlobalFiveStarReview[];
+  } catch (_) {}
+  return [];
+}
+
+export function getGlobalFiveStarReviewsForDisplay(count: number = 6): GlobalFiveStarReview[] {
+  const all = getGlobalFiveStarReviews();
+  return all.sort((a, b) => (b.date > a.date ? 1 : -1)).slice(0, count);
+}
+
+export function getGlobalFiveStarReviewsCount(): number {
+  return getGlobalFiveStarReviews().length;
 }
 
 
