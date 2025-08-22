@@ -620,200 +620,7 @@ Practice identifying phishing emails by categorizing these real-world email scen
 			}
 		]
 	},
-	{
-		id: 'romance-scams',
-		title: 'Romance Scam Basics',
-		description: 'Understand how romance scammers operate and protect yourself from emotional manipulation.',
-		difficulty: 'intermediate',
-		duration: '10-12 mins',
-		slides: [
-			{
-				id: 'introduction',
-				title: 'Understanding Romance Scams',
-				type: 'introduction',
-				content: `❤️ **Imagine this:** You join a dating app or social platform and meet someone who seems perfect. They shower you with affection, call you their soulmate, and talk about a future together. But soon, they mention a crisis — a medical bill, travel expense, or business problem. They ask you to send money because "love means trust."
 
-Weeks or months later, you're left heartbroken and financially drained.
-
-📊 **The Reality:** Romance scams cost victims more than $1.3 billion worldwide in 2022 — making them the most expensive type of online scam. Victims lose not only money, but also emotional security.
-
-👥 **Who's at Risk?**
-
-**Divorced or widowed adults** seeking companionship.
-
-**Young adults** new to online dating.
-
-**Anyone** who is lonely or looking for meaningful connection.
-
-**How Romance Scams Work**
-
-Romance scams typically follow the **Charm → Bond → Crisis → Exploit** cycle:
-
-**Charm 🌹**
-Scammer sets up a fake profile with stolen photos. They're often "successful professionals" (engineers, military, doctors) working abroad.
-
-**Bond 💌**
-They message daily, building emotional connection. Victims feel flattered and wanted.
-
-**Crisis 🚨**
-After weeks of trust-building, the scammer introduces a problem:
-• Hospital emergency
-• Stolen wallet while traveling
-• Business deal that needs "temporary funds"
-
-**Exploit 💸**
-Victim sends money — often multiple times. The scammer disappears once funds dry up, or continues extracting until suspicion arises.
-
-**Real-World Example**
-
-In 2021, a Toronto woman lost $450,000 to a romance scammer she met online. The man claimed to be a U.S. engineer working overseas. He built trust for months, then requested money for "business emergencies." By the time she realized it was a scam, her retirement savings were gone.
-
-**💔 The Emotional Impact**
-
-Romance scams are particularly devastating because they exploit our deepest human need for connection and love. Victims often feel ashamed and embarrassed, making them less likely to report the crime or seek help. The emotional trauma can last long after the financial loss.`
-			},
-			{
-				id: 'red-flags',
-				title: 'Red Flags and Scam Variations',
-				type: 'red-flags',
-				content: `**Common Romance Scam Variations**
-
-**1. Military Romance Scam 🎖️**
-
-Scammer pretends to be a soldier overseas.
-
-Claims they can't access funds while deployed and need help.
-
-**2. Wealthy Businessperson Abroad 💼**
-
-Presents as a successful entrepreneur stuck in customs or facing a financial snag.
-
-**3. Emergency Medical Crisis 🏥**
-
-Claims a family member (or they themselves) needs urgent surgery.
-
-**4. Visa or Travel Scam ✈️**
-
-Says they want to visit but need money for airfare, visas, or "clearance."
-
-**5. Crypto Investment Romance 💰**
-
-Builds a romantic relationship, then convinces victim to "invest together" in cryptocurrency through a fake platform.
-
-**Red Flags to Watch For**
-
-🚩 **Profile pictures that look too perfect** (often stolen from models or real people).
-
-🚩 **They fall in love quickly** and talk about marriage within weeks.
-
-🚩 **Avoid video calls, live chats, or meeting in person.**
-
-🚩 **Claim to be working/living abroad** in places that make visits hard.
-
-🚩 **Ask for secrecy:** "Don't tell anyone, they wouldn't understand."
-
-🚩 **Constantly bring up financial emergencies.**
-
-🚩 **Request payment via gift cards, wire transfers, or crypto.**
-
-**🚨 Critical Warning Signs:**
-
-❌ **Perfect profile photos** (reverse image search often reveals stolen pictures)
-❌ **Immediate declarations of love** (within days or weeks)
-❌ **Avoidance of live interaction** (no video calls, phone calls, or meetings)
-❌ **Remote location claims** (deployed military, working overseas, traveling)
-❌ **Secrecy demands** (keep relationship private from friends/family)
-❌ **Financial emergencies** (medical bills, travel problems, business issues)
-❌ **Untraceable payment requests** (gift cards, wire transfers, cryptocurrency)
-
-**📱 Profile Analysis Red Flags:**
-
-- **Photos too professional** or model-like
-- **Limited photos** or photos that don't match the person's claimed lifestyle
-- **Inconsistent background stories** about work, family, or location
-- **Recently created profiles** with minimal connections or activity
-- **Vague personal details** that can't be verified
-- **Claims of high-status professions** (doctor, engineer, military officer) working abroad
-
-**💬 Communication Red Flags:**
-
-- **Love bombing** - excessive affection and attention early on
-- **Scripted messages** that feel rehearsed or generic
-- **Poor grammar** inconsistent with claimed education level
-- **Time zone inconsistencies** in communication patterns
-- **Avoidance of specific questions** about their life or background
-- **Pressure for quick commitment** or exclusive relationship
-
-Remember: **Legitimate relationships develop naturally over time, with increasing transparency and verification, not secrecy and financial requests.**`
-			},
-			{
-				id: 'tips',
-				title: 'Hot Tips to Stay Safe',
-				type: 'tips',
-				content: `**Hot Tips to Stay Safe**
-
-✅ **Do a reverse image search.** Stolen photos are common in fake profiles.
-
-✅ **Take it slow.** Real relationships develop over time.
-
-✅ **Never send money to someone you haven't met in person.**
-
-✅ **Insist on video calls.** Scammers often avoid live interaction.
-
-✅ **Talk to trusted friends/family.** They can provide perspective if something feels off.
-
-✅ **Report suspicious profiles** on dating apps immediately.
-
-✅ **Trust your gut.** If the story feels dramatic, scripted, or rushed, it probably is.
-
-**🛡️ Advanced Romance Scam Protection**
-
-**1. Profile Verification Strategies**
-• **Reverse image search:** Use Google Images to check if profile photos appear elsewhere online
-• **Social media cross-check:** Look for consistent social media presence across platforms
-• **Video call requirements:** Insist on live video calls before developing deeper feelings
-• **Background verification:** Ask specific questions about their claimed location, job, and background
-
-**2. Communication Safety**
-• **Gradual development:** Healthy relationships develop trust and intimacy slowly over time
-• **Transparency:** Legitimate partners are open about their life, family, and circumstances
-• **Consistency:** Watch for contradictions in their stories or timeline
-• **Local knowledge:** Test their claimed location with specific local questions
-
-**3. Financial Protection**
-• **Never send money:** Legitimate partners don't ask for financial help before meeting
-• **No gift cards:** Real emergencies are never solved with gift cards or wire transfers
-• **Separate finances:** Keep your financial information completely private
-• **Emergency skepticism:** Be especially cautious of urgent financial "emergencies"
-
-**4. Emotional Protection**
-• **Support network:** Share your online relationships with trusted friends and family
-• **Reality checks:** Get outside perspective if someone seems "too good to be true"
-• **Pace yourself:** Don't let anyone rush you into emotional or financial commitments
-• **Self-worth:** Remember that you deserve genuine love that doesn't come with a price tag
-
-**🚨 If You've Been Targeted:**
-
-**Immediate Actions:**
-1. **Stop all communication** with the suspected scammer
-2. **Don't send any more money** or personal information
-3. **Save evidence:** Screenshots of conversations, photos, and financial transactions
-4. **Report to authorities:**
-   - Canadian Anti-Fraud Centre: 1-888-495-8501
-   - Local police if money was sent
-   - Dating platform where you met them
-   - IC3.gov for international online crimes
-
-**Recovery Steps:**
-5. **Monitor your identity** if personal information was shared
-6. **Contact your bank** if financial information was compromised
-7. **Seek emotional support** from friends, family, or professional counselors
-8. **Don't blame yourself** - these scammers are professional manipulators
-
-**Remember:** Love should never cost money. Real relationships are built on mutual respect, trust, and gradual development - not urgency, secrecy, and financial requests.`
-			}
-		]
-	},
 	{
 		id: 'tech-support-scams',
 		title: 'Tech Support Scam Basics',
@@ -2586,194 +2393,7 @@ Apply what you've learned to identify safe banking practices.`,
 			}
 		]
 	},
-	{
-		id: 'lottery-scams',
-		title: 'Lottery Scam Basics',
-		description: 'Recognize fake lottery winnings and prize notifications.',
-		difficulty: 'beginner',
-		duration: '10-12 mins',
-		slides: [
-			{
-				id: 'introduction',
-				title: 'Understanding Lottery Scams',
-				type: 'introduction',
-				content: `🎉 **Imagine this:** You get an email that reads:
-"Congratulations! You've won the International Mega Millions Lottery worth $2.5 million. To claim your prize, please reply with your details and pay a small processing fee of $50."
 
-Your heart races. You don't remember buying a ticket — but maybe you entered some contest online? Before you know it, you're convinced you're a millionaire. Unfortunately, this is one of the oldest and most widespread scams in the world.
-
-📊 **The Reality:** Lottery and sweepstakes scams steal hundreds of millions of dollars annually. Victims are tricked into paying upfront fees or handing over personal information, only to discover there was never any prize to begin with.
-
-👥 **Who's at Risk?**
-
-**Seniors** who may trust official-looking letters.
-
-**Young adults** lured by the promise of easy money.
-
-**Anyone** who gets caught up in the dream of sudden wealth.
-
-**⚠️ Important Religious Consideration:** It's worth noting that in Islamic teachings, lotteries and gambling are considered haram (forbidden). Many religious communities have similar teachings about gambling. This means that even legitimate lotteries may conflict with religious beliefs, making it easier to recognize and reject lottery scams.
-
-**How Lottery Scams Work**
-
-Lottery scams usually follow this pattern: **The Win → The Hook → The Payment → The Drain.**
-
-**The Win 🏆**
-Victim receives a message (email, text, mail, or social media) saying they've won a big prize.
-
-**The Hook 🎣**
-Scammer builds excitement: "You are one of only 5 grand prize winners!"
-
-**The Payment 💳**
-Victim is asked to pay taxes, fees, or handling charges upfront to "release" the prize.
-
-**The Drain 💸**
-Once the victim pays, scammers ask for more: customs fees, courier charges, legal verification. Payments continue until the victim catches on — or runs out of money.
-
-**Real-World Example**
-
-In 2021, the RCMP warned Canadians about lottery scams where victims were told they'd won millions in a U.S. sweepstakes. To claim, they were pressured into paying "customs duties" and "release fees." Victims lost tens of thousands before realizing no prize existed.
-
-**Religious Protection Note:** For those following Islamic teachings, remember that since lotteries are haram, any lottery "win" notification can immediately be recognized as a scam, providing an additional layer of protection against these fraudulent schemes.`
-			},
-			{
-				id: 'red-flags',
-				title: 'Red Flags and Scam Variations',
-				type: 'red-flags',
-				content: `**Common Lottery Scam Variations**
-
-**1. Email or Letter Notifications 📧📬**
-
-Claim to be from "International Lottery Commission" or "EuroMillions."
-
-Include official-looking logos and reference numbers.
-
-**2. Text Message Alerts 📱**
-
-Short messages: "Congrats, you won $1 million! Reply YES to claim."
-
-Designed to lure quick responses.
-
-**3. Social Media Giveaways 🎯**
-
-Fake accounts message users: "You've been selected in our special draw!"
-
-**4. Check Fraud Prize Delivery 🏦**
-
-Victim receives a fake cheque for part of the winnings.
-
-Told to deposit it and wire back fees.
-
-Cheque later bounces, leaving victim in debt.
-
-**5. Romance-Lottery Combo ❤️🎲**
-
-Scammer posing as a romantic interest "shares" lottery winnings.
-
-Victim is asked to pay a transfer or legal fee to access funds.
-
-**Red Flags to Watch For**
-
-🚩 **You didn't buy a ticket — but you "won."**
-
-🚩 **Asked to pay taxes or fees before receiving money.**
-
-🚩 **Pressure to keep your win "secret" until the prize is released.**
-
-🚩 **Messages full of typos, bad grammar, or generic greetings.**
-
-🚩 **Claims from foreign lotteries you've never heard of.**
-
-🚩 **Requests for personal info: banking details, passport, or SIN.**
-
-🚩 **Overpayment cheques that later bounce.**
-
-**⚠️ Religious Red Flag:** Since lotteries are haram in Islam, any lottery-related communication can immediately be identified as either a scam or something that conflicts with religious beliefs. This provides an automatic warning system for those following Islamic teachings.
-
-**🚨 Critical Warning Signs:**
-
-❌ **Unexpected "wins" without participation**
-❌ **Upfront payment demands for any reason**
-❌ **Secrecy requirements about your "prize"**
-❌ **Poor grammar and spelling in official communications**
-❌ **Foreign lottery claims (especially from countries you've never visited)**
-❌ **Personal information requests before prize verification**
-❌ **Check overpayment schemes with "return the difference" requests**
-
-**📋 Lottery Scam Detection Checklist:**
-
-- Did I actually buy a ticket for this lottery? (If no = 100% scam)
-- Are they asking for money upfront? (If yes = 100% scam)
-- Do they want me to keep it secret? (If yes = 100% scam)
-- Is the grammar and spelling professional? (If no = likely scam)
-- Can I verify this on the official lottery website? (If no = likely scam)
-
-Remember: **Legitimate lotteries NEVER require upfront payments and you cannot win lotteries you never entered.**`
-			},
-			{
-				id: 'tips',
-				title: 'Hot Tips to Stay Safe',
-				type: 'tips',
-				content: `**Hot Tips to Stay Safe**
-
-✅ **If you didn't enter, you can't win. Period.**
-
-✅ **Real lotteries don't ask for upfront fees.** Taxes are taken from winnings, not paid in advance.
-
-✅ **Check official sources.** Verify with the official lottery operator's website.
-
-✅ **Be skeptical of international lotteries.** If it's not your country's official draw, it's likely fake.
-
-✅ **Don't share personal info.** Scammers use details for identity theft.
-
-✅ **Ignore secrecy requests.** Real organizations never ask you to keep wins confidential.
-
-✅ **Talk it out.** Excitement clouds judgment — ask a trusted friend or family member.
-
-**🛡️ Advanced Lottery Scam Protection**
-
-**1. Verification Strategies**
-• **Official Website Check:** Look up the lottery on its official government-run website
-• **Contact Direct:** Call the official lottery organization using numbers from their website, not from the suspicious message
-• **Government Verification:** Check with consumer protection agencies about known lottery scams
-• **News Search:** Search for recent news about the specific "lottery" that contacted you
-
-**2. Communication Analysis**
-• **Email Headers:** Check if emails come from official domains (.gov, official lottery domains)
-• **Language Quality:** Professional lotteries use proper grammar and spelling
-• **Personalization:** Real lotteries use your full name, not generic greetings
-• **Official Branding:** Compare logos and formatting with official lottery materials
-
-**3. Financial Protection**
-• **Never Pay Upfront:** Legitimate winnings never require advance payments
-• **Avoid Wire Transfers:** Scammers prefer untraceable payment methods
-• **Reject Check Schemes:** Don't deposit "advance" checks that require you to send money back
-• **No Gift Cards:** Real organizations never ask for payment via gift cards or cryptocurrency
-
-**4. Personal Information Safety**
-• **Limit Sharing:** Never provide SIN, banking details, or passport information
-• **Identity Theft Prevention:** Scammers use personal details for fraudulent accounts
-• **Document Security:** Don't send copies of official documents
-• **Financial Privacy:** Protect bank account and credit card information
-
-**⚠️ Religious Protection:** For those following Islamic teachings, since participating in lotteries is haram, any lottery communication should be immediately dismissed. This religious guideline provides built-in protection against these scams.
-
-**🚨 If You've Been Targeted:**
-
-**Immediate Actions:**
-1. **Stop all communication** with the lottery scammers
-2. **Don't send any money** or personal information
-3. **Report to authorities:**
-   - Canadian Anti-Fraud Centre: 1-888-495-8501
-   - Local police if money was already sent
-   - Internet Crime Complaint Center (IC3) for online scams
-4. **Monitor your identity** if personal information was shared
-5. **Warn others** by reporting the scam to friends and family
-
-**Remember:** Real lottery organizations are transparent, professional, and never rush you into payments. When in doubt, always verify independently through official channels.`
-			}
-		]
-	},
 	{
 		id: 'social-media-scams',
 		title: 'Social Media Impersonation Scam',
@@ -2985,6 +2605,388 @@ Remember: **When in doubt about any social media contact requesting money or per
 • Use voice/video calls to confirm identity
 
 **Remember:** Real friends and family will understand if you need to verify their identity before sending money. Legitimate businesses and celebrities don't randomly contact individuals for financial requests.`
+			}
+		]
+	},
+	{
+		id: 'romance-scams',
+		title: 'Romance Scam Basics',
+		description: 'Understand how romance scammers operate and protect yourself from emotional manipulation.',
+		difficulty: 'intermediate',
+		duration: '10-12 mins',
+		slides: [
+			{
+				id: 'introduction',
+				title: 'Understanding Romance Scams',
+				type: 'introduction',
+				content: `❤️ **Imagine this:** You join a dating app or social platform and meet someone who seems perfect. They shower you with affection, call you their soulmate, and talk about a future together. But soon, they mention a crisis — a medical bill, travel expense, or business problem. They ask you to send money because "love means trust."
+
+Weeks or months later, you're left heartbroken and financially drained.
+
+📊 **The Reality:** Romance scams cost victims more than $1.3 billion worldwide in 2022 — making them the most expensive type of online scam. Victims lose not only money, but also emotional security.
+
+👥 **Who's at Risk?**
+
+**Divorced or widowed adults** seeking companionship.
+
+**Young adults** new to online dating.
+
+**Anyone** who is lonely or looking for meaningful connection.
+
+**How Romance Scams Work**
+
+Romance scams typically follow the **Charm → Bond → Crisis → Exploit** cycle:
+
+**Charm 🌹**
+Scammer sets up a fake profile with stolen photos. They're often "successful professionals" (engineers, military, doctors) working abroad.
+
+**Bond 💌**
+They message daily, building emotional connection. Victims feel flattered and wanted.
+
+**Crisis 🚨**
+After weeks of trust-building, the scammer introduces a problem:
+• Hospital emergency
+• Stolen wallet while traveling
+• Business deal that needs "temporary funds"
+
+**Exploit 💸**
+Victim sends money — often multiple times. The scammer disappears once funds dry up, or continues extracting until suspicion arises.
+
+**Real-World Example**
+
+In 2021, a Toronto woman lost $450,000 to a romance scammer she met online. The man claimed to be a U.S. engineer working overseas. He built trust for months, then requested money for "business emergencies." By the time she realized it was a scam, her retirement savings were gone.
+
+**💔 The Emotional Impact**
+
+Romance scams are particularly devastating because they exploit our deepest human need for connection and love. Victims often feel ashamed and embarrassed, making them less likely to report the crime or seek help. The emotional trauma can last long after the financial loss.`
+			},
+			{
+				id: 'red-flags',
+				title: 'Red Flags and Scam Variations',
+				type: 'red-flags',
+				content: `**Common Romance Scam Variations**
+
+**1. Military Romance Scam 🎖️**
+
+Scammer pretends to be a soldier overseas.
+
+Claims they can't access funds while deployed and need help.
+
+**2. Wealthy Businessperson Abroad 💼**
+
+Presents as a successful entrepreneur stuck in customs or facing a financial snag.
+
+**3. Emergency Medical Crisis 🏥**
+
+Claims a family member (or they themselves) needs urgent surgery.
+
+**4. Visa or Travel Scam ✈️**
+
+Says they want to visit but need money for airfare, visas, or "clearance."
+
+**5. Crypto Investment Romance 💰**
+
+Builds a romantic relationship, then convinces victim to "invest together" in cryptocurrency through a fake platform.
+
+**Red Flags to Watch For**
+
+🚩 **Profile pictures that look too perfect** (often stolen from models or real people).
+
+🚩 **They fall in love quickly** and talk about marriage within weeks.
+
+🚩 **Avoid video calls, live chats, or meeting in person.**
+
+🚩 **Claim to be working/living abroad** in places that make visits hard.
+
+🚩 **Ask for secrecy:** "Don't tell anyone, they wouldn't understand."
+
+🚩 **Constantly bring up financial emergencies.**
+
+🚩 **Request payment via gift cards, wire transfers, or crypto.**
+
+**🚨 Critical Warning Signs:**
+
+❌ **Perfect profile photos** (reverse image search often reveals stolen pictures)
+❌ **Immediate declarations of love** (within days or weeks)
+❌ **Avoidance of live interaction** (no video calls, phone calls, or meetings)
+❌ **Remote location claims** (deployed military, working overseas, traveling)
+❌ **Secrecy demands** (keep relationship private from friends/family)
+❌ **Financial emergencies** (medical bills, travel problems, business issues)
+❌ **Untraceable payment requests** (gift cards, wire transfers, cryptocurrency)
+
+**📱 Profile Analysis Red Flags:**
+
+- **Photos too professional** or model-like
+- **Limited photos** or photos that don't match the person's claimed lifestyle
+- **Inconsistent background stories** about work, family, or location
+- **Recently created profiles** with minimal connections or activity
+- **Vague personal details** that can't be verified
+- **Claims of high-status professions** (doctor, engineer, military officer) working abroad
+
+**💬 Communication Red Flags:**
+
+- **Love bombing** - excessive affection and attention early on
+- **Scripted messages** that feel rehearsed or generic
+- **Poor grammar** inconsistent with claimed education level
+- **Time zone inconsistencies** in communication patterns
+- **Avoidance of specific questions** about their life or background
+- **Pressure for quick commitment** or exclusive relationship
+
+Remember: **Legitimate relationships develop naturally over time, with increasing transparency and verification, not secrecy and financial requests.**`
+			},
+			{
+				id: 'tips',
+				title: 'Hot Tips to Stay Safe',
+				type: 'tips',
+				content: `**Hot Tips to Stay Safe**
+
+✅ **Do a reverse image search.** Stolen photos are common in fake profiles.
+
+✅ **Take it slow.** Real relationships develop over time.
+
+✅ **Never send money to someone you haven't met in person.**
+
+✅ **Insist on video calls.** Scammers often avoid live interaction.
+
+✅ **Talk to trusted friends/family.** They can provide perspective if something feels off.
+
+✅ **Report suspicious profiles** on dating apps immediately.
+
+✅ **Trust your gut.** If the story feels dramatic, scripted, or rushed, it probably is.
+
+**🛡️ Advanced Romance Scam Protection**
+
+**1. Profile Verification Strategies**
+• **Reverse image search:** Use Google Images to check if profile photos appear elsewhere online
+• **Social media cross-check:** Look for consistent social media presence across platforms
+• **Video call requirements:** Insist on live video calls before developing deeper feelings
+• **Background verification:** Ask specific questions about their claimed location, job, and background
+
+**2. Communication Safety**
+• **Gradual development:** Healthy relationships develop trust and intimacy slowly over time
+• **Transparency:** Legitimate partners are open about their life, family, and circumstances
+• **Consistency:** Watch for contradictions in their stories or timeline
+• **Local knowledge:** Test their claimed location with specific local questions
+
+**3. Financial Protection**
+• **Never send money:** Legitimate partners don't ask for financial help before meeting
+• **No gift cards:** Real emergencies are never solved with gift cards or wire transfers
+• **Separate finances:** Keep your financial information completely private
+• **Emergency skepticism:** Be especially cautious of urgent financial "emergencies"
+
+**4. Emotional Protection**
+• **Support network:** Share your online relationships with trusted friends and family
+• **Reality checks:** Get outside perspective if someone seems "too good to be true"
+• **Pace yourself:** Don't let anyone rush you into emotional or financial commitments
+• **Self-worth:** Remember that you deserve genuine love that doesn't come with a price tag
+
+**🚨 If You've Been Targeted:**
+
+**Immediate Actions:**
+1. **Stop all communication** with the suspected scammer
+2. **Don't send any more money** or personal information
+3. **Save evidence:** Screenshots of conversations, photos, and financial transactions
+4. **Report to authorities:**
+   - Canadian Anti-Fraud Centre: 1-888-495-8501
+   - Local police if money was sent
+   - Dating platform where you met them
+   - IC3.gov for international online crimes
+
+**Recovery Steps:**
+5. **Monitor your identity** if personal information was shared
+6. **Contact your bank** if financial information was compromised
+7. **Seek emotional support** from friends, family, or professional counselors
+8. **Don't blame yourself** - these scammers are professional manipulators
+
+**Remember:** Love should never cost money. Real relationships are built on mutual respect, trust, and gradual development - not urgency, secrecy, and financial requests.`
+			}
+		]
+	},
+	{
+		id: 'lottery-scams',
+		title: 'Lottery Scam Basics',
+		description: 'Recognize fake lottery winnings and prize notifications.',
+		difficulty: 'beginner',
+		duration: '10-12 mins',
+		slides: [
+			{
+				id: 'introduction',
+				title: 'Understanding Lottery Scams',
+				type: 'introduction',
+				content: `🎉 **Imagine this:** You get an email that reads:
+"Congratulations! You've won the International Mega Millions Lottery worth $2.5 million. To claim your prize, please reply with your details and pay a small processing fee of $50."
+
+Your heart races. You don't remember buying a ticket — but maybe you entered some contest online? Before you know it, you're convinced you're a millionaire. Unfortunately, this is one of the oldest and most widespread scams in the world.
+
+📊 **The Reality:** Lottery and sweepstakes scams steal hundreds of millions of dollars annually. Victims are tricked into paying upfront fees or handing over personal information, only to discover there was never any prize to begin with.
+
+👥 **Who's at Risk?**
+
+**Seniors** who may trust official-looking letters.
+
+**Young adults** lured by the promise of easy money.
+
+**Anyone** who gets caught up in the dream of sudden wealth.
+
+**⚠️ Important Religious Consideration:** It's worth noting that in Islamic teachings, lotteries and gambling are considered haram (forbidden). Many religious communities have similar teachings about gambling. This means that even legitimate lotteries may conflict with religious beliefs, making it easier to recognize and reject lottery scams.
+
+**How Lottery Scams Work**
+
+Lottery scams usually follow this pattern: **The Win → The Hook → The Payment → The Drain.**
+
+**The Win 🏆**
+Victim receives a message (email, text, mail, or social media) saying they've won a big prize.
+
+**The Hook 🎣**
+Scammer builds excitement: "You are one of only 5 grand prize winners!"
+
+**The Payment 💳**
+Victim is asked to pay taxes, fees, or handling charges upfront to "release" the prize.
+
+**The Drain 💸**
+Once the victim pays, scammers ask for more: customs fees, courier charges, legal verification. Payments continue until the victim catches on — or runs out of money.
+
+**Real-World Example**
+
+In 2021, the RCMP warned Canadians about lottery scams where victims were told they'd won millions in a U.S. sweepstakes. To claim, they were pressured into paying "customs duties" and "release fees." Victims lost tens of thousands before realizing no prize existed.
+
+**Religious Protection Note:** For those following Islamic teachings, remember that since lotteries are haram, any lottery "win" notification can immediately be recognized as a scam, providing an additional layer of protection against these fraudulent schemes.`
+			},
+			{
+				id: 'red-flags',
+				title: 'Red Flags and Scam Variations',
+				type: 'red-flags',
+				content: `**Common Lottery Scam Variations**
+
+**1. Email or Letter Notifications 📧📬**
+
+Claim to be from "International Lottery Commission" or "EuroMillions."
+
+Include official-looking logos and reference numbers.
+
+**2. Text Message Alerts 📱**
+
+Short messages: "Congrats, you won $1 million! Reply YES to claim."
+
+Designed to lure quick responses.
+
+**3. Social Media Giveaways 🎯**
+
+Fake accounts message users: "You've been selected in our special draw!"
+
+**4. Check Fraud Prize Delivery 🏦**
+
+Victim receives a fake cheque for part of the winnings.
+
+Told to deposit it and wire back fees.
+
+Cheque later bounces, leaving victim in debt.
+
+**5. Romance-Lottery Combo ❤️🎲**
+
+Scammer posing as a romantic interest "shares" lottery winnings.
+
+Victim is asked to pay a transfer or legal fee to access funds.
+
+**Red Flags to Watch For**
+
+🚩 **You didn't buy a ticket — but you "won."**
+
+🚩 **Asked to pay taxes or fees before receiving money.**
+
+🚩 **Pressure to keep your win "secret" until the prize is released.**
+
+🚩 **Messages full of typos, bad grammar, or generic greetings.**
+
+🚩 **Claims from foreign lotteries you've never heard of.**
+
+🚩 **Requests for personal info: banking details, passport, or SIN.**
+
+🚩 **Overpayment cheques that later bounce.**
+
+**⚠️ Religious Red Flag:** Since lotteries are haram in Islam, any lottery-related communication can immediately be identified as either a scam or something that conflicts with religious beliefs. This provides an automatic warning system for those following Islamic teachings.
+
+**🚨 Critical Warning Signs:**
+
+❌ **Unexpected "wins" without participation**
+❌ **Upfront payment demands for any reason**
+❌ **Secrecy requirements about your "prize"**
+❌ **Poor grammar and spelling in official communications**
+❌ **Foreign lottery claims (especially from countries you've never visited)**
+❌ **Personal information requests before prize verification**
+❌ **Check overpayment schemes with "return the difference" requests**
+
+**📋 Lottery Scam Detection Checklist:**
+
+- Did I actually buy a ticket for this lottery? (If no = 100% scam)
+- Are they asking for money upfront? (If yes = 100% scam)
+- Do they want me to keep it secret? (If yes = 100% scam)
+- Is the grammar and spelling professional? (If no = likely scam)
+- Can I verify this on the official lottery website? (If no = likely scam)
+
+Remember: **Legitimate lotteries NEVER require upfront payments and you cannot win lotteries you never entered.**`
+			},
+			{
+				id: 'tips',
+				title: 'Hot Tips to Stay Safe',
+				type: 'tips',
+				content: `**Hot Tips to Stay Safe**
+
+✅ **If you didn't enter, you can't win. Period.**
+
+✅ **Real lotteries don't ask for upfront fees.** Taxes are taken from winnings, not paid in advance.
+
+✅ **Check official sources.** Verify with the official lottery operator's website.
+
+✅ **Be skeptical of international lotteries.** If it's not your country's official draw, it's likely fake.
+
+✅ **Don't share personal info.** Scammers use details for identity theft.
+
+✅ **Ignore secrecy requests.** Real organizations never ask you to keep wins confidential.
+
+✅ **Talk it out.** Excitement clouds judgment — ask a trusted friend or family member.
+
+**🛡️ Advanced Lottery Scam Protection**
+
+**1. Verification Strategies**
+• **Official Website Check:** Look up the lottery on its official government-run website
+• **Contact Direct:** Call the official lottery organization using numbers from their website, not from the suspicious message
+• **Government Verification:** Check with consumer protection agencies about known lottery scams
+• **News Search:** Search for recent news about the specific "lottery" that contacted you
+
+**2. Communication Analysis**
+• **Email Headers:** Check if emails come from official domains (.gov, official lottery domains)
+• **Language Quality:** Professional lotteries use proper grammar and spelling
+• **Personalization:** Real lotteries use your full name, not generic greetings
+• **Official Branding:** Compare logos and formatting with official lottery materials
+
+**3. Financial Protection**
+• **Never Pay Upfront:** Legitimate winnings never require advance payments
+• **Avoid Wire Transfers:** Scammers prefer untraceable payment methods
+• **Reject Check Schemes:** Don't deposit "advance" checks that require you to send money back
+• **No Gift Cards:** Real organizations never ask for payment via gift cards or cryptocurrency
+
+**4. Personal Information Safety**
+• **Limit Sharing:** Never provide SIN, banking details, or passport information
+• **Identity Theft Prevention:** Scammers use personal details for fraudulent accounts
+• **Document Security:** Don't send copies of official documents
+• **Financial Privacy:** Protect bank account and credit card information
+
+**⚠️ Religious Protection:** For those following Islamic teachings, since participating in lotteries is haram, any lottery communication should be immediately dismissed. This religious guideline provides built-in protection against these scams.
+
+**🚨 If You've Been Targeted:**
+
+**Immediate Actions:**
+1. **Stop all communication** with the lottery scammers
+2. **Don't send any money** or personal information
+3. **Report to authorities:**
+   - Canadian Anti-Fraud Centre: 1-888-495-8501
+   - Local police if money was already sent
+   - Internet Crime Complaint Center (IC3) for online scams
+4. **Monitor your identity** if personal information was shared
+5. **Warn others** by reporting the scam to friends and family
+
+**Remember:** Real lottery organizations are transparent, professional, and never rush you into payments. When in doubt, always verify independently through official channels.`
 			}
 		]
 	}
