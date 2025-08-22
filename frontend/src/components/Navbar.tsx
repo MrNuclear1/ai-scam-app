@@ -25,12 +25,14 @@ export default function Navbar() {
 							<Link href="/simulator" className="text-[#CBD5E1] hover:text-[#3BA4F7] px-3 py-2 text-sm font-medium transition-colors duration-200">
 								Simulator
 							</Link>
-							<Link href="/red-flags" className="text-[#CBD5E1] hover:text-[#7C5CFC] px-3 py-2 text-sm font-medium transition-colors duration-200">
-								Red Flags
-							</Link>
-							<Link href="/story-mode" className="text-[#CBD5E1] hover:text-[#FF6B6B] px-3 py-2 text-sm font-medium transition-colors duration-200">
-								Story Mode
-							</Link>
+							<a 
+								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
+								target="_blank" 
+								rel="noopener noreferrer"
+								className="text-[#CBD5E1] hover:text-[#7C5CFC] px-3 py-2 text-sm font-medium transition-colors duration-200"
+							>
+								Report a Scam/Fraud
+							</a>
 							<Link href="/reviews" className="text-[#CBD5E1] hover:text-[#FFA500] px-3 py-2 text-sm font-medium transition-colors duration-200">
 								Reviews
 							</Link>
@@ -64,12 +66,14 @@ export default function Navbar() {
 							<Link href="/simulator" className="text-[#CBD5E1] hover:text-[#3BA4F7] block px-3 py-2 text-base font-medium transition-colors duration-200">
 								Simulator
 							</Link>
-							<Link href="/red-flags" className="text-[#CBD5E1] hover:text-[#7C5CFC] block px-3 py-2 text-base font-medium transition-colors duration-200">
-								Red Flags
-							</Link>
-							<Link href="/story-mode" className="text-[#CBD5E1] hover:text-[#FF6B6B] block px-3 py-2 text-base font-medium transition-colors duration-200">
-								Story Mode
-							</Link>
+							<a 
+								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
+								target="_blank" 
+								rel="noopener noreferrer"
+								className="text-[#CBD5E1] hover:text-[#7C5CFC] block px-3 py-2 text-base font-medium transition-colors duration-200"
+							>
+								Report a Scam/Fraud
+							</a>
 							<Link href="/reviews" className="text-[#CBD5E1] hover:text-[#FFA500] block px-3 py-2 text-base font-medium transition-colors duration-200">
 								Reviews
 							</Link>
