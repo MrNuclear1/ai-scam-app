@@ -34,16 +34,27 @@ let openaiLastError = null;
 
 async function initializeOpenAI() {
 	try {
+		// Enhanced logging for Railway deployment debugging
+		console.log("🔧 Initializing OpenAI client...");
+		console.log("📋 Environment variables check:");
+		console.log(`   NODE_ENV: ${process.env.NODE_ENV || 'not set'}`);
+		console.log(`   SCAM_MODEL: ${process.env.SCAM_MODEL || 'not set'}`);
+		console.log(`   PORT: ${process.env.PORT || 'not set'}`);
+		
 		const apiKey = process.env.OPENAI_API_KEY;
 		if (!apiKey) {
 			console.warn("⚠️  OPENAI_API_KEY not found - chat functionality will be disabled");
+			console.warn("🔍 Railway Debug: Verify OPENAI_API_KEY is set in Railway environment variables");
 			openaiConnectionStatus = 'no-api-key';
 			return null;
 		}
 		
+		console.log(`   OPENAI_API_KEY: ${apiKey ? `present (${apiKey.length} chars, starts with '${apiKey.substring(0, 8)}...')` : 'not set'}`);
+		
 		// Check for placeholder API key
 		if (apiKey === 'your_openai_api_key_here' || apiKey.startsWith('sk-your-') || apiKey === 'sk-your-openai-api-key-here') {
 			console.warn("⚠️  OPENAI_API_KEY appears to be a placeholder - chat functionality will be disabled");
+			console.warn("🔍 Railway Debug: Replace placeholder API key with real OpenAI API key");
 			openaiConnectionStatus = 'placeholder-key';
 			openaiLastError = 'API key is a placeholder value';
 			return null;
@@ -93,6 +104,11 @@ async function initializeOpenAI() {
 		
 	} catch (error) {
 		console.error("❌ Failed to initialize OpenAI client:", error.message);
+		console.error("🔍 Railway Debug: OpenAI client initialization failed");
+		console.error("🔍 Environment check:");
+		console.error(`   Working directory: ${process.cwd()}`);
+		console.error(`   Node.js version: ${process.version}`);
+		console.error(`   Platform: ${process.platform}`);
 		openaiConnectionStatus = 'initialization-error';
 		openaiLastError = error.message;
 		return null;
@@ -454,6 +470,108 @@ Provide detailed evaluation with scoring, badge, feedback, and identified red fl
 	}
 });
 
+// Environment variable debugging endpoint for Railway deployment
+app.get("/api/debug-env", (_req, res) => {
+	res.json({
+		status: "debug-info",
+		timestamp: new Date().toISOString(),
+		environment: {
+			NODE_ENV: process.env.NODE_ENV || "not-set",
+			OPENAI_API_KEY: process.env.OPENAI_API_KEY ? {
+				present: true,
+				length: process.env.OPENAI_API_KEY.length,
+				prefix: process.env.OPENAI_API_KEY.substring(0, 8) + "...",
+				isPlaceholder: process.env.OPENAI_API_KEY === 'your_openai_api_key_here' || 
+					process.env.OPENAI_API_KEY?.startsWith('sk-your-') || 
+					process.env.OPENAI_API_KEY === 'sk-your-openai-api-key-here'
+			} : {
+				present: false,
+				error: "OPENAI_API_KEY environment variable not found"
+			},
+			SCAM_MODEL: process.env.SCAM_MODEL || "not-set",
+			PORT: process.env.PORT || "not-set"
+		},
+		runtime: {
+			nodeVersion: process.version,
+			platform: process.platform,
+			workingDirectory: process.cwd(),
+			uptime: process.uptime()
+		},
+		openaiStatus: {
+			connectionStatus: openaiConnectionStatus,
+			lastError: openaiLastError,
+			clientInitialized: !!openaiClient
+		}
+	});
+});
+
+// OpenAI API key validation endpoint for Railway deployment  
+app.get("/api/test-openai", async (_req, res) => {
+	try {
+		const apiKey = process.env.OPENAI_API_KEY;
+		
+		if (!apiKey) {
+			return res.status(400).json({
+				status: "failed",
+				error: "OPENAI_API_KEY environment variable not found",
+				timestamp: new Date().toISOString(),
+				troubleshooting: "Set OPENAI_API_KEY in Railway environment variables"
+			});
+		}
+		
+		// Check for placeholder API key
+		if (apiKey === 'your_openai_api_key_here' || apiKey.startsWith('sk-your-') || apiKey === 'sk-your-openai-api-key-here') {
+			return res.status(400).json({
+				status: "failed",
+				error: "OPENAI_API_KEY appears to be a placeholder value",
+				timestamp: new Date().toISOString(),
+				troubleshooting: "Replace with a real OpenAI API key starting with 'sk-'"
+			});
+		}
+		
+		const openai = getOpenAI();
+		
+		const test = await openai.chat.completions.create({
+			model: "gpt-3.5-turbo",
+			messages: [{ role: "user", content: "API validation test" }],
+			max_tokens: 5,
+			timeout: 15000
+		});
+		
+		res.json({ 
+			status: "success", 
+			message: "OpenAI API key validated successfully",
+			response: test.choices[0]?.message?.content || "No response",
+			model: "gpt-3.5-turbo",
+			usage: test.usage,
+			timestamp: new Date().toISOString()
+		});
+		
+	} catch (error) {
+		console.error("❌ OpenAI API test failed:", error.message);
+		
+		// Provide specific error guidance
+		let troubleshooting = "Unknown error occurred";
+		if (error.message?.includes('ENOTFOUND') || error.message?.includes('getaddrinfo')) {
+			troubleshooting = "Network connectivity issue - check Railway network settings";
+		} else if (error.status === 401) {
+			troubleshooting = "Invalid API key - verify OPENAI_API_KEY is correct";
+		} else if (error.status === 429) {
+			troubleshooting = "Rate limit exceeded - try again later";
+		} else if (error.message?.includes('timeout')) {
+			troubleshooting = "Request timed out - OpenAI API may be slow";
+		}
+		
+		res.status(500).json({ 
+			status: "failed", 
+			error: error.message,
+			errorCode: error.status || 'unknown',
+			troubleshooting: troubleshooting,
+			timestamp: new Date().toISOString()
+		});
+	}
+});
+
 // Test endpoint for API functionality
 app.get("/api/test", async (_req, res) => {
 	try {
@@ -549,6 +667,8 @@ app.use((req, res) => {
 			'POST /api/scam-chat',
 			'POST /api/scam-eval',
 			'GET /api/test',
+			'GET /api/test-openai',
+			'GET /api/debug-env',
 			'GET /api/diagnose'
 		],
 		timestamp: new Date().toISOString()
