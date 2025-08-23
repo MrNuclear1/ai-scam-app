@@ -16,4 +16,7 @@
 	"engines": {
 		"node": ">=18.0.0"
 	}
+	"scripts": {
+    "troubleshoot": "node src/troubleshooting-helper.js"
+	}
 }
