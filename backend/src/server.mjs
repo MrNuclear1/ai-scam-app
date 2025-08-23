@@ -29,12 +29,23 @@ const SCAM_MODEL = process.env.SCAM_MODEL || "gpt-4o-mini";
 
 // Enhanced OpenAI client with better error handling
 let openaiClient = null;
+let openaiConnectionStatus = 'disconnected';
+let openaiLastError = null;
 
-function initializeOpenAI() {
+async function initializeOpenAI() {
 	try {
 		const apiKey = process.env.OPENAI_API_KEY;
 		if (!apiKey) {
 			console.warn("⚠️  OPENAI_API_KEY not found - chat functionality will be disabled");
+			openaiConnectionStatus = 'no-api-key';
+			return null;
+		}
+		
+		// Check for placeholder API key
+		if (apiKey === 'your_openai_api_key_here' || apiKey.startsWith('sk-your-') || apiKey === 'sk-your-openai-api-key-here') {
+			console.warn("⚠️  OPENAI_API_KEY appears to be a placeholder - chat functionality will be disabled");
+			openaiConnectionStatus = 'placeholder-key';
+			openaiLastError = 'API key is a placeholder value';
 			return null;
 		}
 		
@@ -44,20 +55,61 @@ function initializeOpenAI() {
 			maxRetries: 3
 		});
 		
-		console.log("✅ OpenAI client initialized successfully");
-		return openaiClient;
+		// Test the API key with a minimal request
+		console.log("🔍 Testing OpenAI API connection...");
+		try {
+			await openaiClient.chat.completions.create({
+				model: "gpt-3.5-turbo",
+				messages: [{ role: "user", content: "test" }],
+				max_tokens: 1,
+				timeout: 10000
+			});
+			
+			console.log("✅ OpenAI client initialized and API key validated successfully");
+			openaiConnectionStatus = 'connected';
+			openaiLastError = null;
+			return openaiClient;
+		} catch (testError) {
+			console.error("❌ OpenAI API key validation failed:", testError.message);
+			openaiConnectionStatus = 'api-error';
+			openaiLastError = testError.message;
+			
+			// Check for specific error types
+			if (testError.message?.includes('ENOTFOUND') || testError.message?.includes('getaddrinfo')) {
+				openaiConnectionStatus = 'network-error';
+				openaiLastError = 'Network connectivity issue - cannot reach api.openai.com';
+			} else if (testError.status === 401) {
+				openaiConnectionStatus = 'invalid-key';
+				openaiLastError = 'Invalid API key';
+			} else if (testError.status === 429) {
+				openaiConnectionStatus = 'rate-limited';
+				openaiLastError = 'API rate limit exceeded';
+			}
+			
+			// Set client to null if validation fails
+			openaiClient = null;
+			return null;
+		}
+		
 	} catch (error) {
 		console.error("❌ Failed to initialize OpenAI client:", error.message);
+		openaiConnectionStatus = 'initialization-error';
+		openaiLastError = error.message;
 		return null;
 	}
 }
 
 // Initialize OpenAI on startup
-initializeOpenAI();
+(async () => {
+	await initializeOpenAI();
+})();
 
 function getOpenAI() {
 	if (!openaiClient) {
-		throw new Error("OpenAI client not initialized - check OPENAI_API_KEY");
+		const errorMessage = openaiLastError 
+			? `OpenAI client not available: ${openaiLastError}`
+			: "OpenAI client not initialized - check OPENAI_API_KEY";
+		throw new Error(errorMessage);
 	}
 	return openaiClient;
 }
@@ -74,7 +126,9 @@ app.get("/", (req, res) => {
 
 app.get("/api/health", (_req, res) => {
 	const hasOpenAI = !!process.env.OPENAI_API_KEY;
-	const openaiStatus = openaiClient ? "connected" : "disconnected";
+	const isPlaceholderKey = process.env.OPENAI_API_KEY === 'your_openai_api_key_here' || 
+		process.env.OPENAI_API_KEY?.startsWith('sk-your-') || 
+		process.env.OPENAI_API_KEY === 'sk-your-openai-api-key-here';
 	
 	res.json({ 
 		status: "ok", 
@@ -85,8 +139,9 @@ app.get("/api/health", (_req, res) => {
 			nodeEnv: process.env.NODE_ENV || "development",
 			port: PORT,
 			model: SCAM_MODEL,
-			openaiConfigured: hasOpenAI,
-			openaiStatus: openaiStatus,
+			openaiConfigured: hasOpenAI && !isPlaceholderKey,
+			openaiStatus: openaiConnectionStatus,
+			openaiError: openaiLastError,
 			personas: Object.keys(personas).length,
 			availablePersonas: Object.keys(personas)
 		}
@@ -201,35 +256,57 @@ app.post("/api/scam-chat", async (req, res) => {
 	} catch (error) {
 		console.error(`❌ /api/scam-chat error:`, error);
 		
-		// Enhanced error handling
-		if (error.message?.includes('API key')) {
+		// Enhanced error handling with user-friendly messages
+		if (error.message?.includes('OpenAI client not available')) {
 			return res.status(503).json({ 
-				error: "OpenAI API configuration error",
-				details: "API key invalid or missing"
+				error: "Sorry, I'm having trouble connecting right now. Please try again later.",
+				details: "AI service is currently unavailable",
+				adminDetails: error.message
+			});
+		}
+		
+		if (error.message?.includes('API key') || error.status === 401) {
+			return res.status(503).json({ 
+				error: "Sorry, I'm having trouble connecting right now. Please try again later.",
+				details: "Authentication error with AI service",
+				adminDetails: "OpenAI API key invalid or missing"
+			});
+		}
+		
+		if (error.message?.includes('ENOTFOUND') || error.message?.includes('getaddrinfo')) {
+			return res.status(503).json({ 
+				error: "Sorry, I'm having trouble connecting right now. Please try again later.",
+				details: "Network connectivity issue",
+				adminDetails: "Cannot reach OpenAI API servers"
 			});
 		}
 		
 		if (error.message?.includes('timeout')) {
 			return res.status(504).json({ 
-				error: "Request timeout - OpenAI API took too long to respond" 
+				error: "The AI is taking too long to respond. Please try again.",
+				details: "Request timeout"
 			});
 		}
 		
-		if (error.message?.includes('rate limit')) {
+		if (error.message?.includes('rate limit') || error.status === 429) {
 			return res.status(429).json({ 
-				error: "Rate limit exceeded - please wait and try again" 
+				error: "Too many requests right now. Please wait a moment and try again.",
+				details: "Rate limit exceeded"
 			});
 		}
 		
 		if (error.status) {
 			return res.status(error.status).json({ 
-				error: `OpenAI API error: ${error.message}` 
+				error: "Sorry, I'm having trouble connecting right now. Please try again later.",
+				details: `AI service error (${error.status})`,
+				adminDetails: error.message
 			});
 		}
 		
 		res.status(500).json({ 
-			error: "Internal server error",
-			details: error.message || "Unknown error occurred"
+			error: "Sorry, I'm having trouble connecting right now. Please try again later.",
+			details: "Internal server error",
+			adminDetails: error.message || "Unknown error occurred"
 		});
 	}
 });
@@ -405,6 +482,53 @@ app.get("/api/test", async (_req, res) => {
 	}
 });
 
+// Diagnostic endpoint for troubleshooting
+app.get("/api/diagnose", (_req, res) => {
+	const apiKey = process.env.OPENAI_API_KEY;
+	const hasKey = !!apiKey;
+	const isPlaceholder = apiKey === 'your_openai_api_key_here' || 
+		apiKey?.startsWith('sk-your-') || 
+		apiKey === 'sk-your-openai-api-key-here';
+	const keyFormat = apiKey?.startsWith('sk-') ? 'valid-format' : 'invalid-format';
+	
+	res.json({
+		timestamp: new Date().toISOString(),
+		openai: {
+			hasApiKey: hasKey,
+			isPlaceholder: isPlaceholder,
+			keyFormat: hasKey ? keyFormat : 'none',
+			keyLength: hasKey ? apiKey.length : 0,
+			keyPrefix: hasKey ? apiKey.substring(0, 8) + '...' : 'none',
+			connectionStatus: openaiConnectionStatus,
+			lastError: openaiLastError,
+			clientInitialized: !!openaiClient
+		},
+		environment: {
+			nodeEnv: process.env.NODE_ENV || 'development',
+			port: PORT,
+			model: SCAM_MODEL
+		},
+		troubleshooting: {
+			commonIssues: [
+				hasKey ? null : "No OPENAI_API_KEY found in environment",
+				isPlaceholder ? "API key appears to be a placeholder - replace with real key" : null,
+				!hasKey || isPlaceholder ? null : (keyFormat === 'invalid-format' ? "API key doesn't start with 'sk-'" : null),
+				openaiConnectionStatus === 'network-error' ? "Network connectivity issue - check firewall/proxy" : null,
+				openaiConnectionStatus === 'invalid-key' ? "API key is invalid or expired" : null,
+				openaiConnectionStatus === 'rate-limited' ? "OpenAI API rate limit exceeded" : null
+			].filter(Boolean),
+			nextSteps: openaiConnectionStatus === 'connected' ? 
+				["OpenAI API is working correctly"] :
+				[
+					"1. Verify OPENAI_API_KEY is set correctly",
+					"2. Check API key has sufficient credits",
+					"3. Test network connectivity to api.openai.com",
+					"4. Check application logs for detailed errors"
+				]
+		}
+	});
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
 	console.error('❌ Unhandled error:', err);
@@ -424,7 +548,8 @@ app.use((req, res) => {
 			'GET /api/personas',
 			'POST /api/scam-chat',
 			'POST /api/scam-eval',
-			'GET /api/test'
+			'GET /api/test',
+			'GET /api/diagnose'
 		],
 		timestamp: new Date().toISOString()
 	});
@@ -451,7 +576,7 @@ const server = app.listen(PORT, '0.0.0.0', () => {
 	console.log(`👥 Personas endpoint: http://0.0.0.0:${PORT}/api/personas`);
 	console.log(`🧪 Test endpoint: http://0.0.0.0:${PORT}/api/test`);
 	console.log(`🎭 Available personas: ${Object.keys(personas).length}`);
-	console.log(`🔑 OpenAI status: ${openaiClient ? '✅ Connected' : '❌ Not configured'}`);
+	console.log(`🔑 OpenAI status: ${openaiConnectionStatus === 'connected' ? '✅ Connected' : `❌ ${openaiConnectionStatus}`}`);
 	console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 	console.log(`🔧 All environment variables:`, Object.keys(process.env).filter(key => !key.includes('PATH')));
 });
