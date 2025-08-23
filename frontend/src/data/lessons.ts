@@ -1158,7 +1158,7 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 • Ask to speak with HR or the hiring manager by name
 • Verify the recruiter's LinkedIn profile and connections
 
-**🛡️ Information Security Practices**
+🛡️ Information Security Practices**
 
 **What to NEVER Share Before Official Hiring:**
 • Social Insurance Number (SIN)
@@ -1173,7 +1173,7 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 • After Job Offer: Official documents for background checks (if standard for the industry)
 • After Contract Signing: Banking info for payroll setup
 
-**📞 Interview Red Flags**
+📞 Interview Red Flags**
 
 **Legitimate Interview Process:**
 • Multiple rounds of interviews (phone/video screening, formal interview)
@@ -1190,7 +1190,7 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 • Refusal to provide specific job details
 • No discussion of company policies or procedures
 
-**🚨 Emergency Action Plan**
+🚨 Emergency Action Plan**
 
 **If You Suspect a Scam:**
 1. **Stop all communication** immediately
@@ -2405,206 +2405,253 @@ Apply what you've learned to identify safe banking practices.`,
 				id: 'introduction',
 				title: 'Understanding Social Media Impersonation Scams',
 				type: 'introduction',
-				content: `📱 **Imagine this:** You're scrolling Instagram when you get a message from your cousin.
-"Hey! I'm in trouble and need some quick money. Can you send me an e-transfer?"
+				content: `🚨 **Understanding Social Media Impersonation Scams**
+📱 **Scenario: A Familiar Face, a Fake Crisis**
 
-The profile photo and name look identical to your cousin's. But in reality, it's not them — it's a scammer who cloned their account. By the time you realize, the money is long gone.
+You're scrolling Instagram, sipping coffee, when a message pops up:
 
-📊 **The Reality:** Social media impersonation scams are exploding worldwide. In 2023, more than $1.2 billion was stolen through scams on platforms like Facebook, Instagram, TikTok, and WhatsApp. These scams are effective because victims believe they're talking to someone they know or trust.
+"Hey! I'm in trouble. Can you send me an e-transfer? It's urgent."
 
-👥 **Who's at Risk?**
+The message is from your cousin. Or so it seems. The name matches. The profile photo is right. Even past photos on the timeline seem convincing.
 
-**Teens and young adults** who share personal info openly.
+But it's not them.
+It's a scammer who cloned their account.
 
-**Professionals** whose reputations scammers exploit.
+Before you realize it's a scam, you've sent money — and the scammer is gone.
 
-**Seniors** who may trust messages from "family members."
+📊 **The Growing Threat**
 
-**How Social Media Impersonation Scams Work**
+Social media impersonation scams have skyrocketed. In 2023 alone, over $1.2 billion was stolen globally through scams on platforms like Instagram, Facebook, WhatsApp, LinkedIn, and TikTok.
 
-These scams typically follow the **Clone → Contact → Crisis → Exploit** cycle:
+These scams work because:
 
-**Clone 🪞**
-Scammer copies someone's profile — photos, bio, friends list — and creates a nearly identical account.
+They mimic people we trust — friends, family, or public figures.
 
-**Contact 💬**
-They send friend/follow requests to people connected to the real account. Once accepted, they start conversations.
+They use urgency and emotion to bypass rational thinking.
 
-**Crisis 🚨**
-Scammer creates urgency: "I lost my wallet, please send money," or "I need help with a business investment."
+👥 **Who's Most at Risk?**
 
-**Exploit 💸**
-Victims send money, gift cards, or share personal information (like banking details). Scammer blocks and moves on to the next target.
+These scams don't discriminate — but certain groups are more vulnerable:
 
-**Real-World Example**
+**Teens & Young Adults**
+Often overshare online.
+Less experienced with fraud tactics.
 
-In 2022, scammers on Facebook created dozens of fake profiles impersonating well-known Canadian politicians and executives. They sent messages offering "government grants" if users paid a small upfront fee. Thousands of dollars were stolen before the fake accounts were shut down.
+**Professionals & Job Seekers**
+Targets for fake recruiters or business deals.
 
-**🎭 The Psychology Behind These Scams**
+**Seniors**
+May not recognize red flags.
+Easily manipulated by messages from "grandchildren" or "family in trouble."
 
-Social media impersonation scams are particularly effective because they exploit our trust in familiar faces and names. When we see a message from someone we "know," our guard naturally comes down. Scammers count on this psychological vulnerability to bypass our normal skepticism.`
+🔁 **How These Scams Work: The 4-Stage Cycle**
+
+**1. Clone 🪞**
+Scammer creates a duplicate profile, copying the original user's name, photos, bio, and friends list.
+
+**2. Contact 💬**
+They send friend/follow requests to the real person's connections. Once accepted, they message you directly.
+
+**3. Crisis 🚨**
+They invent a situation:
+"I'm stuck overseas."
+"My wallet was stolen."
+"Can you help with a down payment?"
+
+**4. Exploit 💸**
+The goal? Get you to send:
+Money via e-transfer
+Gift cards
+Personal information
+After that, they disappear.
+
+🎯 **Real-World Example**
+
+In 2022, dozens of fake Facebook profiles were created impersonating Canadian politicians. Messages promised "government grants" — if users first sent a small "processing fee."
+💸 Thousands of dollars were stolen before the accounts were removed.
+
+🧠 **Why These Scams Work: The Psychology**
+
+Humans are wired to trust familiar names and faces. These scams bypass your brain's defense mechanisms by:
+
+Using emotional triggers like fear, urgency, or affection.
+
+Exploiting social proof — "they're friends with your friends, so they must be legit."
+
+Targeting your desire to help.`
 			},
 			{
 				id: 'red-flags',
-				title: 'Red Flags and Scam Variations',
+				title: 'Red Flags & Scam Variations',
 				type: 'red-flags',
-				content: `**Common Social Media Impersonation Scam Variations**
+				content: `🚩 **Red Flags & Scam Variations**
 
-**1. Family/Friend in Distress 👨‍👩‍👧**
+👨‍👩‍👧 **1. Family/Friend in Distress**
 
-Message: "I'm stuck overseas, need money for a flight home."
+"Hey, I lost my passport while traveling — can you help?"
 
-Exploits concern for loved ones.
+🌟 **2. Celebrity/Influencer Giveaways**
 
-**2. Celebrity/Famous Person Scams 🌟**
+"You've won $10,000! Just pay the processing fee."
 
-Scammers impersonate influencers or musicians.
+💼 **3. Professional Impersonation**
 
-Promise giveaways, investment opportunities, or exclusive access.
+"Hi, I'm a recruiter from [Big Company]. We're hiring — click this link."
 
-**3. Business/Professional Impersonation 💼**
+❤️ **4. Romance Scams**
 
-Fake profiles of recruiters, executives, or HR managers.
+"Let's get to know each other. I want to visit you — can you send money for my ticket?"
 
-Offer fake jobs or investment deals.
+🤲 **5. Charity Scams**
 
-**4. Romance Impersonation ❤️**
+"Please donate to this disaster relief fund. Time is critical!"
 
-Clone someone's profile to start a fake relationship.
+🚨 **Critical Warning Signs**
 
-Eventually request money or "help with travel."
+❌ Clone accounts with the same photos, but different usernames.
+❌ Urgent requests for money or gift cards.
+❌ Weird grammar or off-sounding messages.
+❌ Unverified celebrity/influencer accounts asking for money.
+❌ Request to move platforms (e.g. "Let's talk on WhatsApp").
 
-**5. Charity/Donation Scams 🤲**
+🔎 **Analyze Like a Pro: Spot Red Flags**
 
-Fake accounts impersonate charities or community leaders.
+📱 **Account Red Flags:**
 
-Solicit donations for "urgent causes" (often disasters or medical crises).
+✅ Low follower count
 
-**Red Flags to Watch For**
+✅ Only a few (often recycled) photos
 
-🚩 **Duplicate accounts with same name and photos**
+✅ Bio or links don't match the real person
 
-🚩 **Urgent requests for money or gift cards**
+✅ Recently created account
 
-🚩 **Messages that don't "sound like" the real person**
+✅ No verification badge
 
-🚩 **Requests to move conversations off-platform (WhatsApp, Telegram)**
+💬 **Message Red Flags:**
 
-🚩 **Poor grammar or awkward phrasing in messages**
+✅ "Hey" or generic greetings
 
-🚩 **Unverified celebrity/influencer profiles promising giveaways**
+✅ Pushes you to act quickly
 
-🚩 **New accounts with few followers but many friend requests**
+✅ Wants money FAST
 
-**🚨 Critical Warning Signs:**
+✅ Won't video call or confirm identity
 
-❌ **Duplicate or cloned accounts** with identical photos but different details
-❌ **Urgent financial requests** especially via gift cards or wire transfers
-❌ **Communication style mismatch** - doesn't sound like the real person
-❌ **Platform switching requests** - wants to move to WhatsApp, Telegram, etc.
-❌ **Poor language quality** - grammar and spelling inconsistent with the real person
-❌ **Unverified celebrity profiles** offering prizes or investment opportunities
-❌ **New accounts with suspicious activity** - recently created but sending many requests
-
-**📱 Account Analysis Red Flags:**
-
-- **Profile inconsistencies:** Different bio details, follower counts, or posting history
-- **Limited photos:** Only a few recycled images from the real account
-- **Recent creation date:** Account was made very recently
-- **Suspicious followers:** Fake or bot followers instead of real connections
-- **Missing verification:** Celebrity/business accounts without official verification badges
-- **Contact information mismatch:** Different email, phone, or website links
-
-**💬 Message Analysis Red Flags:**
-
-- **Urgent tone:** Creating immediate pressure to act quickly
-- **Financial focus:** Conversations quickly turn to money or financial help
-- **Generic greetings:** Using "Hello" instead of the person's usual greeting style
-- **Spelling/grammar errors:** Inconsistent with the real person's education or background
-- **Secretive requests:** Asking you not to tell others about the conversation
-- **Off-platform pressure:** Insisting on moving to other messaging apps
-
-Remember: **When in doubt about any social media contact requesting money or personal information, verify through a separate communication channel.**`
+✅ "Don't tell anyone" — secretive tone`
 			},
 			{
 				id: 'tips',
 				title: 'Hot Tips to Stay Safe',
 				type: 'tips',
-				content: `**Hot Tips to Stay Safe**
+				content: `✅ **Hot Tips to Stay Safe**
 
-✅ **Double-check.** If a "friend" asks for money, call/text them directly to confirm.
+👨‍👩‍👧‍👦 **For Everyone:**
 
-✅ **Report fake profiles.** Use the platform's reporting tools immediately.
+Call or text the person directly before sending money.
 
-✅ **Check verification badges.** Real celebrities/influencers are often verified.
+Never send gift cards or wire transfers based on social media messages.
 
-✅ **Set profile privacy.** Limit who can see your friends list and photos.
+Report fake accounts immediately using in-app tools.
 
-✅ **Don't send money or gift cards.** Especially through social media messaging.
+Verify profiles (look for checkmarks on public figures).
 
-✅ **Educate family members.** Seniors are prime targets for "grandchild in trouble" scams.
+Keep your account private: hide your friends list and contact details.
 
-✅ **Be skeptical.** If something feels off, it probably is.
+🔒 **Advanced Safety Tips**
 
-**🛡️ Advanced Social Media Protection**
+🛡️ **Account Security**
 
-**1. Account Security Strategies**
-• **Privacy settings:** Make your friends list, photos, and personal details private
-• **Two-factor authentication:** Enable 2FA on all social media accounts
-• **Regular account audits:** Periodically review your friends/followers list
-• **Limited personal information:** Avoid sharing sensitive details like full birth dates, locations
+Enable 2-Factor Authentication (2FA)
 
-**2. Verification Techniques**
-• **Direct contact:** Always verify unusual requests through phone calls or in-person contact
-• **Multiple channels:** Use different communication methods to confirm identity
-• **Account comparison:** Compare suspicious accounts with the original profile
-• **Reverse image search:** Check if profile photos appear elsewhere online
+Regularly review your friends/followers
 
-**3. Family Protection**
-• **Education:** Teach family members, especially seniors, about impersonation scams
-• **Code words:** Establish family code words for emergency financial requests
-• **Regular communication:** Stay in touch with family to know their real situations
-• **Awareness campaigns:** Share scam warnings with your social network
+Avoid posting personal identifiers (birthdays, addresses)
 
-**4. Professional Protection**
-• **LinkedIn verification:** Be extra cautious with professional networking requests
-• **Company verification:** Verify business opportunities through official company channels
-• **Background checks:** Research any "professional" opportunities thoroughly
-• **Official channels:** Use company websites and official contact information
+🧠 **Verification Techniques**
 
-**🚨 If You've Been Targeted:**
+Use voice or video to confirm identity
 
-**Immediate Actions:**
-1. **Stop all communication** with the suspicious account
-2. **Don't send any money** or personal information
-3. **Report the fake account** to the platform immediately
-4. **Screenshot evidence:** Save conversations and profile information
-5. **Warn the real person** that their identity is being impersonated
+Compare the suspicious profile to the real one
 
-**Recovery Steps:**
-6. **Alert your network:** Warn friends and family about the impersonation
-7. **Monitor your accounts:** Watch for any unauthorized access or changes
-8. **Report to authorities:** Contact police if money was lost
-9. **Document everything:** Keep records of all communications and financial transactions
+Use reverse image search on profile pictures
 
-**Platform-Specific Tips:**
+👵 **Family Awareness**
 
-**Facebook/Instagram:**
-• Report impersonation through "Report" → "Fake Account"
-• Check for verification badges on celebrity/business accounts
-• Be cautious of friend requests from existing contacts
+Teach seniors and younger relatives about these scams
 
-**LinkedIn:**
-• Verify professional connections through official company channels
-• Be suspicious of job offers that seem too good to be true
-• Check the person's full profile and connections
+Set up family code words for real emergencies
 
-**WhatsApp/Telegram:**
-• Verify contact identity before engaging in financial discussions
-• Be cautious of group invitations from unknown numbers
-• Use voice/video calls to confirm identity
+💼 **Workplace Protection**
 
-**Remember:** Real friends and family will understand if you need to verify their identity before sending money. Legitimate businesses and celebrities don't randomly contact individuals for financial requests.`
+Always verify job/investment opportunities through official channels
+
+Be skeptical of offers that seem "too good to be true"
+
+🚨 **If You've Been Targeted**
+
+**Act Fast:**
+
+Stop communicating
+
+Don't send anything further
+
+Report the account immediately
+
+Screenshot all conversations
+
+Warn the real person (they may not know they're being impersonated)
+
+**Then:**
+
+Tell your friends/family
+
+Monitor your social and financial accounts
+
+Report to your local cybercrime authority or police
+
+Save all evidence`
+			},
+			{
+				id: 'interactive',
+				title: 'Interactive Activity',
+				type: 'interactive',
+				content: `🧠 **INTERACTIVE ACTIVITY**
+
+🎮 **Drag and Drop: Spot the Scam!**
+
+**Instructions:** Drag each message into the correct column:
+"Likely Legit" ✅ or "Red Flag Scam" 🚩
+
+📩 **Messages:**
+
+"Hey! Can you help me out real quick? I can't talk on the phone but need $200 urgently."
+
+"Congrats! You've been selected for a secret Tesla giveaway. Just pay $50 for delivery."
+
+"Hi! Long time no see. Want to catch up sometime soon?"
+
+"My grandma is in the hospital. Can you send me money for her meds, please don't tell anyone."
+
+"We're hiring! Visit careers.microsoft.com to apply officially."
+
+"I lost my wallet while traveling. Can you wire me some money through Western Union?"
+
+✅ **Likely Legit**	🚩 **Red Flag Scam**
+3. Want to catch up sometime?	1. Urgent money, can't call
+5. Microsoft careers site	2. Tesla scam, pay to receive
+	4. Secret money request for hospital meds
+	6. Lost wallet, asks for Western Union transfer
+
+✅ **Drag-and-Drop Complete? Great job!**
+If you're unsure about a message — always verify.
+
+🧭 **Ready to Practice?**
+
+Test your skills in a real-time simulation!
+Chat with an AI scammer and see if you can spot the red flags before it's too late.
+
+👉 **[Start Simulation →]**`
 			}
 		]
 	},
