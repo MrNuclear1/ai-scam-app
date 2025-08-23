@@ -5,7 +5,8 @@
 	"version": "1.0.0",
 	"scripts": {
 		"start": "node src/server.mjs",
-		"dev": "node src/server.mjs"
+		"dev": "node src/server.mjs",
+		"troubleshoot": "node src/troubleshooting-helper.js"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
@@ -16,7 +17,5 @@
 	"engines": {
 		"node": ">=18.0.0"
 	}
-	"scripts": {
-    "troubleshoot": "node src/troubleshooting-helper.js"
-	}
+
 }
