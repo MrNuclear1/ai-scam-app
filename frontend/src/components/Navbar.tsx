@@ -28,6 +28,9 @@ export default function Navbar() {
 							<Link href="/games" className="text-[#CBD5E1] hover:text-[#FF6B6B] px-3 py-2 text-sm font-medium transition-colors duration-200">
 								Games
 							</Link>
+							<Link href="/link-recognition" className="text-[#CBD5E1] hover:text-[#4ECDC4] px-3 py-2 text-sm font-medium transition-colors duration-200">
+								Link Recognition
+							</Link>
 							<a 
 								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
 								target="_blank" 
@@ -71,6 +74,9 @@ export default function Navbar() {
 							</Link>
 							<Link href="/games" className="text-[#CBD5E1] hover:text-[#FF6B6B] block px-3 py-2 text-base font-medium transition-colors duration-200">
 								Games
+							</Link>
+							<Link href="/link-recognition" className="text-[#CBD5E1] hover:text-[#4ECDC4] block px-3 py-2 text-base font-medium transition-colors duration-200">
+								Link Recognition
 							</Link>
 							<a 
 								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
