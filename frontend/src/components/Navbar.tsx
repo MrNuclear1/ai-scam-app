@@ -25,6 +25,9 @@ export default function Navbar() {
 							<Link href="/simulator" className="text-[#CBD5E1] hover:text-[#3BA4F7] px-3 py-2 text-sm font-medium transition-colors duration-200">
 								Simulator
 							</Link>
+							<Link href="/games" className="text-[#CBD5E1] hover:text-[#FF6B6B] px-3 py-2 text-sm font-medium transition-colors duration-200">
+								Games
+							</Link>
 							<a 
 								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
 								target="_blank" 
@@ -65,6 +68,9 @@ export default function Navbar() {
 							</Link>
 							<Link href="/simulator" className="text-[#CBD5E1] hover:text-[#3BA4F7] block px-3 py-2 text-base font-medium transition-colors duration-200">
 								Simulator
+							</Link>
+							<Link href="/games" className="text-[#CBD5E1] hover:text-[#FF6B6B] block px-3 py-2 text-base font-medium transition-colors duration-200">
+								Games
 							</Link>
 							<a 
 								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
