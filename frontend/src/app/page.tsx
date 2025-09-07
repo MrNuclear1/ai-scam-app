@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSiteStats, incrementSiteVisit, SiteStats } from "@/utils/siteVisits";
 import { getLocalFiveStarReviewsCount, getRecentReviews as getRecentUserReviews, getGlobalFiveStarReviewsCount, getGlobalFiveStarReviewsForDisplay, GlobalFiveStarReview, syncGlobalFiveStarReviews, getGlobalFiveStarReviewsCountFromAPI } from "@/utils/reviews";
+import ChatGPTBox from "@/components/ChatGPTBox";
 
 interface Review {
 	id: string;
@@ -232,6 +233,17 @@ export default function HomePage() {
 					<h3 className="text-lg font-semibold text-[#E8EEF6] mb-2">AI Test</h3>
 					<p className="text-[#94A3B8] text-sm">Test OpenAI integration</p>
 				</Link>
+			</div>
+
+			{/* ChatGPT Test Section */}
+			<div className="mt-16">
+				<div className="text-center mb-8">
+					<h2 className="text-3xl font-bold text-[#E8EEF6] mb-4">🤖 ChatGPT API Test</h2>
+					<p className="text-[#94A3B8] max-w-2xl mx-auto">
+						Test our OpenAI integration with this interactive chatbox. The backend API key is already configured and ready to use.
+					</p>
+				</div>
+				<ChatGPTBox />
 			</div>
 		</div>
 	);
