@@ -204,7 +204,7 @@ export default function ChatGPTBox() {
           Powered by OpenAI API via backend • {process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}
         </p>
         <p className="text-xs text-[#64748B] mt-1">
-          Last updated: {new Date().toLocaleString()}
+          Last updated: {new Date().toLocaleString()} • Git push test
         </p>
       </div>
     </div>
