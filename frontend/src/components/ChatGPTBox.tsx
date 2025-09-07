@@ -203,6 +203,9 @@ export default function ChatGPTBox() {
         <p className="text-xs text-[#94A3B8]">
           Powered by OpenAI API via backend • {process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}
         </p>
+        <p className="text-xs text-[#64748B] mt-1">
+          Last updated: {new Date().toLocaleString()}
+        </p>
       </div>
     </div>
   );
