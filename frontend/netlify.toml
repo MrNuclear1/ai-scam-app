@@ -5,13 +5,16 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
 [context.production.environment]
-  NEXT_PUBLIC_BACKEND_URL = "https://your-backend-on-railway.up.railway.app"
+  NEXT_PUBLIC_BACKEND_URL = "https://ai-scam-app-production.up.railway.app"
 
 [context.deploy-preview.environment]
-  NEXT_PUBLIC_BACKEND_URL = "https://your-backend-on-railway.up.railway.app"
+  NEXT_PUBLIC_BACKEND_URL = "https://ai-scam-app-production.up.railway.app"
