@@ -1,0 +1,35 @@
+## AI Scam Education (Non‑Profit)
+
+Our mission is to help older adults and children recognize, resist, and report scams through safe, hands‑on practice and clear, accessible education.
+
+### Who it’s for
+- Older adults who want to practice spotting red flags before they’re pressured in real life
+- Kids and teens learning digital safety and critical thinking online
+
+### What you can do
+- Interactive scam chats: practice conversations with realistic AI scammer personas in a safe sandbox
+- Story‑mode lessons: guided scenarios that teach tactics and counter‑moves step by step
+- Red‑flags library: common scripts, psychological tricks, and how to respond
+- Instant feedback and scoring: learn what you missed and how to improve
+- Community reviews: learn from shared experiences and curated examples
+
+### Why it’s different
+- Human‑like practice without risk; no real accounts, money, or services involved
+- Plain‑language, accessible design for all literacy levels
+- Free, ad‑free, and open to community contributions
+
+### How we protect users
+- No account required to try the simulator
+- Conversations are sandboxed and do not connect to real institutions
+- Educational content only; not financial, legal, or medical advice
+
+### Get involved
+- Contribute lessons, scenarios, translations, or accessibility improvements
+- Share feedback and ideas via repository issues
+- Educators, libraries, and senior centers: reach out to partner on workshops
+
+### Contact
+- Email: team@aiscam.education (placeholder)
+- Website: https://aiscam.education (placeholder)
+
+

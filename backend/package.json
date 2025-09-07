@@ -1,0 +1,21 @@
+{
+  "name": "ai-scam-backend",
+  "version": "1.0.0",
+  "description": "Backend for AI Scam App",
+  "main": "src/server.mjs",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "troubleshoot": "node src/troubleshooting-helper.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1",
+    "openai": "^4.104.0"
+  }
+}

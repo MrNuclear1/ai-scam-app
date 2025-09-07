@@ -1,0 +1,341 @@
+export interface Review {
+  id: string;
+  name: string;
+  stars: number; // 1-5
+  description: string;
+  date: string; // ISO
+}
+
+export interface GlobalFiveStarReview {
+  id: string;
+  firstName: string;
+  lastName: string;
+  message: string;
+  stars: 5; // Always 5
+  date: string; // ISO
+}
+
+const REVIEWS_KEY = 'scamproof-reviews';
+const LEGACY_REVIEWS_KEY = 'scamguard-reviews';
+const MY_REVIEWS_KEY = 'scamproof-myreviews';
+const HELPFUL_COUNTS_KEY = 'scamproof-helpful-counts';
+const HELPFUL_VOTED_KEY = 'scamproof-helpful-voted';
+const GLOBAL_FIVE_STAR_REVIEWS_KEY = 'scamproof-global-five-star-reviews';
+
+const COUNT_API_BASES = [
+  'https://api.countapi.xyz',
+  'https://api.countapi.dev',
+];
+
+// GitHub Gist storage for persistent data across devices and deployments
+const GITHUB_API_BASE = 'https://api.github.com';
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN || '';
+const GIST_ID = process.env.NEXT_PUBLIC_STORAGE_GIST_ID || '';
+
+interface GlobalData {
+  fiveStarReviews: GlobalFiveStarReview[];
+  totalSiteVisits: number;
+  lastUpdated: string;
+}
+
+async function countApiHit(namespace: string, key: string): Promise<number | null> {
+  for (const base of COUNT_API_BASES) {
+    try {
+      const res = await fetch(`${base}/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`);
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (typeof data.value === 'number') return data.value;
+    } catch (_) {
+      // try next base
+    }
+  }
+  return null;
+}
+
+async function countApiGet(namespace: string, key: string): Promise<number | null> {
+  for (const base of COUNT_API_BASES) {
+    try {
+      const res = await fetch(`${base}/get/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`);
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (typeof data.value === 'number') return data.value;
+    } catch (_) {
+      // try next base
+    }
+  }
+  return null;
+}
+
+export function getReviews(): Review[] {
+  if (typeof window === 'undefined') return [];
+  const raw = localStorage.getItem(REVIEWS_KEY) || localStorage.getItem(LEGACY_REVIEWS_KEY);
+  if (!raw) return [];
+  try {
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) return arr as Review[];
+  } catch (_) {}
+  return [];
+}
+
+export async function addReview(name: string, stars: number, description: string, firstName?: string, lastName?: string): Promise<Review> {
+  const review: Review = {
+    id: `rev_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
+    name: name?.trim() || 'Anonymous',
+    stars: Math.min(5, Math.max(1, Math.round(stars))),
+    description: description?.trim() || '',
+    date: new Date().toISOString(),
+  };
+
+  if (typeof window !== 'undefined') {
+    const existing = getReviews();
+    const updated = [review, ...existing].slice(0, 200); // simple cap
+    localStorage.setItem(REVIEWS_KEY, JSON.stringify(updated));
+
+    // Track ownership for edit/delete controls
+    try {
+      const mineRaw = localStorage.getItem(MY_REVIEWS_KEY);
+      const mine: string[] = mineRaw ? JSON.parse(mineRaw) : [];
+      mine.unshift(review.id);
+      localStorage.setItem(MY_REVIEWS_KEY, JSON.stringify(mine.slice(0, 100)));
+    } catch (_) {}
+
+    // If 5-star review, save to global testimonials
+    if (review.stars === 5 && firstName && lastName) {
+      const globalReview: GlobalFiveStarReview = {
+        id: `global_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        message: description?.trim() || '',
+        stars: 5,
+        date: new Date().toISOString(),
+      };
+      
+      // Save to global storage (async, non-blocking)
+      addGlobalFiveStarReview(globalReview).catch(console.error);
+    }
+  }
+
+  // If 5-star, hit global counter (best-effort)
+  try {
+    if (review.stars === 5) {
+      await countApiHit('scamproof', 'five_star_reviews');
+    }
+  } catch (_) {}
+
+  return review;
+}
+
+export function getRecentReviews(count: number = 3): Review[] {
+  const all = getReviews();
+  return all.sort((a, b) => (b.date > a.date ? 1 : -1)).slice(0, count);
+}
+
+export function getLocalFiveStarReviewsCount(): number {
+  return getReviews().filter(r => r.stars === 5).length;
+}
+
+export async function getGlobalFiveStarReviewsCountFromAPI(): Promise<number | null> {
+  try {
+    return await countApiGet('scamproof', 'five_star_reviews');
+  } catch (_) {
+    return null;
+  }
+}
+
+export function getMyReviewIds(): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(MY_REVIEWS_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (_) { return []; }
+}
+
+export function editMyReview(id: string, updates: Partial<Pick<Review,'name'|'stars'|'description'>>): Review | null {
+  if (typeof window === 'undefined') return null;
+  const mine = new Set(getMyReviewIds());
+  if (!mine.has(id)) return null;
+  const all = getReviews();
+  const idx = all.findIndex(r => r.id === id);
+  if (idx === -1) return null;
+  all[idx] = { ...all[idx], ...updates } as Review;
+  localStorage.setItem(REVIEWS_KEY, JSON.stringify(all));
+  return all[idx];
+}
+
+export function removeMyReview(id: string): boolean {
+  if (typeof window === 'undefined') return false;
+  const mine = new Set(getMyReviewIds());
+  if (!mine.has(id)) return false;
+  const remaining = getReviews().filter(r => r.id !== id);
+  localStorage.setItem(REVIEWS_KEY, JSON.stringify(remaining));
+  localStorage.setItem(MY_REVIEWS_KEY, JSON.stringify(Array.from(mine).filter(x => x !== id)));
+  return true;
+}
+
+export function getHelpfulCountMap(): Record<string, number> {
+  if (typeof window === 'undefined') return {};
+  try {
+    const raw = localStorage.getItem(HELPFUL_COUNTS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (_) { return {}; }
+}
+
+export function getHelpfulCount(id: string): number {
+  return getHelpfulCountMap()[id] || 0;
+}
+
+export function hasVotedHelpful(id: string): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    const raw = localStorage.getItem(HELPFUL_VOTED_KEY);
+    const arr: string[] = raw ? JSON.parse(raw) : [];
+    return new Set(arr).has(id);
+  } catch (_) { return false; }
+}
+
+export function voteHelpful(id: string): number {
+  if (typeof window === 'undefined') return 0;
+  if (hasVotedHelpful(id)) return getHelpfulCount(id);
+  const counts = getHelpfulCountMap();
+  counts[id] = (counts[id] || 0) + 1;
+  localStorage.setItem(HELPFUL_COUNTS_KEY, JSON.stringify(counts));
+  try {
+    const raw = localStorage.getItem(HELPFUL_VOTED_KEY);
+    const arr: string[] = raw ? JSON.parse(raw) : [];
+    arr.push(id);
+    localStorage.setItem(HELPFUL_VOTED_KEY, JSON.stringify(arr.slice(0, 500)));
+  } catch (_) {}
+  return counts[id];
+}
+
+export function getAverageRating(): number {
+  const reviews = getReviews();
+  if (reviews.length === 0) return 0;
+  const sum = reviews.reduce((acc, r) => acc + r.stars, 0);
+  return Math.round((sum / reviews.length) * 10) / 10;
+}
+
+export function getRatingDistribution(): Record<number, number> {
+  const dist: Record<number, number> = {1:0,2:0,3:0,4:0,5:0};
+  for (const r of getReviews()) dist[r.stars] = (dist[r.stars] || 0) + 1;
+  return dist;
+}
+
+// Global 5-star review functions
+export function getGlobalFiveStarReviews(): GlobalFiveStarReview[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(GLOBAL_FIVE_STAR_REVIEWS_KEY);
+    if (!raw) return [];
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) return arr as GlobalFiveStarReview[];
+  } catch (_) {}
+  return [];
+}
+
+export function getGlobalFiveStarReviewsForDisplay(count: number = 6): GlobalFiveStarReview[] {
+  const all = getGlobalFiveStarReviews();
+  // Sort by date descending (newest first)
+  return all.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, count);
+}
+
+export function getGlobalFiveStarReviewsCount(): number {
+  return getGlobalFiveStarReviews().length;
+}
+
+// Global data persistence functions
+async function getGlobalData(): Promise<GlobalData | null> {
+  if (!GIST_ID) return null;
+  
+  try {
+    const response = await fetch(`${GITHUB_API_BASE}/gists/${GIST_ID}`);
+    if (!response.ok) return null;
+    
+    const gist = await response.json();
+    const content = gist.files?.['global-data.json']?.content;
+    if (!content) return null;
+    
+    return JSON.parse(content) as GlobalData;
+  } catch (error) {
+    console.error('Error fetching global data:', error);
+    return null;
+  }
+}
+
+async function saveGlobalData(data: GlobalData): Promise<boolean> {
+  if (!GIST_ID || !GITHUB_TOKEN) return false;
+  
+  try {
+    const response = await fetch(`${GITHUB_API_BASE}/gists/${GIST_ID}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        files: {
+          'global-data.json': {
+            content: JSON.stringify(data, null, 2)
+          }
+        }
+      })
+    });
+    
+    return response.ok;
+  } catch (error) {
+    console.error('Error saving global data:', error);
+    return false;
+  }
+}
+
+// Enhanced functions that sync with global storage
+export async function syncGlobalFiveStarReviews(): Promise<boolean> {
+  try {
+    const globalData = await getGlobalData();
+    if (globalData?.fiveStarReviews) {
+      const currentLocal = getGlobalFiveStarReviews();
+      const globalReviews = globalData.fiveStarReviews;
+      
+      // Check if we have new reviews from global storage
+      const hasNewReviews = globalReviews.length > currentLocal.length || 
+                           (globalReviews.length > 0 && currentLocal.length > 0 && 
+                            globalReviews[0].id !== currentLocal[0].id);
+      
+      if (hasNewReviews) {
+        localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(globalReviews));
+        console.log('Synced new global reviews:', globalReviews.length);
+        return true; // Indicates new data was synced
+      }
+    }
+    return false; // No new data
+  } catch (error) {
+    console.error('Error syncing global reviews:', error);
+    return false;
+  }
+}
+
+export async function addGlobalFiveStarReview(review: GlobalFiveStarReview): Promise<boolean> {
+  try {
+    // Add to local storage first
+    const existingLocal = getGlobalFiveStarReviews();
+    const updatedLocal = [review, ...existingLocal].slice(0, 100);
+    localStorage.setItem(GLOBAL_FIVE_STAR_REVIEWS_KEY, JSON.stringify(updatedLocal));
+    
+    // Sync with global storage
+    const globalData = await getGlobalData() || {
+      fiveStarReviews: [],
+      totalSiteVisits: 0,
+      lastUpdated: new Date().toISOString()
+    };
+    
+    globalData.fiveStarReviews = [review, ...globalData.fiveStarReviews].slice(0, 100);
+    globalData.lastUpdated = new Date().toISOString();
+    
+    return await saveGlobalData(globalData);
+  } catch (error) {
+    console.error('Error adding global review:', error);
+    return false;
+  }
+}
+
+
