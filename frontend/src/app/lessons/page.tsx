@@ -56,26 +56,26 @@ export default function LessonsPage() {
 							</div>
 
 							<div className="space-y-2">
-								<h4 className="text-sm font-semibold text-[#CBD5E1]">Lesson Format:</h4>
+								<h4 className="text-sm font-semibold text-gray-700">Lesson Format:</h4>
 								<div className="flex flex-wrap gap-2">
-									<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
+									<span className="text-xs bg-green-700 text-white px-2 py-1 rounded">
 										{lesson.slides.length} Interactive Slides
 									</span>
-									<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
+									<span className="text-xs bg-green-700 text-white px-2 py-1 rounded">
 										Knowledge Check
 									</span>
-									<span className="text-xs bg-[#374151] text-[#94A3B8] px-2 py-1 rounded">
+									<span className="text-xs bg-green-700 text-white px-2 py-1 rounded">
 										Practice Scenarios
 									</span>
 								</div>
 							</div>
 
-							<div className="mt-6 pt-4 border-t border-[#374151]">
+							<div className="mt-6 pt-4 border-t border-gray-300">
 								<div className="flex items-center justify-between">
-									<span className="text-sm text-[#3BA4F7] font-medium group-hover:text-[#20C997] transition-colors duration-300">
+									<div className="bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300">
 										Start Lesson →
-									</span>
-									<span className="text-xs bg-[#7C5CFC] text-white px-2 py-1 rounded">
+									</div>
+									<span className="text-xs bg-green-600 text-white px-2 py-1 rounded">
 										{lesson.slides.length} Slides
 									</span>
 								</div>
