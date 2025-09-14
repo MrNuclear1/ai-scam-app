@@ -39,9 +39,9 @@ export default function LessonsPage() {
 							<div className="mb-4">
 								<div className="flex items-center justify-between mb-3">
 									<span className={`px-3 py-1 rounded-full text-xs font-medium ${
-										lesson.difficulty === 'beginner' ? 'bg-green-900 text-green-300' :
-										lesson.difficulty === 'intermediate' ? 'bg-yellow-900 text-yellow-300' :
-										'bg-red-900 text-red-300'
+										lesson.difficulty === 'beginner' ? 'bg-green-800 text-white' :
+										lesson.difficulty === 'intermediate' ? 'bg-yellow-800 text-white' :
+										'bg-red-800 text-white'
 									}`}>
 										{lesson.difficulty}
 									</span>

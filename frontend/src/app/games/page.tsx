@@ -62,9 +62,9 @@ export default function GamesPage() {
 							<div className="mb-4">
 								<div className="flex items-center justify-between mb-3">
 									<span className={`px-3 py-1 rounded-full text-xs font-medium ${
-										game.difficulty === 'easy' ? 'bg-secondary-100 text-secondary-700 border border-secondary-300' :
-										game.difficulty === 'medium' ? 'bg-primary-100 text-primary-700 border border-primary-300' :
-										'bg-accent-100 text-accent-700 border border-accent-300'
+										game.difficulty === 'easy' ? 'bg-green-800 text-white' :
+										game.difficulty === 'medium' ? 'bg-yellow-800 text-white' :
+										'bg-red-800 text-white'
 									}`}>
 										{game.difficulty}
 									</span>

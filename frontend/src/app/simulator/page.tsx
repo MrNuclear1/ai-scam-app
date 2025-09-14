@@ -25,9 +25,9 @@ export default function SimulatorPage() {
 							<div className="mb-4">
 								<div className="flex items-center justify-between mb-3">
 									<span className={`px-3 py-1 rounded-full text-xs font-medium ${
-										persona.difficulty === 'easy' ? 'bg-green-900 text-green-300' :
-										persona.difficulty === 'medium' ? 'bg-yellow-900 text-yellow-300' :
-										'bg-red-900 text-red-300'
+										persona.difficulty === 'easy' ? 'bg-green-800 text-white' :
+										persona.difficulty === 'medium' ? 'bg-yellow-800 text-white' :
+										'bg-red-800 text-white'
 									}`}>
 										{persona.difficulty}
 									</span>
@@ -43,16 +43,16 @@ export default function SimulatorPage() {
 
 							<div className="space-y-3">
 								<h4 className="text-sm font-semibold text-gray-700">Red Flags to Watch:</h4>
-								<ul className="space-y-1">
+								<ul className="space-y-2">
 									{persona.tips.slice(0, 2).map((tip, index) => (
-										<li key={index} className="text-xs text-gray-600 flex items-start">
-											<span className="text-blue-500 mr-2">•</span>
+										<li key={index} className="text-sm text-gray-700 flex items-start">
+											<span className="text-blue-600 mr-2 text-lg">•</span>
 											{tip}
 										</li>
 									))}
 									{persona.tips.length > 2 && (
-										<li className="text-xs text-gray-500">
-											<span className="text-blue-500 mr-2">•</span>
+										<li className="text-sm text-gray-600">
+											<span className="text-blue-600 mr-2 text-lg">•</span>
 											+{persona.tips.length - 2} more tips inside
 										</li>
 									)}
@@ -60,9 +60,9 @@ export default function SimulatorPage() {
 							</div>
 
 							<div className="mt-6 pt-4 border-t border-[#374151]">
-								<span className="text-sm text-[#3BA4F7] font-medium group-hover:text-[#20C997] transition-colors duration-300">
+								<div className="bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 text-center">
 									Start Simulation →
-								</span>
+								</div>
 							</div>
 						</Link>
 					))}
