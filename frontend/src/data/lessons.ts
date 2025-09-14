@@ -75,7 +75,37 @@ Your wallet or email is flagged as a target, leading to more scam attempts in th
 
 **Real-World Example**
 
-In 2021, scammers impersonated Elon Musk on Twitter, claiming they'd return double any Bitcoin sent. Thousands of people fell for it, and millions of dollars were stolen. Despite takedowns, similar scams keep resurfacing because they prey on greed, urgency, and trust in public figures.`
+In 2021, scammers impersonated Elon Musk on Twitter, claiming they'd return double any Bitcoin sent. Thousands of people fell for it, and millions of dollars were stolen. Despite takedowns, similar scams keep resurfacing because they prey on greed, urgency, and trust in public figures.`,
+				image: '/images/lessons/crypto-exchange-icon.jpg'
+			},
+			{
+				id: 'popular-cryptos',
+				title: 'Understanding Popular Cryptocurrencies',
+				type: 'introduction',
+				content: `**The Cryptocurrency Landscape**
+
+There are thousands of cryptocurrencies in existence, but only a handful have gained mainstream recognition and widespread adoption. Understanding the most popular ones helps you recognize legitimate projects versus potential scams.
+
+**Why This Matters for Scam Detection**
+
+Scammers often:
+• **Impersonate popular cryptocurrencies** with fake versions
+• **Create fake "new" cryptocurrencies** claiming to be "the next Bitcoin"
+• **Use legitimate crypto names** to make their scams seem credible
+• **Target people** who recognize popular crypto names but don't understand the technology
+
+**Key Insight:** Just because you recognize a cryptocurrency name doesn't mean an investment opportunity involving it is legitimate. Scammers exploit familiarity with popular crypto names to build false trust.
+
+**The Reality Check**
+
+While there are thousands of cryptocurrencies, most are:
+• **Experimental projects** with uncertain futures
+• **Scam tokens** designed to steal money
+• **Low-value coins** with no real utility
+• **Pump-and-dump schemes** that inflate prices artificially
+
+**Remember:** Popular cryptocurrencies like Bitcoin and Ethereum are still highly volatile investments. Any promise of guaranteed returns or "doubling your money" is a red flag, regardless of which cryptocurrency is involved.`,
+				image: '/images/lessons/popular-cryptocurrencies-list.jpg'
 			},
 			{
 				id: 'red-flags',
@@ -140,7 +170,8 @@ Once people buy in, insiders dump their holdings, and the price collapses.
 ❌ Requests for upfront fees or verification payments
 ❌ Anonymous teams or fake company information
 ❌ No clear explanation of how profits are generated
-❌ Pressure to recruit friends and family`
+❌ Pressure to recruit friends and family`,
+				image: '/images/lessons/crypto-mining-tunnel.jpg'
 			},
 			{
 				id: 'tips',
@@ -195,7 +226,8 @@ Never make any cryptocurrency investment decision immediately. Wait 72 hours and
    - Report to FTC (reportfraud.ftc.gov)
    - Contact your local police
 4. **Document everything:** Screenshots, wallet addresses, communication records
-5. **Warn others:** Share your experience to prevent others from falling victim`
+5. **Warn others:** Share your experience to prevent others from falling victim`,
+				image: '/images/lessons/crypto-button-click.jpg'
 			},
 			{
 				id: 'summary',
@@ -242,7 +274,8 @@ The Hook → The Ask → The Vanish → The Multiply
 • ✅ Use secure wallets and hardware wallets for large amounts
 • ✅ Talk it out with trusted friends or advisors before investing
 
-**Remember:** The crypto space has legitimate opportunities, but it's also filled with scams. Education, patience, and skepticism are your best defenses. When in doubt, don't invest - there will always be other opportunities.`
+**Remember:** The crypto space has legitimate opportunities, but it's also filled with scams. Education, patience, and skepticism are your best defenses. When in doubt, don't invest - there will always be other opportunities.`,
+				image: '/images/lessons/crypto-market-crash.jpg'
 			},
 			{
 				id: 'interactive',
@@ -267,7 +300,8 @@ Practice identifying cryptocurrency scams by categorizing these real-world scena
 							{ id: 'legitimate', name: 'LEGITIMATE ✅' }
 						]
 					}
-				}
+				},
+				image: '/images/lessons/crypto-coins-collage.jpg'
 			},
 			{
 				id: 'quiz',
