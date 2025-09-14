@@ -124,7 +124,7 @@ export default function HomePage() {
 
 			{/* Features Grid */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-					<div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-colors duration-300 shadow-sm">
+					<div className="bg-primary-50/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-colors duration-300 shadow-sm">
 						<div className="text-secondary-500 text-3xl mb-4">🎯</div>
 						<h3 className="text-xl font-semibold text-text mb-3">Interactive Lessons</h3>
 						<p className="text-primary-400">Learn to spot red flags through engaging, interactive content designed by cybersecurity experts.</p>
@@ -147,15 +147,15 @@ export default function HomePage() {
 			<div className="text-center mb-16">
 				<h2 className="text-3xl font-bold text-text mb-8">Platform Stats</h2>
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-					<div className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-primary-200 shadow-sm">
+					<div className="bg-primary-50/60 backdrop-blur-sm p-6 rounded-xl border border-primary-200 shadow-sm">
 						<div className="text-3xl font-bold text-secondary-500 mb-2">{siteStats.totalVisits.toLocaleString()}</div>
 						<div className="text-primary-400">Total Visits</div>
 					</div>
-					<div className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-primary-200 shadow-sm">
+					<div className="bg-primary-50/60 backdrop-blur-sm p-6 rounded-xl border border-primary-200 shadow-sm">
 						<div className="text-3xl font-bold text-secondary-500 mb-2">{fiveStarCount}</div>
 						<div className="text-primary-400">5-Star Reviews</div>
 					</div>
-					<div className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-primary-200 shadow-sm">
+					<div className="bg-primary-50/60 backdrop-blur-sm p-6 rounded-xl border border-primary-200 shadow-sm">
 						<div className="text-3xl font-bold text-accent-500 mb-2">9</div>
 						<div className="text-primary-400">AI Scam Simulators</div>
 					</div>
@@ -175,7 +175,7 @@ export default function HomePage() {
 				) : globalTestimonials.length > 0 ? (
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 						{globalTestimonials.map((testimonial) => (
-							<div key={testimonial.id} className="bg-gradient-to-br from-white/80 to-primary-50 backdrop-blur-sm p-6 rounded-xl border border-accent-300/20 hover:border-accent-400/40 transition-all duration-300 shadow-sm">
+							<div key={testimonial.id} className="bg-gradient-to-br from-primary-50/90 to-primary-100/50 backdrop-blur-sm p-6 rounded-xl border border-accent-300/20 hover:border-accent-400/40 transition-all duration-300 shadow-sm">
 								<div className="flex justify-center mb-4">
 									{[...Array(5)].map((_, i) => (
 										<span key={i} className="text-xl text-accent-500">⭐</span>
@@ -203,25 +203,25 @@ export default function HomePage() {
 
 			{/* Navigation Links */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-					<Link href="/lessons" className="group bg-white/80 hover:bg-white/90 p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-all duration-300 shadow-sm">
+					<Link href="/lessons" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-all duration-300 shadow-sm">
 						<div className="text-secondary-500 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">📚</div>
 						<h3 className="text-lg font-semibold text-text mb-2">Lessons</h3>
 						<p className="text-primary-400 text-sm">Interactive scam awareness training</p>
 				</Link>
 
-					<Link href="/simulator" className="group bg-white/80 hover:bg-white/90 p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-all duration-300 shadow-sm">
+					<Link href="/simulator" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-all duration-300 shadow-sm">
 						<div className="text-secondary-500 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">🎮</div>
 						<h3 className="text-lg font-semibold text-text mb-2">Simulator</h3>
 						<p className="text-primary-400 text-sm">Practice with AI scammers</p>
 				</Link>
 
-					<Link href="/red-flags" className="group bg-white/80 hover:bg-white/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
+					<Link href="/red-flags" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
 						<div className="text-accent-500 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">🚩</div>
 						<h3 className="text-lg font-semibold text-text mb-2">Red Flags</h3>
 						<p className="text-primary-400 text-sm">Learn warning signs</p>
 				</Link>
 
-					<Link href="/story-mode" className="group bg-white/80 hover:bg-white/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
+					<Link href="/story-mode" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
 						<div className="text-accent-500 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">📖</div>
 						<h3 className="text-lg font-semibold text-text mb-2">Story Mode</h3>
 						<p className="text-primary-400 text-sm">Immersive scenarios</p>

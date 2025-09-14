@@ -45,7 +45,7 @@ export default {
 					800: '#991B1B',
 					900: '#7F1D1D',
 				},
-				background: '#F9F9F9', // Off-White
+				background: '#F5F5F5', // Soft Warm Gray
 				text: '#444444', // Charcoal Gray
 			},
 			animation: {

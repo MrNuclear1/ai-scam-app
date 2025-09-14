@@ -96,7 +96,7 @@ export default function ScamChat({ personaId }: ScamChatProps) {
 
 	if (isFinished && evaluation) {
 		return (
-			<div className="max-w-4xl mx-auto p-6 bg-white/90 rounded-xl border border-primary-200 shadow-lg">
+			<div className="max-w-4xl mx-auto p-6 bg-primary-50/90 rounded-xl border border-primary-200 shadow-lg">
 				<div className="text-center mb-6">
 					<h2 className="text-2xl font-bold text-text mb-4">Simulation Complete!</h2>
 					<div className={`text-6xl mb-4 ${
@@ -134,7 +134,7 @@ export default function ScamChat({ personaId }: ScamChatProps) {
 	return (
 		<div className="max-w-4xl mx-auto">
 			{/* Persona Info */}
-			<div className="bg-white/90 p-6 rounded-xl mb-6 border border-primary-200 shadow-sm">
+			<div className="bg-primary-50/90 p-6 rounded-xl mb-6 border border-primary-200 shadow-sm">
 				<h2 className="text-2xl font-bold text-text mb-2">{persona.title}</h2>
 				<p className="text-primary-300 mb-4">{persona.description}</p>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -162,7 +162,7 @@ export default function ScamChat({ personaId }: ScamChatProps) {
 			</div>
 
 			{/* Chat Interface */}
-			<div className="bg-white/90 rounded-xl overflow-hidden border border-primary-200 shadow-sm">
+			<div className="bg-primary-50/90 rounded-xl overflow-hidden border border-primary-200 shadow-sm">
 				{/* Messages */}
 				<div className="h-96 overflow-y-auto p-6 space-y-4">
 					{messages.length === 0 ? (
@@ -209,7 +209,7 @@ export default function ScamChat({ personaId }: ScamChatProps) {
 							value={input}
 							onChange={(e) => setInput(e.target.value)}
 							placeholder="Type your response..."
-							className="flex-1 bg-white text-text border border-primary-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+							className="flex-1 bg-primary-50 text-text border border-primary-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
 							disabled={isLoading}
 						/>
 						<button

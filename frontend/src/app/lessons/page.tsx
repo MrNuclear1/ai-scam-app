@@ -34,7 +34,7 @@ export default function LessonsPage() {
 						<Link
 							key={lesson.id}
 							href={`/lessons/${lesson.id}`}
-							className="group bg-white/80 backdrop-blur-sm hover:bg-white/90 border border-primary-200 hover:border-secondary-500 rounded-xl p-6 transition-all duration-300 transform hover:scale-105 shadow-sm"
+							className="group bg-primary-50/80 backdrop-blur-sm hover:bg-primary-50/90 border border-primary-200 hover:border-secondary-500 rounded-xl p-6 transition-all duration-300 transform hover:scale-105 shadow-sm"
 						>
 							<div className="mb-4">
 								<div className="flex items-center justify-between mb-3">
