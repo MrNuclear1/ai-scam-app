@@ -138,7 +138,7 @@ export default function HomePage() {
 				
 					<Link href="/games" className="block bg-sage-100/80 backdrop-blur-sm p-6 rounded-xl border border-sage-300 hover:border-primary-500 transition-colors duration-300 shadow-sm hover:shadow-md">
 						<div className="text-accent-500 text-3xl mb-4">🏆</div>
-						<h3 className="text-xl font-semibold text-text mb-3 hover:text-primary-600 transition-colors duration-300">Story Mode</h3>
+						<h3 className="text-xl font-semibold text-text mb-3 hover:text-primary-600 transition-colors duration-300">Games</h3>
 						<p className="text-primary-600">Interactive games that test your scam detection skills with scoring and badges.</p>
 					</Link>
 			</div>
