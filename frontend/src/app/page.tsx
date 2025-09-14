@@ -222,7 +222,7 @@ export default function HomePage() {
 				</Link>
 
 					<Link href="/games" className="group bg-sage-100/80 hover:bg-sage-100/90 p-6 rounded-xl border border-sage-300 hover:border-primary-500 transition-all duration-300 shadow-sm">
-							<div className="text-blue-600 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">📖</div>
+							<div className="text-blue-600 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">🏆</div>
 							<h3 className="text-lg font-semibold text-text mb-2">Games</h3>
 							<p className="text-gray-700 text-sm">Interactive games</p>
 				</Link>
