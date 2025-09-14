@@ -398,7 +398,8 @@ Scammers steal login details, bank info, or infect devices, often leading to ide
 
 In 2020, hackers used a phishing email that looked like a Microsoft Office 365 login page to steal over 1 million corporate credentials worldwide. Employees at major companies fell for it because the emails were timed during the COVID remote work shift — exploiting fear and urgency around digital security.
 
-**Critical Truth:** Legitimate companies will NEVER ask you to verify sensitive information via email links. When in doubt, always contact them directly using official phone numbers or websites.`
+**Critical Truth:** Legitimate companies will NEVER ask you to verify sensitive information via email links. When in doubt, always contact them directly using official phone numbers or websites.`,
+				image: '/images/lessons/phishing-explanation.jpg'
 			},
 			{
 				id: 'red-flags',
@@ -526,7 +527,8 @@ Never use contact information from a suspicious email. Instead:
 5. **Report the phishing** to the FTC and the impersonated company
 6. **Warn your contacts** in case the scammer targets them next
 
-**Prevention is Key:** It's much easier to avoid phishing than to recover from it.`
+**Prevention is Key:** It's much easier to avoid phishing than to recover from it.`,
+				image: '/images/lessons/phishing-laptop.jpg'
 			},
 			{
 				id: 'summary',
@@ -582,7 +584,8 @@ The Bait → The Hook → The Capture → The Exploit
 • ✅ Use multi-factor authentication (MFA)
 • ✅ Report phishing to help protect others
 
-**Remember:** Phishers are getting more sophisticated, but informed users are still the best defense. Your skepticism and verification habits are your strongest protection against email fraud.`
+**Remember:** Phishers are getting more sophisticated, but informed users are still the best defense. Your skepticism and verification habits are your strongest protection against email fraud.`,
+				image: '/images/lessons/phishing-login-form.jpg'
 			},
 			{
 				id: 'interactive',
@@ -607,7 +610,8 @@ Practice identifying phishing emails by categorizing these real-world email scen
 							{ id: 'safe-practices', name: 'Safe Practices ✅' }
 						]
 					}
-				}
+				},
+				image: '/images/lessons/phishing-elements.jpg'
 			},
 			{
 				id: 'quiz',
