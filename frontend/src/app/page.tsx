@@ -124,23 +124,23 @@ export default function HomePage() {
 
 			{/* Features Grid */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-					<div className="bg-primary-50/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-colors duration-300 shadow-sm">
+					<Link href="/lessons" className="block bg-primary-50/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-secondary-500 transition-colors duration-300 shadow-sm hover:shadow-md">
 						<div className="text-secondary-500 text-3xl mb-4">🎯</div>
-						<h3 className="text-xl font-semibold text-text mb-3">Interactive Lessons</h3>
+						<h3 className="text-xl font-semibold text-text mb-3 hover:text-secondary-500 transition-colors duration-300">Interactive Lessons</h3>
 						<p className="text-primary-400">Learn to spot red flags through engaging, interactive content designed by cybersecurity experts.</p>
-				</div>
+					</Link>
 				
-					<div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-colors duration-300 shadow-sm">
+					<Link href="/simulator" className="block bg-primary-50/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-colors duration-300 shadow-sm hover:shadow-md">
 						<div className="text-secondary-500 text-3xl mb-4">🤖</div>
-						<h3 className="text-xl font-semibold text-text mb-3">ChatGPT-Powered Scammers</h3>
+						<h3 className="text-xl font-semibold text-text mb-3 hover:text-secondary-500 transition-colors duration-300">ChatGPT-Powered Scammers</h3>
 						<p className="text-primary-400">Chat with 9 realistic AI scammer personas powered by ChatGPT. Each uses authentic tactics to help you practice spotting real scams.</p>
-				</div>
+					</Link>
 				
-					<div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-colors duration-300 shadow-sm">
+					<Link href="/games" className="block bg-primary-50/80 backdrop-blur-sm p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-colors duration-300 shadow-sm hover:shadow-md">
 						<div className="text-accent-500 text-3xl mb-4">🏆</div>
-						<h3 className="text-xl font-semibold text-text mb-3">Story Mode</h3>
-						<p className="text-primary-400">Immersive scenarios that test your scam detection skills with scoring and badges.</p>
-				</div>
+						<h3 className="text-xl font-semibold text-text mb-3 hover:text-accent-500 transition-colors duration-300">Story Mode</h3>
+						<p className="text-primary-400">Interactive games that test your scam detection skills with scoring and badges.</p>
+					</Link>
 			</div>
 
 			{/* Stats Section */}
@@ -215,16 +215,16 @@ export default function HomePage() {
 						<p className="text-primary-400 text-sm">Practice with AI scammers</p>
 				</Link>
 
-					<Link href="/red-flags" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
+					<Link href="/link-recognition" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
 						<div className="text-accent-500 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">🚩</div>
-						<h3 className="text-lg font-semibold text-text mb-2">Red Flags</h3>
-						<p className="text-primary-400 text-sm">Learn warning signs</p>
+						<h3 className="text-lg font-semibold text-text mb-2">Link Recognition</h3>
+						<p className="text-primary-400 text-sm">Identify suspicious links</p>
 				</Link>
 
-					<Link href="/story-mode" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
+					<Link href="/games" className="group bg-primary-50/80 hover:bg-primary-50/90 p-6 rounded-xl border border-primary-200 hover:border-accent-500 transition-all duration-300 shadow-sm">
 						<div className="text-accent-500 text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">📖</div>
-						<h3 className="text-lg font-semibold text-text mb-2">Story Mode</h3>
-						<p className="text-primary-400 text-sm">Immersive scenarios</p>
+						<h3 className="text-lg font-semibold text-text mb-2">Games</h3>
+						<p className="text-primary-400 text-sm">Interactive games</p>
 				</Link>
 			</div>
 		</div>
