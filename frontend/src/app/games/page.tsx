@@ -42,11 +42,11 @@ export default function GamesPage() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
 				<div className="text-center mb-8 sm:mb-12 lg:mb-16">
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6 leading-tight">
-						<span className="bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 bg-clip-text text-transparent">
+						<span className="text-gray-800">
 							Interactive Games
 						</span>
 					</h1>
-					<p className="text-lg sm:text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed">
+					<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
 						Test your scam detection skills through fun, interactive games designed to improve your awareness and protect you from fraud.
 					</p>
 				</div>
@@ -68,23 +68,23 @@ export default function GamesPage() {
 									}`}>
 										{game.difficulty}
 									</span>
-									<span className="text-primary-600 text-sm">{game.duration}</span>
+									<span className="text-gray-600 text-sm">{game.duration}</span>
 								</div>
 								<div className="text-4xl mb-3">{game.icon}</div>
-								<h3 className="text-xl font-bold text-text mb-3 group-hover:text-primary-600 transition-colors duration-300">
+								<h3 className="text-xl font-bold text-text mb-3 group-hover:text-blue-600 transition-colors duration-300">
 									{game.title}
 								</h3>
-								<p className="text-primary-700 mb-4 leading-relaxed">
+								<p className="text-gray-700 mb-4 leading-relaxed">
 									{game.description}
 								</p>
 							</div>
 
 							<div className="space-y-2">
-								<h4 className="text-sm font-semibold text-primary-600 mb-2">Features:</h4>
+								<h4 className="text-sm font-semibold text-blue-600 mb-2">Features:</h4>
 								<ul className="space-y-1">
 									{game.features.map((feature, index) => (
-										<li key={index} className="text-xs text-primary-600 flex items-start">
-											<span className="text-primary-500 mr-2">•</span>
+										<li key={index} className="text-xs text-gray-600 flex items-start">
+											<span className="text-blue-500 mr-2">•</span>
 											{feature}
 										</li>
 									))}
@@ -92,7 +92,7 @@ export default function GamesPage() {
 							</div>
 
 							<div className="mt-4 pt-4 border-t border-sage-300">
-								<div className="text-sm text-primary-600 font-medium group-hover:text-primary-500 transition-colors duration-300">
+								<div className="text-sm text-blue-600 font-medium group-hover:text-blue-500 transition-colors duration-300">
 									Play Game →
 								</div>
 							</div>
@@ -103,13 +103,13 @@ export default function GamesPage() {
 				{/* Coming Soon Section */}
 				<div className="text-center">
 					<h2 className="text-2xl font-bold text-text mb-4">More Games Coming Soon!</h2>
-					<p className="text-primary-700 mb-6 max-w-2xl mx-auto">
+					<p className="text-gray-600 mb-6 max-w-2xl mx-auto">
 						We're working on more interactive games to help you learn about different types of scams and fraud. 
 						Stay tuned for phishing email detection, phone call scams, and more!
 					</p>
 					<div className="bg-sage-100/60 backdrop-blur-sm border border-sage-300 rounded-xl p-6 max-w-md mx-auto">
 						<div className="text-2xl mb-2">🚧</div>
-						<p className="text-primary-700 text-sm">
+						<p className="text-gray-700 text-sm">
 							Have ideas for new games? We'd love to hear your suggestions!
 						</p>
 					</div>

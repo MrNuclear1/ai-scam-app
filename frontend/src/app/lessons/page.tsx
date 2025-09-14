@@ -8,7 +8,7 @@ export default function LessonsPage() {
 			<div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
 				<div className="text-center max-w-2xl">
 					<h1 className="text-4xl font-bold text-text mb-4">Loading Lessons...</h1>
-					<p className="text-xl text-primary-300">Please wait while we load the lesson content.</p>
+					<p className="text-xl text-gray-600">Please wait while we load the lesson content.</p>
 				</div>
 			</div>
 		);
@@ -19,11 +19,11 @@ export default function LessonsPage() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
 				<div className="text-center mb-8 sm:mb-12 lg:mb-16">
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6 leading-tight">
-						<span className="bg-gradient-to-r from-secondary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent">
+						<span className="text-gray-800">
 							Scam Awareness Lessons
 						</span>
 					</h1>
-					<p className="text-lg sm:text-xl text-primary-300 max-w-3xl mx-auto leading-relaxed">
+					<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
 						Learn to identify and protect yourself from various types of scams through our interactive lessons.
 					</p>
 				</div>
@@ -45,7 +45,7 @@ export default function LessonsPage() {
 									}`}>
 										{lesson.difficulty}
 									</span>
-										<span className="text-primary-400 text-sm">{lesson.duration}</span>
+										<span className="text-gray-500 text-sm">{lesson.duration}</span>
 								</div>
 								<h3 className="text-xl font-bold text-text mb-3 group-hover:text-secondary-500 transition-colors duration-300">
 									{lesson.title}

@@ -11,37 +11,37 @@ export default function Navbar() {
 				<div className="flex items-center justify-between h-16">
 					{/* Logo */}
 					<Link href="/" className="flex items-center space-x-2">
-						<span className="text-2xl font-bold bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 bg-clip-text text-transparent">
-							Scamproof
-						</span>
+					<span className="text-2xl font-bold text-gray-800">
+						Scamproof
+					</span>
 					</Link>
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:block">
 						<div className="ml-10 flex items-baseline space-x-8">
-							<Link href="/lessons" className="text-primary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-								Lessons
-							</Link>
-							<Link href="/simulator" className="text-primary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-								Simulator
-							</Link>
-							<Link href="/games" className="text-primary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+							<Link href="/lessons" className="text-gray-700 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+									Lessons
+								</Link>
+								<Link href="/simulator" className="text-gray-700 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+									Simulator
+								</Link>
+							<Link href="/games" className="text-gray-700 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
 								Games
 							</Link>
-							<Link href="/link-recognition" className="text-primary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-								Link Recognition
-							</Link>
+							<Link href="/link-recognition" className="text-gray-700 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+									Link Recognition
+								</Link>
 							<a 
 								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
 								target="_blank" 
 								rel="noopener noreferrer"
-								className="text-primary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+								className="text-gray-700 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
 							>
 								Report a Scam/Fraud
 							</a>
-							<Link href="/reviews" className="text-primary-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
-								Reviews
-							</Link>
+							<Link href="/reviews" className="text-gray-700 hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
+									Reviews
+								</Link>
 						</div>
 					</div>
 
@@ -49,7 +49,7 @@ export default function Navbar() {
 					<div className="md:hidden">
 						<button
 							onClick={() => setIsOpen(!isOpen)}
-							className="text-primary-700 hover:text-text p-2"
+								className="text-gray-700 hover:text-gray-600 p-2"
 						>
 							<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								{isOpen ? (
@@ -66,29 +66,29 @@ export default function Navbar() {
 				{isOpen && (
 					<div className="md:hidden">
 							<div className="px-2 pt-2 pb-3 space-y-1 border-t border-sage-400">
-								<Link href="/lessons" className="text-primary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
-								Lessons
-							</Link>
-								<Link href="/simulator" className="text-primary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
-								Simulator
-							</Link>
-								<Link href="/games" className="text-primary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
+									<Link href="/lessons" className="text-gray-700 hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
+										Lessons
+									</Link>
+									<Link href="/simulator" className="text-gray-700 hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
+										Simulator
+									</Link>
+								<Link href="/games" className="text-gray-700 hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
 								Games
 							</Link>
-								<Link href="/link-recognition" className="text-primary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
-								Link Recognition
-							</Link>
+									<Link href="/link-recognition" className="text-gray-700 hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
+										Link Recognition
+									</Link>
 							<a 
 								href="https://www.services.rcmp-grc.gc.ca/chooser-eng.html?ipeReferer=CAFCFRS" 
 								target="_blank" 
 								rel="noopener noreferrer"
-									className="text-primary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200"
+										className="text-gray-700 hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-200"
 							>
 								Report a Scam/Fraud
 							</a>
-								<Link href="/reviews" className="text-primary-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
-								Reviews
-							</Link>
+									<Link href="/reviews" className="text-gray-700 hover:text-gray-600 block px-3 py-2 text-base font-medium transition-colors duration-200">
+										Reviews
+									</Link>
 						</div>
 					</div>
 				)}

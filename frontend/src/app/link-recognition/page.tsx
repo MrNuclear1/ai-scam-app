@@ -169,7 +169,7 @@ export default function LinkRecognitionPage() {
 				<div className="max-w-2xl w-full">
 					<div className="bg-primary-50/80 backdrop-blur-sm border border-primary-200 rounded-2xl p-8 text-center shadow-sm">
 						<div className="mb-6">
-							<h1 className="text-4xl font-bold bg-gradient-to-r from-[#20C997] to-[#3BA4F7] bg-clip-text text-transparent mb-2">
+							<h1 className="text-4xl font-bold text-primary-800 mb-2">
 								Quiz Complete! 🎉
 							</h1>
 							<p className="text-[#CBD5E1] text-lg">Your Link Recognition Score</p>
@@ -212,7 +212,7 @@ export default function LinkRecognitionPage() {
 			<div className="max-w-6xl mx-auto">
 				{/* Header */}
 				<div className="text-center mb-8">
-					<h1 className="text-4xl font-bold bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] bg-clip-text text-transparent mb-2">
+					<h1 className="text-4xl font-bold text-gray-800 mb-2">
 						🔗 Link Recognition Training
 					</h1>
 					<p className="text-[#CBD5E1] text-lg">Learn to identify legitimate vs fake links</p>
