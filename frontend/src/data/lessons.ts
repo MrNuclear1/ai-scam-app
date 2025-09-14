@@ -933,7 +933,9 @@ Test your knowledge! For each scenario, click whether it's a RED FLAG (scam) or 
 				id: 'introduction',
 				title: 'Understanding Fake Job Offer Scams',
 				type: 'introduction',
-				content: `💼 **Imagine this:** You've been applying for jobs online and finally — an email lands in your inbox.
+				content: `![Job Opportunity](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
+
+💼 **Imagine this:** You've been applying for jobs online and finally — an email lands in your inbox.
 "Congratulations! After reviewing your resume, we'd like to offer you a remote data entry job paying $35/hour. No interview required. Please reply quickly to confirm your acceptance."
 
 The offer sounds perfect. But hidden behind that shiny opportunity is a scam designed to steal money, personal information, or even your identity.
@@ -980,7 +982,9 @@ In 2022, thousands of Canadians received fake job offers on Indeed for remote da
 				id: 'red-flags',
 				title: 'Red Flags to Watch For',
 				type: 'red-flags',
-				content: `**Common Fake Job Offer Variations**
+				content: `![Suspicious Job Message](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
+
+**Common Fake Job Offer Variations**
 
 **1. Upfront Payment for Training or Equipment 💸**
 
@@ -1127,7 +1131,9 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 				id: 'tips',
 				title: 'Hot Tips to Stay Safe',
 				type: 'tips',
-				content: `✅ **Practical protection strategies:**
+				content: `![Job Security](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
+
+✅ **Practical protection strategies:**
 
 **Apply only through official company websites or trusted platforms.**
 
@@ -1375,7 +1381,9 @@ You receive an email offering a remote data entry job for $40/hour, no interview
 				id: 'introduction',
 				title: 'Investment Fraud Overview',
 				type: 'introduction',
-				content: `📉 **Investment fraud is one of the most damaging scams because it attacks not just your wallet, but your future security.** Scammers know that people dream of growing their money quickly — whether it's saving for retirement, paying off debt, or chasing financial independence. They play on those desires by offering opportunities that seem professional, sophisticated, and low-risk.
+				content: `![Financial Chart](https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop&crop=center)
+
+📉 **Investment fraud is one of the most damaging scams because it attacks not just your wallet, but your future security.** Scammers know that people dream of growing their money quickly — whether it's saving for retirement, paying off debt, or chasing financial independence. They play on those desires by offering opportunities that seem professional, sophisticated, and low-risk.
 
 These scams often arrive through email, social media ads, or even introductions from people you know who have already been tricked. Fraudsters use company logos, fake testimonials, and polished websites to look legitimate. What makes them dangerous is that they often use half-truths — mentioning real financial terms, citing actual companies, or blending real investments with fake ones.
 
@@ -1434,7 +1442,9 @@ Understanding these psychological tactics is the first step in building immunity
 				id: 'scam-types',
 				title: 'Common Types of Investment Scams',
 				type: 'red-flags',
-				content: `💼 **Scammers use sophisticated schemes designed to separate you from your money.**
+				content: `![Investment Opportunities](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center)
+
+💼 **Scammers use sophisticated schemes designed to separate you from your money.**
 
 **Ponzi Schemes**
 These are the "classic" scams where money from new investors is used to pay returns to earlier investors. As long as fresh money keeps flowing in, the scheme appears successful. But when recruitment slows, the whole thing collapses. Famous cases like Bernie Madoff's $65 billion scheme show how devastating these can be, even for sophisticated investors.
@@ -1498,7 +1508,9 @@ These platforms pretend to be real trading tools but are rigged so the victim ca
 				id: 'red-flags',
 				title: 'Red Flags',
 				type: 'red-flags',
-				content: `🚩 **Investment scams share a common playbook — once you know the warning signs, they become much easier to spot.**
+				content: `![Money Tree](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
+
+🚩 **Investment scams share a common playbook — once you know the warning signs, they become much easier to spot.**
 
 **Guaranteed or Risk-Free Returns:** All real investments carry some risk. If someone says "guaranteed 30% monthly return," they're lying.
 
@@ -1568,7 +1580,9 @@ If an investment promises:
 				id: 'tips',
 				title: 'Due Diligence Best Practices',
 				type: 'tips',
-				content: `✅ **The best way to protect yourself is not just spotting red flags but actively practicing due diligence. That means doing your homework before giving anyone your money.**
+				content: `![Investment Analysis](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center)
+
+✅ **The best way to protect yourself is not just spotting red flags but actively practicing due diligence. That means doing your homework before giving anyone your money.**
 
 **Verify Credentials:** Use regulatory databases like FINRA (US), IIROC (Canada), or FCA (UK) to confirm the advisor or firm is licensed. If they're not listed, walk away.
 
@@ -1588,7 +1602,9 @@ If an investment promises:
 				id: 'interactive',
 				title: 'Real vs. Scam Investment Pitch',
 				type: 'interactive',
-				content: `🔍 **Scammers know how to dress up lies as opportunity. Here's a direct comparison:**
+				content: `![Investment Management](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
+
+🔍 **Scammers know how to dress up lies as opportunity. Here's a direct comparison:**
 
 | **Legitimate Pitch ✅** | **Scam Pitch 🚩** |
 |-------------------------|-------------------|
@@ -1635,7 +1651,9 @@ If someone says, "We've unlocked a trading algorithm that beats the stock market
 				id: 'quiz',
 				title: 'Interactive Scenario & Quiz',
 				type: 'quiz',
-				content: `🎮 **Interactive Scenario:**
+				content: `![Types of Affinity Fraud](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
+
+🎮 **Interactive Scenario:**
 
 **Situation:**
 You receive a call from a man claiming to be an investment advisor. He says he has an opportunity to double your money in six months through a "government-backed crypto bond." He pressures you by saying spots are closing fast and insists you wire $5,000 today to lock in your position.

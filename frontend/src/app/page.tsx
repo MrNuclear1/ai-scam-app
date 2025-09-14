@@ -80,12 +80,10 @@ export default function HomePage() {
 		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
 			{/* Hero Section */}
 			<div className="text-center mb-16">
-				<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text mb-6 leading-tight">
-					<span className="text-gray-800">
-						Scamproof
-					</span>
+				<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+					Scamproof
 				</h1>
-				<p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+				<p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
 					AI-Powered Scam Awareness Training Platform
 				</p>
 				<p className="text-lg text-gray-500 mb-12 max-w-3xl mx-auto">
