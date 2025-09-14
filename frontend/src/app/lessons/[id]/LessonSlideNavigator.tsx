@@ -48,24 +48,24 @@ function KahootStyleGame({ data }: { data: any }) {
 	if (gameComplete) {
 		const percentage = Math.round((score / totalScenarios) * 100);
 		return (
-			<div className="mt-6 p-8 bg-primary-50/90 rounded-lg text-center border border-primary-200 shadow-sm">
-				<h3 className="text-2xl font-bold text-text mb-4">🎉 Game Complete!</h3>
+			<div className="mt-6 p-8 bg-sage-100/80 rounded-lg text-center border border-sage-300 shadow-sm">
+				<h3 className="text-2xl font-bold text-gray-800 mb-4">🎉 Game Complete!</h3>
 				<div className="mb-6">
-					<div className="text-4xl font-bold text-secondary-500 mb-2">{score}/{totalScenarios}</div>
-					<div className="text-lg text-primary-300">{percentage}% Correct</div>
+					<div className="text-4xl font-bold text-[#20C997] mb-2">{score}/{totalScenarios}</div>
+					<div className="text-lg text-gray-600">{percentage}% Correct</div>
 				</div>
 				<div className="mb-6">
 					{percentage >= 80 ? (
-						<div className="text-secondary-600">🏆 Excellent! You're well-prepared to spot tech scams!</div>
+						<div className="text-[#20C997]">🏆 Excellent! You're well-prepared to spot tech scams!</div>
 					) : percentage >= 60 ? (
-						<div className="text-accent-500">👍 Good work! Review the red flags to improve further.</div>
+						<div className="text-[#FF6B6B]">👍 Good work! Review the red flags to improve further.</div>
 					) : (
-						<div className="text-accent-600">💪 Keep learning! Practice makes perfect at spotting scams.</div>
+						<div className="text-[#FF6B6B]">💪 Keep learning! Practice makes perfect at spotting scams.</div>
 					)}
 				</div>
 				<button
 					onClick={resetGame}
-					className="bg-gradient-to-r from-secondary-500 to-accent-500 hover:from-secondary-600 hover:to-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+					className="bg-gradient-to-r from-[#20C997] to-[#3BA4F7] hover:from-[#1BA085] hover:to-[#2A8EE6] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
 				>
 					Play Again
 				</button>
@@ -74,39 +74,39 @@ function KahootStyleGame({ data }: { data: any }) {
 	}
 
 	return (
-		<div className="mt-6 p-6 bg-primary-50/90 rounded-lg border border-primary-200 shadow-sm">
+		<div className="mt-6 p-6 bg-sage-100/80 rounded-lg border border-sage-300 shadow-sm">
 			<div className="mb-6">
 				<div className="flex justify-between items-center mb-4">
-					<h3 className="text-xl font-bold text-text">{data.gameTitle}</h3>
-					<div className="text-sm text-primary-400">
+					<h3 className="text-xl font-bold text-gray-800">{data.gameTitle}</h3>
+					<div className="text-sm text-gray-600">
 						Question {currentScenario + 1} of {totalScenarios} | Score: {score}/{currentScenario + (showResult ? 1 : 0)}
 					</div>
 				</div>
-				<div className="w-full bg-primary-200 rounded-full h-2 mb-4">
-					<div 
-						className="bg-gradient-to-r from-secondary-500 to-accent-500 h-2 rounded-full transition-all duration-300"
-						style={{ width: `${((currentScenario + 1) / totalScenarios) * 100}%` }}
-					></div>
-				</div>
+					<div className="w-full bg-gray-200 rounded-full h-2 mb-4">
+						<div 
+							className="bg-gradient-to-r from-[#20C997] to-[#3BA4F7] h-2 rounded-full transition-all duration-300"
+							style={{ width: `${((currentScenario + 1) / totalScenarios) * 100}%` }}
+						></div>
+					</div>
 			</div>
 
 			<div className="mb-6">
-				<h4 className="text-lg font-semibold text-text mb-4">{scenario.question}</h4>
+					<h4 className="text-lg font-semibold text-gray-800 mb-4">{scenario.question}</h4>
 				<div className="grid grid-cols-1 gap-3">
 					{scenario.options.map((option: any, index: number) => {
 						let buttonClass = "p-4 rounded-lg text-left transition-all duration-200 border-2 ";
 						
-						if (!showResult) {
-							buttonClass += "border-[#374151] hover:border-[#3BA4F7] bg-[#1E293B] hover:bg-[#374151] text-[#CBD5E1] cursor-pointer";
-						} else {
-							if (option.correct) {
-								buttonClass += "border-green-500 bg-green-900/30 text-green-100";
-							} else if (selectedAnswer === index) {
-								buttonClass += "border-red-500 bg-red-900/30 text-red-100";
-							} else {
-								buttonClass += "border-[#374151] bg-[#1E293B] text-[#6B7280]";
-							}
-						}
+								if (!showResult) {
+									buttonClass += "border-sage-300 hover:border-[#3BA4F7] bg-white hover:bg-gray-50 text-gray-800 cursor-pointer";
+								} else {
+									if (option.correct) {
+										buttonClass += "border-green-500 bg-green-50 text-green-800";
+									} else if (selectedAnswer === index) {
+										buttonClass += "border-red-500 bg-red-50 text-red-800";
+									} else {
+										buttonClass += "border-sage-300 bg-white text-gray-600";
+									}
+								}
 
 						return (
 							<button
@@ -136,24 +136,24 @@ function KahootStyleGame({ data }: { data: any }) {
 			</div>
 
 			{showResult && (
-				<div className="mb-6 p-4 bg-[#1E293B] rounded-lg">
-					<div className="flex items-start mb-3">
-						<div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${
-							scenario.options[selectedAnswer!].correct ? 'bg-green-600' : 'bg-red-600'
-						} text-white text-lg`}>
-							{scenario.options[selectedAnswer!].correct ? '✓' : '✗'}
-						</div>
-						<div>
-							<div className={`font-semibold ${
-								scenario.options[selectedAnswer!].correct ? 'text-green-400' : 'text-red-400'
-							}`}>
-								{scenario.options[selectedAnswer!].correct ? 'Correct!' : 'Incorrect'}
+					<div className="mb-6 p-4 bg-gray-50 rounded-lg border border-sage-300">
+						<div className="flex items-start mb-3">
+							<div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${
+								scenario.options[selectedAnswer!].correct ? 'bg-green-600' : 'bg-red-600'
+							} text-white text-lg`}>
+								{scenario.options[selectedAnswer!].correct ? '✓' : '✗'}
 							</div>
-							<div className="text-sm text-[#94A3B8]">Category: {scenario.category}</div>
+							<div>
+								<div className={`font-semibold ${
+									scenario.options[selectedAnswer!].correct ? 'text-green-600' : 'text-red-600'
+								}`}>
+									{scenario.options[selectedAnswer!].correct ? 'Correct!' : 'Incorrect'}
+								</div>
+								<div className="text-sm text-gray-600">Category: {scenario.category}</div>
+							</div>
 						</div>
+						<p className="text-gray-700 text-sm leading-relaxed">{scenario.explanation}</p>
 					</div>
-					<p className="text-[#CBD5E1] text-sm leading-relaxed">{scenario.explanation}</p>
-				</div>
 			)}
 
 			{showResult && (
@@ -231,14 +231,14 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 			{/* Progress Bar */}
 			<div className="mb-6">
 				<div className="flex items-center justify-between mb-2">
-					<span className="text-sm text-[#94A3B8]">
+					<span className="text-sm text-gray-600">
 						Slide {currentSlideIndex + 1} of {totalSlides}
 					</span>
-					<span className="text-sm text-[#94A3B8]">
+					<span className="text-sm text-gray-600">
 						{Math.round(((currentSlideIndex + 1) / totalSlides) * 100)}% Complete
 					</span>
 				</div>
-				<div className="w-full bg-[#374151] rounded-full h-2">
+				<div className="w-full bg-gray-200 rounded-full h-2">
 					<div 
 						className="bg-gradient-to-r from-[#20C997] to-[#3BA4F7] h-2 rounded-full transition-all duration-300"
 						style={{ width: `${((currentSlideIndex + 1) / totalSlides) * 100}%` }}
@@ -255,7 +255,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 						className={`w-3 h-3 rounded-full transition-all duration-200 ${
 							index === currentSlideIndex 
 								? 'bg-[#3BA4F7]' 
-								: 'bg-[#374151] hover:bg-[#4B5563]'
+								: 'bg-gray-300 hover:bg-gray-400'
 						}`}
 						title={slide.title}
 					/>
@@ -263,9 +263,9 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 			</div>
 
 			{/* Current Slide Content */}
-			<div className="bg-[#1E293B] rounded-xl p-8 mb-6 min-h-[500px]">
+			<div className="bg-sage-100/80 backdrop-blur-sm border border-sage-300 rounded-xl p-8 mb-6 min-h-[500px] shadow-sm">
 				<div className="mb-6">
-					<h2 className="text-2xl font-bold text-[#E8EEF6] mb-2">{currentSlide.title}</h2>
+					<h2 className="text-2xl font-bold text-gray-800 mb-2">{currentSlide.title}</h2>
 					<div className="w-16 h-1 bg-gradient-to-r from-[#20C997] to-[#3BA4F7] rounded-full"></div>
 				</div>
 				
@@ -279,15 +279,15 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 					disabled={currentSlideIndex === 0}
 					className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
 						currentSlideIndex === 0
-							? 'bg-[#374151] text-[#6B7280] cursor-not-allowed'
-							: 'bg-[#374151] hover:bg-[#4B5563] text-[#E8EEF6]'
+							? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+							: 'bg-gray-200 hover:bg-gray-300 text-gray-700'
 					}`}
 				>
 					← Previous
 				</button>
 
 				<div className="text-center">
-					<span className="text-sm text-[#94A3B8] block">
+					<span className="text-sm text-gray-600 block">
 						{currentSlide.type.charAt(0).toUpperCase() + currentSlide.type.slice(1)} Slide
 					</span>
 				</div>
@@ -297,7 +297,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 					disabled={currentSlideIndex === totalSlides - 1}
 					className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
 						currentSlideIndex === totalSlides - 1
-							? 'bg-[#374151] text-[#6B7280] cursor-not-allowed'
+							? 'bg-gray-200 text-gray-400 cursor-not-allowed'
 							: 'bg-gradient-to-r from-[#20C997] to-[#3BA4F7] hover:from-[#1BA085] hover:to-[#2A8EE6] text-white'
 					}`}
 				>
@@ -307,11 +307,11 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 
 			{/* Practice Simulation Call-to-Action (Only on last slide) */}
 			{currentSlideIndex === totalSlides - 1 && correspondingPersona && (
-				<div className="bg-gradient-to-r from-[#3BA4F7]/10 to-[#7C5CFC]/10 border border-[#3BA4F7]/30 rounded-xl p-6 mb-6">
+				<div className="bg-sage-100/60 border border-sage-300 rounded-xl p-6 mb-6">
 					<div className="flex items-center justify-between">
 						<div>
-							<h3 className="text-xl font-bold text-[#E8EEF6] mb-2">🎯 Ready to Practice?</h3>
-							<p className="text-[#CBD5E1] mb-4">
+							<h3 className="text-xl font-bold text-gray-800 mb-2">🎯 Ready to Practice?</h3>
+							<p className="text-gray-600 mb-4">
 								Test your knowledge with a live simulation of this scam type. 
 								Chat with an AI scammer and see if you can spot the red flags!
 							</p>
@@ -323,7 +323,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 							>
 								Start Simulation →
 							</a>
-							<span className="text-xs text-[#94A3B8] text-center">
+							<span className="text-xs text-gray-600 text-center">
 								Live AI scammer chat
 							</span>
 						</div>

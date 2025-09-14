@@ -34,38 +34,38 @@ export default function LessonContent({ content, image }: LessonContentProps) {
 							&& (node as any).children.length === 1
 							&& (node as any).children[0]?.type === 'strong';
 						if (onlyStrong) {
-							return (
-								<h3 className="text-xl sm:text-2xl font-bold text-text mt-6 mb-3">
-									{children}
-								</h3>
-							);
+								return (
+									<h3 className="text-xl sm:text-2xl font-bold text-gray-800 mt-6 mb-3">
+										{children}
+									</h3>
+								);
 						}
-						return (
-							<p className="text-lg text-primary-300 leading-relaxed whitespace-pre-line mb-4">
-								{children}
-							</p>
-						);
+							return (
+								<p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line mb-4">
+									{children}
+								</p>
+							);
 					},
 					strong: ({ children }) => (
-						<strong className="font-semibold text-text">{children}</strong>
+						<strong className="font-semibold text-gray-800">{children}</strong>
 					),
 					ul: ({ children }) => (
-						<ul className="list-disc pl-6 text-primary-300">{children}</ul>
+						<ul className="list-disc pl-6 text-gray-700">{children}</ul>
 					),
 					ol: ({ children }) => (
-						<ol className="list-decimal pl-6 text-primary-300">{children}</ol>
+						<ol className="list-decimal pl-6 text-gray-700">{children}</ol>
 					),
 					li: ({ children }) => (
 						<li className="mb-1">{children}</li>
 					),
 					h1: ({ children }) => (
-						<h1 className="text-2xl sm:text-3xl font-bold text-text mt-6 mb-4">{children}</h1>
+						<h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-6 mb-4">{children}</h1>
 					),
 					h2: ({ children }) => (
-						<h2 className="text-xl sm:text-2xl font-bold text-text mt-6 mb-4">{children}</h2>
+						<h2 className="text-xl sm:text-2xl font-bold text-gray-800 mt-6 mb-4">{children}</h2>
 					),
 					h3: ({ children }) => (
-						<h3 className="text-xl font-bold text-text mt-5 mb-3">{children}</h3>
+						<h3 className="text-xl font-bold text-gray-800 mt-5 mb-3">{children}</h3>
 					),
 				}}
 			>
