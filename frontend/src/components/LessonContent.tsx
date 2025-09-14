@@ -18,6 +18,10 @@ export default function LessonContent({ content, image }: LessonContentProps) {
 						src={image} 
 						alt="Lesson illustration" 
 						className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+						onError={(e) => {
+							console.error('Image failed to load:', image);
+							e.currentTarget.style.display = 'none';
+						}}
 					/>
 				</div>
 			)}
