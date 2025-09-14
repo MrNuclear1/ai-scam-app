@@ -165,21 +165,21 @@ export default function LinkRecognitionPage() {
 
 	if (quizComplete) {
 		return (
-			<div className="min-h-screen bg-gradient-to-br from-[#0B0F14] via-[#1A1F2E] to-[#0B0F14] flex items-center justify-center p-4">
+			<div className="min-h-screen flex items-center justify-center p-4">
 				<div className="max-w-2xl w-full">
 					<div className="bg-sage-100/80 backdrop-blur-sm border border-sage-300 rounded-2xl p-8 text-center shadow-sm">
 						<div className="mb-6">
 							<h1 className="text-4xl font-bold text-gray-800 mb-2">
 								Quiz Complete! 🎉
 							</h1>
-							<p className="text-[#CBD5E1] text-lg">Your Link Recognition Score</p>
+							<p className="text-gray-600 text-lg">Your Link Recognition Score</p>
 						</div>
 						
 						<div className="mb-8">
 							<div className="text-6xl font-bold text-[#20C997] mb-2">
 								{score}/{linkExamples.length}
 							</div>
-							<div className="text-[#CBD5E1]">
+							<div className="text-gray-600">
 								{score >= 8 ? "Excellent! You're a link recognition expert! 🏆" :
 								 score >= 6 ? "Good job! You're getting better at spotting fake links! 👍" :
 								 score >= 4 ? "Not bad! Keep practicing to improve! 📚" :
@@ -196,7 +196,7 @@ export default function LinkRecognitionPage() {
 							</button>
 							<Link
 								href="/games"
-								className="block w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 text-center"
+								className="block w-full bg-[#3BA4F7] hover:bg-[#2A8EE6] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 text-center"
 							>
 								Play More Games
 							</Link>
@@ -208,16 +208,16 @@ export default function LinkRecognitionPage() {
 	}
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-[#0B0F14] via-[#1A1F2E] to-[#0B0F14] p-4">
+		<div className="min-h-screen p-4">
 			<div className="max-w-6xl mx-auto">
 				{/* Header */}
 				<div className="text-center mb-8">
 					<h1 className="text-4xl font-bold text-gray-800 mb-2">
 						🔗 Link Recognition Training
 					</h1>
-					<p className="text-[#CBD5E1] text-lg">Learn to identify legitimate vs fake links</p>
+					<p className="text-gray-600 text-lg">Learn to identify legitimate vs fake links</p>
 					<div className="mt-4 flex justify-center items-center space-x-4">
-						<div className="text-[#CBD5E1]">
+						<div className="text-gray-600">
 							Question {currentExampleIndex + 1} of {linkExamples.length}
 						</div>
 						<div className="text-[#20C997] font-semibold">
@@ -239,8 +239,8 @@ export default function LinkRecognitionPage() {
 				{/* Educational Content */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 					{/* URL Breakdown */}
-					<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-6">
-						<h3 className="text-xl font-bold text-[#E8EEF6] mb-4">🔍 URL Components</h3>
+					<div className="bg-sage-100/80 backdrop-blur-sm border border-sage-300 rounded-2xl p-6">
+						<h3 className="text-xl font-bold text-gray-800 mb-4">🔍 URL Components</h3>
 						<div className="space-y-3">
 							<div className="bg-sage-100/90 border border-sage-300 rounded-lg p-4 shadow-sm">
 								<div className="text-sm text-gray-600 mb-2">Example URL:</div>
@@ -270,35 +270,35 @@ export default function LinkRecognitionPage() {
 					</div>
 
 					{/* Key Rules */}
-					<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-6">
-						<h3 className="text-xl font-bold text-[#E8EEF6] mb-4">📋 Key Rules</h3>
+					<div className="bg-sage-100/80 backdrop-blur-sm border border-sage-300 rounded-2xl p-6">
+						<h3 className="text-xl font-bold text-gray-800 mb-4">📋 Key Rules</h3>
 						<div className="space-y-4">
 							<div className="flex items-start space-x-3">
 								<span className="text-[#20C997] text-xl">✅</span>
 								<div>
-									<div className="text-[#E8EEF6] font-semibold">Focus on the Domain</div>
-									<div className="text-[#94A3B8] text-sm">The main part before the first slash is what matters</div>
+									<div className="text-gray-800 font-semibold">Focus on the Domain</div>
+									<div className="text-gray-600 text-sm">The main part before the first slash is what matters</div>
 								</div>
 							</div>
 							<div className="flex items-start space-x-3">
 								<span className="text-[#FF6B6B] text-xl">❌</span>
 								<div>
-									<div className="text-[#E8EEF6] font-semibold">Ignore Subdomains</div>
-									<div className="text-[#94A3B8] text-sm">www, secure, myaccount are just subdomains</div>
+									<div className="text-gray-800 font-semibold">Ignore Subdomains</div>
+									<div className="text-gray-600 text-sm">www, secure, myaccount are just subdomains</div>
 								</div>
 							</div>
 							<div className="flex items-start space-x-3">
 								<span className="text-[#FF6B6B] text-xl">❌</span>
 								<div>
-									<div className="text-[#E8EEF6] font-semibold">Watch for Extra Words</div>
-									<div className="text-[#94A3B8] text-sm">amazon-security.com is NOT amazon.com</div>
+									<div className="text-gray-800 font-semibold">Watch for Extra Words</div>
+									<div className="text-gray-600 text-sm">amazon-security.com is NOT amazon.com</div>
 								</div>
 							</div>
 							<div className="flex items-start space-x-3">
 								<span className="text-[#FF6B6B] text-xl">❌</span>
 								<div>
-									<div className="text-[#E8EEF6] font-semibold">Check Extensions</div>
-									<div className="text-[#94A3B8] text-sm">amazon.net is NOT amazon.com</div>
+									<div className="text-gray-800 font-semibold">Check Extensions</div>
+									<div className="text-gray-600 text-sm">amazon.net is NOT amazon.com</div>
 								</div>
 							</div>
 						</div>
@@ -306,12 +306,12 @@ export default function LinkRecognitionPage() {
 				</div>
 
 				{/* Quiz Card */}
-				<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-8">
+				<div className="bg-sage-100/80 backdrop-blur-sm border border-sage-300 rounded-2xl p-8">
 					{/* Current URL */}
 					<div className="mb-8">
-						<h3 className="text-xl font-bold text-[#E8EEF6] mb-4">Is this link legitimate?</h3>
-						<div className="bg-[#0F172A] border border-[#334155] rounded-xl p-6">
-							<div className="text-[#E8EEF6] font-mono text-lg break-all">
+						<h3 className="text-xl font-bold text-gray-800 mb-4">Is this link legitimate?</h3>
+						<div className="bg-white border border-sage-300 rounded-xl p-6">
+							<div className="text-gray-800 font-mono text-lg break-all">
 								{currentExample.url}
 							</div>
 						</div>
@@ -319,22 +319,22 @@ export default function LinkRecognitionPage() {
 
 					{/* URL Breakdown */}
 					<div className="mb-8">
-						<h4 className="text-lg font-semibold text-[#E8EEF6] mb-4">URL Breakdown:</h4>
+						<h4 className="text-lg font-semibold text-gray-800 mb-4">URL Breakdown:</h4>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 							<div className="bg-sage-100/90 border border-sage-300 rounded-lg p-4 shadow-sm">
-								<div className="text-secondary-500 text-sm font-semibold mb-2">Subdomain</div>
+								<div className="text-[#3BA4F7] text-sm font-semibold mb-2">Subdomain</div>
 								<div className="text-gray-800 font-mono">
 									{currentExample.subdomain || '(none)'}
 								</div>
 							</div>
 							<div className="bg-sage-100/90 border border-sage-300 rounded-lg p-4 shadow-sm">
-								<div className="text-secondary-600 text-sm font-semibold mb-2">Domain</div>
+								<div className="text-[#20C997] text-sm font-semibold mb-2">Domain</div>
 								<div className="text-gray-800 font-mono">
 									{currentExample.domain}
 								</div>
 							</div>
 							<div className="bg-sage-100/90 border border-sage-300 rounded-lg p-4 shadow-sm">
-								<div className="text-accent-500 text-sm font-semibold mb-2">Path</div>
+								<div className="text-[#FF6B6B] text-sm font-semibold mb-2">Path</div>
 								<div className="text-gray-800 font-mono">
 									{currentExample.path}
 								</div>
@@ -380,18 +380,18 @@ export default function LinkRecognitionPage() {
 										{userAnswers[currentExampleIndex] === currentExample.isLegitimate ? 'Correct!' : 'Incorrect!'}
 									</span>
 								</div>
-								<div className="text-center">
-									<p className="text-[#CBD5E1] mb-2">
-										This link is: <span className={`font-bold ${
-											currentExample.isLegitimate ? 'text-[#4ECDC4]' : 'text-[#FF6B6B]'
-										}`}>
-											{currentExample.isLegitimate ? 'LEGITIMATE ✅' : 'FAKE/SCAM ❌'}
-										</span>
-									</p>
-									<p className="text-[#94A3B8] text-sm">
-										{currentExample.explanation}
-									</p>
-								</div>
+															<div className="text-center">
+																<p className="text-gray-600 mb-2">
+																	This link is: <span className={`font-bold ${
+																		currentExample.isLegitimate ? 'text-[#4ECDC4]' : 'text-[#FF6B6B]'
+																	}`}>
+																		{currentExample.isLegitimate ? 'LEGITIMATE ✅' : 'FAKE/SCAM ❌'}
+																	</span>
+																</p>
+																<p className="text-gray-600 text-sm">
+																	{currentExample.explanation}
+																</p>
+															</div>
 							</div>
 
 							<button

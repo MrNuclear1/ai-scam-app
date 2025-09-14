@@ -71,7 +71,7 @@ export default function GamesPage() {
 									<span className="text-gray-600 text-sm">{game.duration}</span>
 								</div>
 								<div className="text-4xl mb-3">{game.icon}</div>
-								<h3 className="text-xl font-bold text-text mb-3 group-hover:text-blue-600 transition-colors duration-300">
+								<h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#3BA4F7] transition-colors duration-300">
 									{game.title}
 								</h3>
 								<p className="text-gray-700 mb-4 leading-relaxed">
@@ -80,11 +80,11 @@ export default function GamesPage() {
 							</div>
 
 							<div className="space-y-2">
-								<h4 className="text-sm font-semibold text-blue-600 mb-2">Features:</h4>
+								<h4 className="text-sm font-semibold text-[#3BA4F7] mb-2">Features:</h4>
 								<ul className="space-y-1">
 									{game.features.map((feature, index) => (
 										<li key={index} className="text-xs text-gray-600 flex items-start">
-											<span className="text-blue-500 mr-2">•</span>
+											<span className="text-[#20C997] mr-2">•</span>
 											{feature}
 										</li>
 									))}
@@ -92,7 +92,7 @@ export default function GamesPage() {
 							</div>
 
 							<div className="mt-4 pt-4 border-t border-sage-300">
-								<div className="text-sm text-blue-600 font-medium group-hover:text-blue-500 transition-colors duration-300">
+								<div className="text-sm text-[#3BA4F7] font-medium group-hover:text-[#20C997] transition-colors duration-300">
 									Play Game →
 								</div>
 							</div>
