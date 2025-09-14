@@ -5,12 +5,22 @@ import remarkGfm from "remark-gfm";
 
 interface LessonContentProps {
 	content: string;
+	image?: string;
 }
 
 // Accessible markdown renderer that promotes standalone bold lines to headings
-export default function LessonContent({ content }: LessonContentProps) {
+export default function LessonContent({ content, image }: LessonContentProps) {
 	return (
 		<div className="prose max-w-none mb-8">
+			{image && (
+				<div className="mb-6">
+					<img 
+						src={image} 
+						alt="Lesson illustration" 
+						className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+					/>
+				</div>
+			)}
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm]}
 				components={{

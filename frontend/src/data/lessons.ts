@@ -12,6 +12,7 @@ export interface LessonSlide {
 	title: string;
 	type: 'introduction' | 'red-flags' | 'tips' | 'summary' | 'interactive' | 'quiz';
 	content: string;
+	image?: string;
 	interactive?: InteractiveElement;
 	quiz?: QuizQuestion[];
 }
@@ -675,7 +676,8 @@ Even after payment, scammers may install backdoors or malware to extort victims 
 
 **Real-World Example**
 
-In 2018, the U.S. Department of Justice shut down a massive India-based call centre operation that scammed Americans out of over $100 million. Operators posed as Microsoft employees, tricking victims into granting access and paying for fake security software. Despite such busts, similar scams keep surfacing because they are cheap, scalable, and prey on fear.`
+In 2018, the U.S. Department of Justice shut down a massive India-based call centre operation that scammed Americans out of over $100 million. Operators posed as Microsoft employees, tricking victims into granting access and paying for fake security software. Despite such busts, similar scams keep surfacing because they are cheap, scalable, and prey on fear.`,
+				image: '/images/lessons/scam-alert-laptop.jpg'
 			},
 			{
 				id: 'red-flags',
@@ -736,7 +738,8 @@ Victim is told they must "return" the excess money — by gift cards or wire tra
 ❌ Requests for credit card info over the phone
 ❌ Claims about your "IP address being compromised"
 
-If you encounter ANY of these red flags, it's a scam.`
+If you encounter ANY of these red flags, it's a scam.`,
+				image: '/images/lessons/computer-locked-warning.jpg'
 			},
 			{
 				id: 'tips',
@@ -758,7 +761,8 @@ If you encounter ANY of these red flags, it's a scam.`
 
 ✅ **Educate family and friends.** Especially seniors — sharing awareness is the best defense.
 
-**Remember:** Legitimate tech support is patient, professional, and never creates artificial urgency.`
+**Remember:** Legitimate tech support is patient, professional, and never creates artificial urgency.`,
+				image: '/images/lessons/blue-screen-scam.jpg'
 			},
 			{
 				id: 'summary',
@@ -786,7 +790,8 @@ If you encounter ANY of these red flags, it's a scam.`
 | Accepts payment only through secure portals | Demands gift cards, wire transfers, or crypto |
 | Solves issues without demanding remote access | Pushes you to install remote control software |
 
-**Remember:** Real tech companies don't use scare tactics or demand immediate action. When in doubt, hang up and contact the company directly through official channels.`
+**Remember:** Real tech companies don't use scare tactics or demand immediate action. When in doubt, hang up and contact the company directly through official channels.`,
+				image: '/images/lessons/virus-warning-popup.jpg'
 			},
 			{
 				id: 'interactive',
@@ -862,7 +867,8 @@ Test your knowledge! For each scenario, click whether it's a RED FLAG (scam) or 
 							}
 						]
 					}
-				}
+				},
+				image: '/images/lessons/antivirus-threats-detected.jpg'
 			},
 			{
 				id: 'quiz',
@@ -933,9 +939,7 @@ Test your knowledge! For each scenario, click whether it's a RED FLAG (scam) or 
 				id: 'introduction',
 				title: 'Understanding Fake Job Offer Scams',
 				type: 'introduction',
-				content: `![Job Opportunity](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
-
-💼 **Imagine this:** You've been applying for jobs online and finally — an email lands in your inbox.
+				content: `💼 **Imagine this:** You've been applying for jobs online and finally — an email lands in your inbox.
 "Congratulations! After reviewing your resume, we'd like to offer you a remote data entry job paying $35/hour. No interview required. Please reply quickly to confirm your acceptance."
 
 The offer sounds perfect. But hidden behind that shiny opportunity is a scam designed to steal money, personal information, or even your identity.
@@ -982,9 +986,7 @@ In 2022, thousands of Canadians received fake job offers on Indeed for remote da
 				id: 'red-flags',
 				title: 'Red Flags to Watch For',
 				type: 'red-flags',
-				content: `![Suspicious Job Message](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
-
-**Common Fake Job Offer Variations**
+				content: `**Common Fake Job Offer Variations**
 
 **1. Upfront Payment for Training or Equipment 💸**
 
@@ -1131,9 +1133,7 @@ If you encounter ANY of these red flags, it's likely a job scam.`
 				id: 'tips',
 				title: 'Hot Tips to Stay Safe',
 				type: 'tips',
-				content: `![Job Security](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop&crop=center)
-
-✅ **Practical protection strategies:**
+				content: `✅ **Practical protection strategies:**
 
 **Apply only through official company websites or trusted platforms.**
 

@@ -201,7 +201,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 			case 'interactive':
 				return (
 					<div>
-						<LessonContent content={slide.content} />
+						<LessonContent content={slide.content} image={slide.image} />
 						{slide.interactive && slide.interactive.type === 'drag-match' && (
 							<DragDropExercise data={slide.interactive.data} />
 						)}
@@ -213,7 +213,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 			case 'quiz':
 				return (
 					<div>
-						<LessonContent content={slide.content} />
+						<LessonContent content={slide.content} image={slide.image} />
 						{slide.quiz && slide.quiz.length > 0 && (
 							<InteractiveQuiz questions={slide.quiz} />
 						)}
@@ -221,7 +221,7 @@ export default function LessonSlideNavigator({ lesson }: LessonSlideNavigatorPro
 				);
 			default:
 				return (
-					<LessonContent content={slide.content} />
+					<LessonContent content={slide.content} image={slide.image} />
 				);
 		}
 	};
