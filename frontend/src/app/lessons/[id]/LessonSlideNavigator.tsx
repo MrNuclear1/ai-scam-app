@@ -48,24 +48,24 @@ function KahootStyleGame({ data }: { data: any }) {
 	if (gameComplete) {
 		const percentage = Math.round((score / totalScenarios) * 100);
 		return (
-			<div className="mt-6 p-8 bg-[#0F172A] rounded-lg text-center">
-				<h3 className="text-2xl font-bold text-[#E8EEF6] mb-4">🎉 Game Complete!</h3>
+			<div className="mt-6 p-8 bg-primary-50/90 rounded-lg text-center border border-primary-200 shadow-sm">
+				<h3 className="text-2xl font-bold text-text mb-4">🎉 Game Complete!</h3>
 				<div className="mb-6">
-					<div className="text-4xl font-bold text-[#20C997] mb-2">{score}/{totalScenarios}</div>
-					<div className="text-lg text-[#CBD5E1]">{percentage}% Correct</div>
+					<div className="text-4xl font-bold text-secondary-500 mb-2">{score}/{totalScenarios}</div>
+					<div className="text-lg text-primary-300">{percentage}% Correct</div>
 				</div>
 				<div className="mb-6">
 					{percentage >= 80 ? (
-						<div className="text-green-400">🏆 Excellent! You're well-prepared to spot tech scams!</div>
+						<div className="text-secondary-600">🏆 Excellent! You're well-prepared to spot tech scams!</div>
 					) : percentage >= 60 ? (
-						<div className="text-yellow-400">👍 Good work! Review the red flags to improve further.</div>
+						<div className="text-accent-500">👍 Good work! Review the red flags to improve further.</div>
 					) : (
-						<div className="text-orange-400">💪 Keep learning! Practice makes perfect at spotting scams.</div>
+						<div className="text-accent-600">💪 Keep learning! Practice makes perfect at spotting scams.</div>
 					)}
 				</div>
 				<button
 					onClick={resetGame}
-					className="bg-gradient-to-r from-[#20C997] to-[#3BA4F7] hover:from-[#1BA085] hover:to-[#2A8EE6] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+					className="bg-gradient-to-r from-secondary-500 to-accent-500 hover:from-secondary-600 hover:to-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
 				>
 					Play Again
 				</button>
@@ -74,24 +74,24 @@ function KahootStyleGame({ data }: { data: any }) {
 	}
 
 	return (
-		<div className="mt-6 p-6 bg-[#0F172A] rounded-lg">
+		<div className="mt-6 p-6 bg-primary-50/90 rounded-lg border border-primary-200 shadow-sm">
 			<div className="mb-6">
 				<div className="flex justify-between items-center mb-4">
-					<h3 className="text-xl font-bold text-[#E8EEF6]">{data.gameTitle}</h3>
-					<div className="text-sm text-[#94A3B8]">
+					<h3 className="text-xl font-bold text-text">{data.gameTitle}</h3>
+					<div className="text-sm text-primary-400">
 						Question {currentScenario + 1} of {totalScenarios} | Score: {score}/{currentScenario + (showResult ? 1 : 0)}
 					</div>
 				</div>
-				<div className="w-full bg-[#374151] rounded-full h-2 mb-4">
+				<div className="w-full bg-primary-200 rounded-full h-2 mb-4">
 					<div 
-						className="bg-gradient-to-r from-[#20C997] to-[#3BA4F7] h-2 rounded-full transition-all duration-300"
+						className="bg-gradient-to-r from-secondary-500 to-accent-500 h-2 rounded-full transition-all duration-300"
 						style={{ width: `${((currentScenario + 1) / totalScenarios) * 100}%` }}
 					></div>
 				</div>
 			</div>
 
 			<div className="mb-6">
-				<h4 className="text-lg font-semibold text-[#E8EEF6] mb-4">{scenario.question}</h4>
+				<h4 className="text-lg font-semibold text-text mb-4">{scenario.question}</h4>
 				<div className="grid grid-cols-1 gap-3">
 					{scenario.options.map((option: any, index: number) => {
 						let buttonClass = "p-4 rounded-lg text-left transition-all duration-200 border-2 ";

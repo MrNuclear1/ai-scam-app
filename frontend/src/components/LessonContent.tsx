@@ -10,7 +10,7 @@ interface LessonContentProps {
 // Accessible markdown renderer that promotes standalone bold lines to headings
 export default function LessonContent({ content }: LessonContentProps) {
 	return (
-		<div className="prose prose-invert max-w-none mb-8">
+		<div className="prose max-w-none mb-8">
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm]}
 				components={{
@@ -21,37 +21,37 @@ export default function LessonContent({ content }: LessonContentProps) {
 							&& (node as any).children[0]?.type === 'strong';
 						if (onlyStrong) {
 							return (
-								<h3 className="text-xl sm:text-2xl font-bold text-[#E8EEF6] mt-6 mb-3">
+								<h3 className="text-xl sm:text-2xl font-bold text-text mt-6 mb-3">
 									{children}
 								</h3>
 							);
 						}
 						return (
-							<p className="text-lg text-[#CBD5E1] leading-relaxed whitespace-pre-line mb-4">
+							<p className="text-lg text-primary-300 leading-relaxed whitespace-pre-line mb-4">
 								{children}
 							</p>
 						);
 					},
 					strong: ({ children }) => (
-						<strong className="font-semibold text-[#E8EEF6]">{children}</strong>
+						<strong className="font-semibold text-text">{children}</strong>
 					),
 					ul: ({ children }) => (
-						<ul className="list-disc pl-6 text-[#CBD5E1]">{children}</ul>
+						<ul className="list-disc pl-6 text-primary-300">{children}</ul>
 					),
 					ol: ({ children }) => (
-						<ol className="list-decimal pl-6 text-[#CBD5E1]">{children}</ol>
+						<ol className="list-decimal pl-6 text-primary-300">{children}</ol>
 					),
 					li: ({ children }) => (
 						<li className="mb-1">{children}</li>
 					),
 					h1: ({ children }) => (
-						<h1 className="text-2xl sm:text-3xl font-bold text-[#E8EEF6] mt-6 mb-4">{children}</h1>
+						<h1 className="text-2xl sm:text-3xl font-bold text-text mt-6 mb-4">{children}</h1>
 					),
 					h2: ({ children }) => (
-						<h2 className="text-xl sm:text-2xl font-bold text-[#E8EEF6] mt-6 mb-4">{children}</h2>
+						<h2 className="text-xl sm:text-2xl font-bold text-text mt-6 mb-4">{children}</h2>
 					),
 					h3: ({ children }) => (
-						<h3 className="text-xl font-bold text-[#E8EEF6] mt-5 mb-3">{children}</h3>
+						<h3 className="text-xl font-bold text-text mt-5 mb-3">{children}</h3>
 					),
 				}}
 			>

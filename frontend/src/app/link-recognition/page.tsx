@@ -167,7 +167,7 @@ export default function LinkRecognitionPage() {
 		return (
 			<div className="min-h-screen bg-gradient-to-br from-[#0B0F14] via-[#1A1F2E] to-[#0B0F14] flex items-center justify-center p-4">
 				<div className="max-w-2xl w-full">
-					<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-8 text-center">
+					<div className="bg-primary-50/80 backdrop-blur-sm border border-primary-200 rounded-2xl p-8 text-center shadow-sm">
 						<div className="mb-6">
 							<h1 className="text-4xl font-bold bg-gradient-to-r from-[#20C997] to-[#3BA4F7] bg-clip-text text-transparent mb-2">
 								Quiz Complete! 🎉
@@ -196,7 +196,7 @@ export default function LinkRecognitionPage() {
 							</button>
 							<Link
 								href="/games"
-								className="block w-full bg-[#334155] hover:bg-[#475569] text-[#E8EEF6] font-semibold py-3 px-6 rounded-xl transition-all duration-200 text-center"
+								className="block w-full bg-primary-300 hover:bg-primary-400 text-text font-semibold py-3 px-6 rounded-xl transition-all duration-200 text-center"
 							>
 								Play More Games
 							</Link>
@@ -228,7 +228,7 @@ export default function LinkRecognitionPage() {
 
 				{/* Progress Bar */}
 				<div className="mb-8">
-					<div className="w-full bg-[#334155] rounded-full h-3">
+					<div className="w-full bg-primary-200 rounded-full h-3">
 						<div 
 							className="bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] h-3 rounded-full transition-all duration-500"
 							style={{ width: `${((currentExampleIndex + 1) / linkExamples.length) * 100}%` }}
@@ -242,7 +242,7 @@ export default function LinkRecognitionPage() {
 					<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-6">
 						<h3 className="text-xl font-bold text-[#E8EEF6] mb-4">🔍 URL Components</h3>
 						<div className="space-y-3">
-							<div className="bg-[#0F172A] border border-[#334155] rounded-lg p-4">
+							<div className="bg-primary-50/90 border border-primary-200 rounded-lg p-4 shadow-sm">
 								<div className="text-sm text-[#94A3B8] mb-2">Example URL:</div>
 								<div className="text-[#E8EEF6] font-mono text-sm break-all">
 									https://www.amazon.com/your-orders
@@ -250,19 +250,19 @@ export default function LinkRecognitionPage() {
 							</div>
 							<div className="grid grid-cols-1 gap-3">
 								<div className="flex items-center space-x-3">
-									<span className="bg-[#FF6B6B] text-white text-xs px-2 py-1 rounded">Protocol</span>
+									<span className="bg-accent-500 text-white text-xs px-2 py-1 rounded">Protocol</span>
 									<span className="text-[#CBD5E1] text-sm">https://</span>
 								</div>
 								<div className="flex items-center space-x-3">
-									<span className="bg-[#4ECDC4] text-white text-xs px-2 py-1 rounded">Subdomain</span>
+									<span className="bg-secondary-500 text-white text-xs px-2 py-1 rounded">Subdomain</span>
 									<span className="text-[#CBD5E1] text-sm">www</span>
 								</div>
 								<div className="flex items-center space-x-3">
-									<span className="bg-[#20C997] text-white text-xs px-2 py-1 rounded">Domain</span>
+									<span className="bg-secondary-600 text-white text-xs px-2 py-1 rounded">Domain</span>
 									<span className="text-[#CBD5E1] text-sm">amazon.com</span>
 								</div>
 								<div className="flex items-center space-x-3">
-									<span className="bg-[#3BA4F7] text-white text-xs px-2 py-1 rounded">Path</span>
+									<span className="bg-accent-500 text-white text-xs px-2 py-1 rounded">Path</span>
 									<span className="text-[#CBD5E1] text-sm">/your-orders</span>
 								</div>
 							</div>
@@ -321,19 +321,19 @@ export default function LinkRecognitionPage() {
 					<div className="mb-8">
 						<h4 className="text-lg font-semibold text-[#E8EEF6] mb-4">URL Breakdown:</h4>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-							<div className="bg-[#0F172A] border border-[#334155] rounded-lg p-4">
+							<div className="bg-primary-50/90 border border-primary-200 rounded-lg p-4 shadow-sm">
 								<div className="text-[#4ECDC4] text-sm font-semibold mb-2">Subdomain</div>
 								<div className="text-[#E8EEF6] font-mono">
 									{currentExample.subdomain || '(none)'}
 								</div>
 							</div>
-							<div className="bg-[#0F172A] border border-[#334155] rounded-lg p-4">
+							<div className="bg-primary-50/90 border border-primary-200 rounded-lg p-4 shadow-sm">
 								<div className="text-[#20C997] text-sm font-semibold mb-2">Domain</div>
 								<div className="text-[#E8EEF6] font-mono">
 									{currentExample.domain}
 								</div>
 							</div>
-							<div className="bg-[#0F172A] border border-[#334155] rounded-lg p-4">
+							<div className="bg-primary-50/90 border border-primary-200 rounded-lg p-4 shadow-sm">
 								<div className="text-[#3BA4F7] text-sm font-semibold mb-2">Path</div>
 								<div className="text-[#E8EEF6] font-mono">
 									{currentExample.path}

@@ -130,7 +130,7 @@ export default function GamesPage() {
 		return (
 			<div className="min-h-screen bg-gradient-to-br from-[#0B0F14] via-[#1A1F2E] to-[#0B0F14] flex items-center justify-center p-4">
 				<div className="max-w-2xl w-full">
-					<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-8 text-center">
+					<div className="bg-primary-50/80 backdrop-blur-sm border border-primary-200 rounded-2xl p-8 text-center shadow-sm">
 						<div className="mb-6">
 							<h1 className="text-4xl font-bold bg-gradient-to-r from-[#20C997] to-[#3BA4F7] bg-clip-text text-transparent mb-2">
 								Game Complete! 🎉
@@ -159,7 +159,7 @@ export default function GamesPage() {
 							</button>
 							<Link
 								href="/lessons"
-								className="block w-full bg-[#334155] hover:bg-[#475569] text-[#E8EEF6] font-semibold py-3 px-6 rounded-xl transition-all duration-200 text-center"
+								className="block w-full bg-primary-300 hover:bg-primary-400 text-text font-semibold py-3 px-6 rounded-xl transition-all duration-200 text-center"
 							>
 								Learn More About Scams
 							</Link>
@@ -193,7 +193,7 @@ export default function GamesPage() {
 
 				{/* Progress Bar */}
 				<div className="mb-8">
-					<div className="w-full bg-[#334155] rounded-full h-3">
+					<div className="w-full bg-primary-200 rounded-full h-3">
 						<div 
 							className="bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] h-3 rounded-full transition-all duration-500"
 							style={{ width: `${((currentMessageIndex + 1) / shuffledMessages.length) * 100}%` }}
@@ -205,7 +205,7 @@ export default function GamesPage() {
 				<div className="bg-[#1E293B]/80 backdrop-blur-sm border border-[#334155] rounded-2xl p-8 mb-8">
 					{/* Message */}
 					<div className="mb-8">
-						<div className="bg-[#0F172A] border border-[#334155] rounded-xl p-6">
+						<div className="bg-primary-50/90 border border-primary-200 rounded-xl p-6 shadow-sm">
 							<p className="text-[#E8EEF6] text-lg leading-relaxed">
 								{currentMessage.message}
 							</p>
@@ -237,8 +237,8 @@ export default function GamesPage() {
 						<div className="space-y-6">
 							<div className={`p-6 rounded-xl border-2 ${
 								selectedAnswer === currentMessage.isScam 
-									? 'bg-[#065F46]/20 border-[#10B981]' 
-									: 'bg-[#7F1D1D]/20 border-[#EF4444]'
+									? 'bg-secondary-100/50 border-secondary-500' 
+									: 'bg-accent-100/50 border-accent-500'
 							}`}>
 								<div className="flex items-center justify-center space-x-3 mb-4">
 									<span className="text-4xl">
