@@ -449,7 +449,7 @@ Open them, and ransomware installs silently.
 
 🚩 Suspicious attachments (.exe, .zip, .scr)
 
-🚩 Hover link mismatch (text says one thing, actual link points elsewhere)
+🚩 Hover link mismatch (text says one thing, actual link points elsewhere) - [Practice link recognition here](/link-recognition)
 
 🚩 Requests for sensitive information (passwords, SIN, banking details)
 
@@ -504,6 +504,8 @@ Never use contact information from a suspicious email. Instead:
 • Look for misspelled domain names (amazom.com vs amazon.com)
 • Be suspicious of shortened URLs in official communications
 • When in doubt, don't click - go to the website directly
+
+💡 **Want to practice identifying suspicious links?** Check out our [Link Recognition Training](/link-recognition) to test your skills with real examples!
 
 **3. Email Account Security**
 • Enable two-factor authentication on your email
