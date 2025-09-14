@@ -407,3 +407,4 @@ export default function LinkRecognitionPage() {
 		</div>
 	);
 }
+

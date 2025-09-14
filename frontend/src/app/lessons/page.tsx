@@ -7,8 +7,8 @@ export default function LessonsPage() {
 		return (
 			<div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
 				<div className="text-center max-w-2xl">
-					<h1 className="text-4xl font-bold text-[#E8EEF6] mb-4">Loading Lessons...</h1>
-					<p className="text-xl text-[#CBD5E1]">Please wait while we load the lesson content.</p>
+					<h1 className="text-4xl font-bold text-text mb-4">Loading Lessons...</h1>
+					<p className="text-xl text-primary-300">Please wait while we load the lesson content.</p>
 				</div>
 			</div>
 		);
@@ -18,12 +18,12 @@ export default function LessonsPage() {
 		<div className="min-h-screen w-full">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
 				<div className="text-center mb-8 sm:mb-12 lg:mb-16">
-					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#E8EEF6] mb-6 leading-tight">
-						<span className="bg-gradient-to-r from-[#20C997] via-[#3BA4F7] to-[#7C5CFC] bg-clip-text text-transparent">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6 leading-tight">
+						<span className="bg-gradient-to-r from-secondary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent">
 							Scam Awareness Lessons
 						</span>
 					</h1>
-					<p className="text-lg sm:text-xl text-[#CBD5E1] max-w-3xl mx-auto leading-relaxed">
+					<p className="text-lg sm:text-xl text-primary-300 max-w-3xl mx-auto leading-relaxed">
 						Learn to identify and protect yourself from various types of scams through our interactive lessons.
 					</p>
 				</div>
@@ -34,7 +34,7 @@ export default function LessonsPage() {
 						<Link
 							key={lesson.id}
 							href={`/lessons/${lesson.id}`}
-							className="group bg-[#1E293B]/50 backdrop-blur-sm hover:bg-[#1E293B]/70 border border-[#334155] hover:border-[#3BA4F7] rounded-xl p-6 transition-all duration-300 transform hover:scale-105"
+							className="group bg-white/80 backdrop-blur-sm hover:bg-white/90 border border-primary-200 hover:border-secondary-500 rounded-xl p-6 transition-all duration-300 transform hover:scale-105 shadow-sm"
 						>
 							<div className="mb-4">
 								<div className="flex items-center justify-between mb-3">
@@ -45,9 +45,9 @@ export default function LessonsPage() {
 									}`}>
 										{lesson.difficulty}
 									</span>
-									<span className="text-[#94A3B8] text-sm">{lesson.duration}</span>
+										<span className="text-primary-400 text-sm">{lesson.duration}</span>
 								</div>
-								<h3 className="text-xl font-bold text-[#E8EEF6] mb-3 group-hover:text-[#3BA4F7] transition-colors duration-300">
+								<h3 className="text-xl font-bold text-text mb-3 group-hover:text-secondary-500 transition-colors duration-300">
 									{lesson.title}
 								</h3>
 								<p className="text-[#94A3B8] mb-4 line-clamp-3">
