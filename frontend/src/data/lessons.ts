@@ -468,7 +468,8 @@ Before clicking ANY link or downloading ANY attachment:
 ❌ Are they offering something too good to be true?
 ❌ Generic greetings instead of your name?
 
-If you answer YES to any of these, it's likely a phishing attempt.`
+If you answer YES to any of these, it's likely a phishing attempt.`,
+				image: '/images/lessons/phishing-elements.jpg'
 			},
 			{
 				id: 'tips',
