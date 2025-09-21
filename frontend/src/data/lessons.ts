@@ -4,6 +4,7 @@ export interface Lesson {
 	description: string;
 	difficulty: 'beginner' | 'intermediate' | 'advanced';
 	duration: string;
+	thumbnail?: string;
 	slides: LessonSlide[];
 }
 
@@ -37,6 +38,7 @@ export const lessons: Lesson[] = [
 		description: 'Learn to identify common cryptocurrency scam tactics and red flags.',
 		difficulty: 'beginner',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/crypto-basics/b97bb0460b191997aad464c34c7e705f.png',
 		slides: [
 			{
 				id: 'introduction',
@@ -355,6 +357,7 @@ Practice identifying cryptocurrency scams by categorizing these real-world scena
 		description: 'Master the art of spotting phishing emails and protecting your information.',
 		difficulty: 'beginner',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/phishing-emails/Chase-https-phishing-email-example.png',
 		slides: [
 			{
 				id: 'introduction',
@@ -669,6 +672,7 @@ Practice identifying phishing emails by categorizing these real-world email scen
 		description: 'Learn to identify and avoid fake tech support scams targeting your devices.',
 		difficulty: 'intermediate',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/tech-support-scams/computer-popup-tech-scam.webp',
 		slides: [
 			{
 				id: 'introduction',
@@ -975,6 +979,7 @@ Test your knowledge! For each scenario, click whether it's a RED FLAG (scam) or 
 		description: 'Recognize fraudulent job offers and protect yourself from employment scams.',
 		difficulty: 'beginner',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/job-offer-scams/scam-text-3.png',
 		slides: [
 			{
 				id: 'introduction',
@@ -1417,6 +1422,7 @@ You receive an email offering a remote data entry job for $40/hour, no interview
 		description: 'Identify fake investment opportunities and Ponzi schemes.',
 		difficulty: 'advanced',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/investment-scams/yf240qor0f0v7pvw.jpg',
 		slides: [
 			{
 				id: 'introduction',
@@ -1784,6 +1790,7 @@ You receive a call from a man claiming to be an investment advisor. He says he h
 		description: 'Learn to identify fake Canada Revenue Agency communications and threats.',
 		difficulty: 'beginner',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/cra-scams/scam-example2.webp',
 		slides: [
 			{
 				id: 'introduction',
@@ -2090,6 +2097,7 @@ Practice identifying CRA scams by categorizing these real-world scenarios. Drag 
 		description: 'Protect yourself from fake bank security alerts and account verification requests.',
 		difficulty: 'intermediate',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/banking-scams/SMS.webp',
 		slides: [
 			{
 				id: 'introduction',
@@ -2459,6 +2467,7 @@ Apply what you've learned to identify safe banking practices.`,
 		description: 'Identify fake profiles impersonating friends, family, celebrities, and professionals.',
 		difficulty: 'intermediate',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/social-media-scams/social-media-scam-catfishing.png',
 		slides: [
 			{
 				id: 'introduction',
@@ -2720,6 +2729,7 @@ Chat with an AI scammer and see if you can spot the red flags before it's too la
 		description: 'Understand how romance scammers operate and protect yourself from emotional manipulation.',
 		difficulty: 'intermediate',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/romance-scams/romance-scam-thailand.webp',
 		slides: [
 			{
 				id: 'introduction',
@@ -2914,6 +2924,7 @@ Remember: **Legitimate relationships develop naturally over time, with increasin
 		description: 'Recognize fake lottery winnings and prize notifications.',
 		difficulty: 'beginner',
 		duration: '10-12 mins',
+		thumbnail: '/images/lessons/lottery-scams/social-media-scam-lottery-gift-card.png',
 		slides: [
 			{
 				id: 'introduction',

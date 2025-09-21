@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { lessons } from "@/data/lessons";
 
 export default function LessonsPage() {
@@ -34,50 +35,60 @@ export default function LessonsPage() {
 						<Link
 							key={lesson.id}
 							href={`/lessons/${lesson.id}`}
-							className="group bg-primary-50/80 backdrop-blur-sm hover:bg-primary-50/90 border border-primary-200 hover:border-secondary-500 rounded-xl p-6 transition-all duration-300 transform hover:scale-105 shadow-sm"
+							className="group bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-300 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-lg"
 						>
-							<div className="mb-4">
-								<div className="flex items-center justify-between mb-3">
-									<span className={`px-3 py-1 rounded-full text-xs font-medium ${
-										lesson.difficulty === 'beginner' ? 'bg-green-800 text-white' :
-										lesson.difficulty === 'intermediate' ? 'bg-yellow-800 text-white' :
-										'bg-red-800 text-white'
-									}`}>
-										{lesson.difficulty}
-									</span>
-										<span className="text-gray-500 text-sm">{lesson.duration}</span>
+							{/* Thumbnail Image */}
+							{lesson.thumbnail && (
+								<div className="relative h-48 w-full overflow-hidden">
+									<Image
+										src={lesson.thumbnail}
+										alt={lesson.title}
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-300"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+									<div className="absolute top-3 right-3">
+										<span className={`px-2 py-1 rounded-full text-xs font-medium ${
+											lesson.difficulty === 'beginner' ? 'bg-green-600 text-white' :
+											lesson.difficulty === 'intermediate' ? 'bg-yellow-600 text-white' :
+											'bg-red-600 text-white'
+										}`}>
+											{lesson.difficulty}
+										</span>
+									</div>
 								</div>
-								<h3 className="text-xl font-bold text-text mb-3 group-hover:text-secondary-500 transition-colors duration-300">
+							)}
+							
+							<div className="p-6">
+								<div className="flex items-center justify-between mb-3">
+									<span className="text-gray-500 text-sm">{lesson.duration}</span>
+									<span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+										{lesson.slides.length} slides
+									</span>
+								</div>
+								
+								<h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
 									{lesson.title}
 								</h3>
-								<p className="text-[#94A3B8] mb-4 line-clamp-3">
+								
+								<p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
 									{lesson.description}
 								</p>
-							</div>
 
-							<div className="space-y-2">
-								<h4 className="text-sm font-semibold text-gray-700">Lesson Format:</h4>
-								<div className="flex flex-wrap gap-2">
-									<span className="text-xs bg-green-700 text-white px-2 py-1 rounded">
-										{lesson.slides.length} Interactive Slides
+								<div className="flex flex-wrap gap-2 mb-4">
+									<span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+										Interactive Slides
 									</span>
-									<span className="text-xs bg-green-700 text-white px-2 py-1 rounded">
+									<span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
 										Knowledge Check
 									</span>
-									<span className="text-xs bg-green-700 text-white px-2 py-1 rounded">
+									<span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">
 										Practice Scenarios
 									</span>
 								</div>
-							</div>
-
-							<div className="mt-6 pt-4 border-t border-gray-300">
-								<div className="flex items-center justify-between">
-									<div className="bg-green-700 hover:bg-green-800 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300">
-										Start Lesson →
-									</div>
-									<span className="text-xs bg-green-600 text-white px-2 py-1 rounded">
-										{lesson.slides.length} Slides
-									</span>
+								
+								<div className="bg-blue-600 hover:bg-blue-700 text-white text-center font-medium py-3 px-4 rounded-lg transition-colors duration-300">
+									Start Lesson →
 								</div>
 							</div>
 						</Link>
